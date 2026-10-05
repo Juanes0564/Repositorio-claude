@@ -18,7 +18,7 @@ Vínculo es una app para que personas mayores en Colombia aprendan y practiquen 
 | Fase | Qué incluye | Estado |
 |---|---|---|
 | 1 | Base, diseño, bienvenida, menú principal, perfil | ✅ Lista |
-| 2 | Simulador y transferencia bancaria | Pendiente |
+| 2 | Simulador y transferencia bancaria | ✅ Lista |
 | 3 | Copiloto de voz | Pendiente |
 | 4 | Talleres | Pendiente |
 | 5 | Simuladores: citas, transporte, compras, estafas | Pendiente |
@@ -127,6 +127,7 @@ Se documentará paso a paso en la Fase 8.
 | `npm run typecheck` | Revisa que el código no tenga errores de tipos |
 | `npm run lint` | Revisa el estilo del código |
 | `npm run icons` | Vuelve a generar los íconos de la app desde el logo |
+| `npm run screenshots` | Toma capturas de todas las pantallas (con `npm run preview` abierto) |
 
 ### Documentos
 
@@ -143,6 +144,9 @@ Se documentará paso a paso en la Fase 8.
 - `src/content/` — **todos los textos** de la app.
 - `src/screens/` — las pantallas.
 - `src/components/` — piezas reutilizables (marco, navegación, logo…).
+- `src/content/flows/` — las prácticas del simulador (una por archivo).
+- `src/sim/` — el motor del simulador y las piezas de las pantallas simuladas.
+- `src/config/progress.ts` — la regla del Pasaporte (50 % práctica + 50 % taller).
 - `src/lib/storage.ts` — lo que se guarda en el celular.
 - `src/styles/index.css` — colores, tamaños y estilos.
 - `docs/referencia/` — imágenes de referencia del diseño.

@@ -1,6 +1,24 @@
 # Decisiones del proyecto
 
-Registro de decisiones técnicas y de diseño. Lo más reciente va arriba dentro de cada fase.
+Registro de decisiones técnicas y de diseño.
+
+## Fase 2
+
+1. **Motor separado de la pantalla.** `src/sim/engine.ts` es lógica pura (tocar, escribir, siguiente, volver, reiniciar, ayuda) y se prueba sin navegador. Las pantallas simuladas se arman con piezas reutilizables en `src/sim/blocks/`. Cada práctica es solo datos (`src/content/flows/`).
+2. **Teclado numérico:** las teclas nunca cuentan como error; solo se revisa al tocar el botón final ("Entrar", "Continuar"). Tras dos errores, el resaltado señala la siguiente tecla correcta, "Borrar" si sobra un número, o el botón final.
+3. **Resaltado:** contorno grueso discontinuo + etiqueta con flecha y la palabra "Aquí" (no depende solo del color). Solo en modo Guiado.
+4. **"Siguiente" nunca está apagado del todo:** si se toca antes de tiempo, explica "Primero haz lo que dice el paso." (un botón desactivado no dice por qué). Se ve con borde punteado mientras espera.
+5. **Orden de la pantalla 4:** progreso → nota del coach → pantalla simulada → barra fija con el aviso y Volver/Siguiente. La referencia pone el coach debajo de la pantalla simulada; lo subimos para que la instrucción siempre se vea sin desplazarse. "¡Bien!" y los avisos salen en la barra fija, junto a "Siguiente".
+6. **Sin navegación inferior dentro de la práctica** para evitar salidas accidentales. Se sale con "Salir" (pide confirmación). "Volver" en el paso 1 también pregunta si quiere salir.
+7. **Modo Libre por habilidad:** se desbloquea al completar el Guiado de cualquier práctica de esa habilidad (el progreso se guarda por habilidad, como pide el Pasaporte). Si alguien abre el modo Libre bloqueado desde la dirección, se abre en Guiado.
+8. **Regla del Pasaporte en un solo archivo:** `src/config/progress.ts` (50 % simulador guiado + 50 % taller).
+9. **Voz de "Ayuda":** se agregó una versión básica de lectura en voz alta (`src/lib/speech.ts`) con el orden de voces del brief y botón "Detener voz". La Fase 3 la completa (copiloto y reconocimiento de voz).
+10. **Identidad de las plataformas ficticias:** cuadro redondeado de un color propio con un ícono genérico. Colores elegidos lejos de las marcas colombianas conocidas, todos con contraste ≥ 7:1 con texto blanco:
+    Banco Ejemplo `#0F5C5C` (verde petróleo), EPS Salud Ejemplo `#1E5675`, Chat Ejemplo `#3E4C6B`, Transporte Ejemplo `#1F4E79`, Billetera Ejemplo `#6B4813` (café), Tienda Ejemplo `#8B3A3A` (ladrillo), Domicilios Ejemplo `#48551A` (oliva), Ajustes `#4A4F55` (gris).
+11. **Prueba automática anti-marcas:** `src/content/brands.test.ts` falla si aparece el nombre de un banco, EPS o app real en las plataformas o prácticas.
+12. **"Más usadas"** muestra todas las plataformas ordenadas por uso; los demás filtros las reducen. Las plataformas sin prácticas dicen "Muy pronto".
+13. **Capturas automáticas:** `npm run screenshots` toma capturas de todas las pantallas en varios tamaños y avisa si algo se sale de la pantalla o si hay pedidos a internet.
+14. **Texto al 200 %:** en pantallas muy angostas la barra Volver/Siguiente deja de estar fija para no tapar la práctica.
 
 ## Fase 1
 

@@ -13,6 +13,9 @@ Todos los textos que se ven en la app están en la carpeta `src/content/`. **No 
 | `profile.ts` | Perfil, privacidad, acerca de, borrar datos. |
 | `skills.ts` | Nombres de las 8 habilidades del Pasaporte. |
 | `screens.ts` | Títulos de secciones. |
+| `platforms.ts` | Las plataformas ficticias (nombre, color, ícono). |
+| `simulator.ts` | Textos de las pantallas 3 y 4 (botones, avisos, felicitación). |
+| `flows/` | Una práctica por archivo (por ejemplo `transfer-bank.ts`). |
 
 ## Cambiar de "tú" a "usted"
 
@@ -43,7 +46,46 @@ Si un texto necesita una versión más corta para el modo sencillo, escríbelo a
 - Nunca números de teléfono ni enlaces reales de bancos o entidades. Di "el número que aparece en tu tarjeta".
 - Textos de seguridad y estafas llevan `reviewed: false` hasta que una persona del equipo los revise.
 
+## Cómo agregar una práctica al simulador
+
+Cada práctica es un archivo de datos en `src/content/flows/`. No hay que programar pantallas: el simulador arma cada pantalla con piezas que ya existen.
+
+1. Copia `src/content/flows/transfer-bank.ts` con un nombre nuevo, por ejemplo `appointment-eps.ts`.
+2. Cambia `id`, `skill` (una de las 8 habilidades), `platform` (una de `platforms.ts`), `title`, `summary` y `minutes`.
+3. Escribe entre 6 y 8 pasos. Cada paso tiene:
+   - `coach`: la instrucción (máximo unas 12 palabras).
+   - `hint`: la pista (en modo Guiado se ve siempre; en modo Solo, al tocar Ayuda).
+   - `wrong` (opcional): qué decir si toca otra cosa. Si no lo pones, dice "No pasa nada. Intentemos de nuevo."
+   - `target`: lo que la persona debe hacer:
+     - Tocar algo: `{ kind: 'tap', id: 'el-id-del-boton' }`
+     - Escribir números: `{ kind: 'input', keypadId: 'el-id-del-teclado', expected: '1234' }`
+   - `screen`: la pantalla simulada, hecha de piezas (`blocks`):
+
+| Pieza (`type`) | Para qué sirve |
+|---|---|
+| `heading`, `text` | Título o texto dentro de la app ficticia |
+| `notice` | Recuadro de aviso (`tone: 'warning'` para advertencias) |
+| `balance` | Saldo de una cuenta |
+| `tiles` | Cuadrícula de botones con ícono (apps del celular o menú de una app) |
+| `list` | Lista de opciones (contactos, sedes, productos…) |
+| `form` | Campos que se tocan ("¿A dónde vas?") |
+| `actions` | Botones (`primary`, `secondary` o `link`) |
+| `keypad` | Teclado numérico con visor (`masked` para claves, `money` para pesos, `plain`) |
+| `summary` | Resumen para revisar antes de confirmar |
+| `receipt` | Comprobante |
+| `sms` | Mensaje de texto recibido (puede tener un enlace que se toca) |
+| `chat` | Conversación con botones para escribir, enviar audio, foto… |
+| `settings` | Filas de ajustes con interruptor o flecha |
+
+4. Escribe `finish.learned` (qué aprendió) y `finish.tip` (consejo de seguridad).
+5. Deja `reviewed: false` hasta que una persona del equipo revise el contenido.
+6. Agrega la práctica a la lista en `src/content/flows/index.ts`.
+7. Corre `npm test`. Las pruebas revisan automáticamente que cada paso tenga su botón objetivo, que haya entre 6 y 8 pasos, que las instrucciones sean cortas y que no aparezcan nombres de marcas reales.
+
+**Reglas del simulador:** solo nombres ficticios ("Banco Ejemplo"…); claves y códigos siempre de práctica y dichos en voz alta en la instrucción ("escribe 1234"); nombres y cuentas claramente inventados ("Rosa Ejemplo", "terminada en 4321").
+
+**Nota sobre el trato:** los textos *dentro* de la app ficticia (por ejemplo "¿Olvidaste tu clave?") imitan cómo hablan las apps reales y no cambian con `TREATMENT`. Los textos del coach y de Vínculo sí usan `tv()`.
+
 ## Próximamente en este documento
 
-- Cómo agregar un simulador (Fase 2).
 - Cómo agregar un taller y un video de YouTube (Fase 4).

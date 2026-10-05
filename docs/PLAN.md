@@ -18,18 +18,18 @@ Criterios de aceptación:
 - [x] Todo texto visible en `src/content/`.
 - [x] Docs: README, DECISIONES, DEPENDENCIAS, ASSETS, CONTENIDO, PRUEBAS (iniciales).
 
-## Fase 2 — Simulador
+## Fase 2 — Simulador ✅
 Motor de flujos por datos, selección de plataforma (pantalla 3), simulador (pantalla 4), componentes de pantallas simuladas y flujo de transferencia bancaria.
 
 Criterios:
-- [ ] Esquema tipado de flujo (pantalla, objetivo, coach, pista, error) en `src/content/flows/`.
-- [ ] Componentes reutilizables: encabezado, lista, formulario, teclado numérico, confirmación, comprobante, chat, SMS, ajustes.
-- [ ] Cinta "PRÁCTICA – no es real" en todas las pantallas.
-- [ ] "¡Bien!" + marca verde; error amable; tras 2 errores, contorno + flecha.
-- [ ] Ayuda siempre visible; Volver, Salir (con confirmación), Reiniciar.
-- [ ] Modo Guiado y Libre (Libre tras completar Guiado).
-- [ ] Pantalla final con aprendizaje, consejo, "Ver taller"/"Practicar otra vez"; progreso actualizado.
-- [ ] Flujo completo de transferencia en Banco Ejemplo; pruebas del motor.
+- [x] Esquema tipado de flujo (pantalla, objetivo, coach, pista, error) en `src/content/flows/`.
+- [x] Componentes reutilizables: encabezado, lista, formulario, teclado numérico, confirmación, comprobante, chat, SMS, ajustes.
+- [x] Cinta "PRÁCTICA – no es real" en todas las pantallas.
+- [x] "¡Bien!" + marca verde; error amable; tras 2 errores, contorno + flecha.
+- [x] Ayuda siempre visible; Volver, Salir (con confirmación), Reiniciar.
+- [x] Modo Guiado y Libre (Libre tras completar Guiado).
+- [x] Pantalla final con aprendizaje, consejo, "Ver taller"/"Practicar otra vez"; progreso actualizado.
+- [x] Flujo completo de transferencia en Banco Ejemplo; pruebas del motor.
 
 ## Fase 3 — Copiloto de voz
 Criterios:

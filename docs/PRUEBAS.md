@@ -39,6 +39,30 @@ Lista para revisar la app a mano. Marca cada casilla cuando la pruebes.
 - [ ] Abrir la app una vez, apagar internet y recargar: la app sigue abriendo.
 - [ ] En Android (Chrome): menú ⋮ → "Instalar app" o "Agregar a la pantalla principal".
 
+## Fase 2 — Simulador
+
+### Selección de plataforma (pantalla 3)
+- [ ] "Simular y practicar" abre la lista con filtros: Más usadas, Bancos, Salud, Transporte, Compras.
+- [ ] El filtro activo se nota con fondo, color y una marca ✓.
+- [ ] Los accesos rápidos del menú (Bancos, EPS/Salud…) abren la lista ya filtrada.
+- [ ] Ninguna plataforma se parece a un banco, EPS o app real.
+- [ ] Banco Ejemplo muestra "Enviar dinero a otra persona"; las demás dicen "Muy pronto".
+- [ ] "Practicar solo" aparece bloqueado con candado y explicación hasta completar la práctica con guía.
+
+### Simulador (pantalla 4)
+- [ ] Siempre se ve la cinta "PRÁCTICA – no es real".
+- [ ] Se ve "Paso X de 8" y la barra de progreso.
+- [ ] Tocar lo correcto muestra "¡Bien!" con marca verde. Nada avanza solo.
+- [ ] Tocar otra cosa muestra un mensaje amable. A la segunda, aparece un recuadro punteado con "Aquí".
+- [ ] En la clave y el valor, el resaltado señala la tecla que sigue, o "Borrar" si hay un número de más.
+- [ ] "Siguiente" antes de tiempo explica "Primero haz lo que dice el paso."
+- [ ] "Volver" funciona en todos los pasos (en el paso 1 pregunta si quiere salir).
+- [ ] "Salir" y "Reiniciar" piden confirmación.
+- [ ] "Ayuda" muestra la pista y la lee en voz alta (si la voz está activada). "Detener voz" la calla.
+- [ ] Al terminar: felicitación, lo aprendido, consejo de seguridad, "Practicar otra vez" y "Ver taller".
+- [ ] Después del modo con guía, "Practicar solo" queda disponible y no muestra pistas hasta tocar "Ayuda".
+- [ ] Con letra Muy grande, todo cabe y se puede usar.
+
 ## Pruebas con personas (cuando el equipo pueda)
 
 - [ ] Probar en un Android real de gama baja.

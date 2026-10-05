@@ -4,7 +4,7 @@ const lum = (hex) => {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 }
 const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05) }
-const pairs = process.argv.slice(2).length ? [process.argv.slice(2)] : [
+const pairs = process.argv.slice(2).length ? [['', ...process.argv.slice(2)]] : [
   ['normal: ink / bg', '#1C2629', '#FBF7EE'],
   ['normal: ink-soft / bg', '#45524F', '#FBF7EE'],
   ['normal: ink-soft / surface', '#45524F', '#FFFFFF'],
