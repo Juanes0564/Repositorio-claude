@@ -2,21 +2,21 @@
 
 Cada fase se cierra con: `npm run build`, `npm run typecheck`, `npm run lint` y `npm test` sin errores; capturas revisadas en 360×640 y 390×844; commit `feat(fase-N): ...`; informe corto.
 
-## Fase 1 — Base y diseño
+## Fase 1 — Base y diseño ✅
 Proyecto, PWA, sistema de diseño, marco de teléfono, navegación inferior, bienvenida (pantalla 1), menú principal (pantalla 2), Perfil, persistencia local y archivos de contenido.
 
 Criterios de aceptación:
-- [ ] Proyecto React + Vite + TS con HashRouter; `vite-plugin-pwa` genera manifiesto y service worker.
-- [ ] Fuente Atkinson Hyperlegible autoalojada; ningún recurso remoto en tiempo de ejecución.
-- [ ] Variables de color/espaciado en CSS; tamaños en `rem`; escala de letra Normal (20 px) / Grande (×1,2) / Muy grande (×1,45) y alto contraste funcionando.
-- [ ] Marco de teléfono en ≥ 768 px con barra de estado `aria-hidden`; sin marco en celular; `?frame=0` lo apaga.
-- [ ] Navegación inferior: Inicio, Mis avances, Ayuda, Perfil (íconos con texto, ≥ 56 px).
-- [ ] Bienvenida con logo SVG, lema, "Comenzar", nombre opcional y elección de modo sencillo; no vuelve a salir tras completarla.
-- [ ] Menú principal con saludo, buscador (marcador de posición), 4 tarjetas grandes y accesos rápidos.
-- [ ] Perfil: nombre, voz on/off y velocidad, acceso a modo sencillo, Borrar mis datos (con confirmación), Privacidad, Acerca de.
-- [ ] Persistencia `vinculo.v1` versionada con migración y pruebas unitarias.
-- [ ] Todo texto visible en `src/content/`.
-- [ ] Docs: README, DECISIONES, DEPENDENCIAS, ASSETS, CONTENIDO, PRUEBAS (iniciales).
+- [x] Proyecto React + Vite + TS con HashRouter; `vite-plugin-pwa` genera manifiesto y service worker.
+- [x] Fuente Atkinson Hyperlegible autoalojada; ningún recurso remoto en tiempo de ejecución.
+- [x] Variables de color/espaciado en CSS; tamaños en `rem`; escala de letra Normal (20 px) / Grande (×1,2) / Muy grande (×1,45) y alto contraste funcionando.
+- [x] Marco de teléfono en ≥ 768 px con barra de estado `aria-hidden`; sin marco en celular; `?frame=0` lo apaga.
+- [x] Navegación inferior: Inicio, Mis avances, Ayuda, Perfil (íconos con texto, ≥ 56 px).
+- [x] Bienvenida con logo SVG, lema, "Comenzar", nombre opcional (por teclado; la voz llega en la Fase 3) y elección de modo sencillo; no vuelve a salir tras completarla.
+- [x] Menú principal con saludo, buscador (marcador de posición), 4 tarjetas grandes y accesos rápidos.
+- [x] Perfil: nombre, voz on/off y velocidad, acceso a modo sencillo, Borrar mis datos (con confirmación), Privacidad, Acerca de.
+- [x] Persistencia `vinculo.v1` versionada con migración y pruebas unitarias.
+- [x] Todo texto visible en `src/content/`.
+- [x] Docs: README, DECISIONES, DEPENDENCIAS, ASSETS, CONTENIDO, PRUEBAS (iniciales).
 
 ## Fase 2 — Simulador
 Motor de flujos por datos, selección de plataforma (pantalla 3), simulador (pantalla 4), componentes de pantallas simuladas y flujo de transferencia bancaria.
