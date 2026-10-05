@@ -9,6 +9,7 @@ Registro de decisiones técnicas y de diseño. Lo más reciente va arriba dentro
 3. **No había imagen de referencia en el repositorio.** `docs/referencia/` estaba vacía cuando se construyó la Fase 1, así que la paleta se definió a partir de lo que dice el brief (logo verde y amarillo, tono cálido). Paleta provisional:
    - Verde principal `#1D5C46` (texto/botones), verde logo `#2E8A63`, amarillo logo `#F2C14E`, fondo crema `#FBF7EE`, texto `#1C2629`.
    - Todos los textos tienen contraste ≥ 7:1 (ver `scripts/contrast.mjs`). En alto contraste: negro sobre blanco y verde muy oscuro.
+   - **Aprobada por el equipo (provisional)** tras revisar la Fase 1, junto con el menú principal.
    - **Pendiente:** cuando el equipo agregue `docs/referencia/recorrido-usuario.png`, ajustar los tonos en `src/styles/index.css` (sección "Tokens").
 4. **Escala de letra con el tamaño raíz.** La letra base es 20 px (`font-size: 125%` en `<html>`). Grande = 24 px (×1,2), Muy grande = 29 px (×1,45). Como todo se mide en `rem`, la interfaz completa crece con la letra.
 5. **Objetivos táctiles** con `max(56px, 2.8rem)`; en modo sencillo `max(64px, 3.2rem)`.
