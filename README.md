@@ -19,7 +19,7 @@ Vínculo es una app para que personas mayores en Colombia aprendan y practiquen 
 |---|---|---|
 | 1 | Base, diseño, bienvenida, menú principal, perfil | ✅ Lista |
 | 2 | Simulador y transferencia bancaria | ✅ Lista |
-| 3 | Copiloto de voz | Pendiente |
+| 3 | Copiloto de voz | ✅ Lista |
 | 4 | Talleres | Pendiente |
 | 5 | Simuladores: citas, transporte, compras, estafas | Pendiente |
 | 6 | Simuladores: WhatsApp, celular, seguridad | Pendiente |
@@ -146,6 +146,7 @@ Se documentará paso a paso en la Fase 8.
 - `src/components/` — piezas reutilizables (marco, navegación, logo…).
 - `src/content/flows/` — las prácticas del simulador (una por archivo).
 - `src/sim/` — el motor del simulador y las piezas de las pantallas simuladas.
+- `src/copilot/` — el motor que entiende lo que la persona dice o escribe (sin internet ni IA externa).
 - `src/config/progress.ts` — la regla del Pasaporte (50 % práctica + 50 % taller).
 - `src/lib/storage.ts` — lo que se guarda en el celular.
 - `src/styles/index.css` — colores, tamaños y estilos.

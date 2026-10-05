@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Mic, MicOff } from 'lucide-react'
 import { Logo } from '../components/Logo'
+import { VoiceConsentDialog } from '../components/VoiceConsentDialog'
 import { WelcomeIllustration } from '../components/WelcomeIllustration'
-import { common, welcome } from '../content'
+import { common, voice, welcome } from '../content'
+import { extractName } from '../lib/extractName'
 import { useAppState } from '../state/useAppState'
+import { useVoiceInput } from '../state/useVoiceInput'
 
 type Step = 'intro' | 'name' | 'simple'
 
@@ -15,6 +18,7 @@ export function Welcome() {
   const [step, setStep] = useState<Step>('intro')
   const [name, setNameDraft] = useState(data.profile.name)
   const headingRef = useRef<HTMLHeadingElement>(null)
+  const mic = useVoiceInput((spoken) => setNameDraft(extractName(spoken)))
 
   useEffect(() => {
     if (step !== 'intro') headingRef.current?.focus()
@@ -89,6 +93,28 @@ export function Welcome() {
             />
             <p className="field__help">{welcome.nameStep.privacy}</p>
           </div>
+          {mic.available &&
+            (mic.status === 'listening' ? (
+              <button type="button" className="btn btn--secondary btn--block" onClick={mic.stop}>
+                <MicOff className="icon" aria-hidden="true" />
+                <span>{voice.stopListening}</span>
+              </button>
+            ) : (
+              <button type="button" className="btn btn--secondary btn--block" onClick={mic.start}>
+                <Mic className="icon" aria-hidden="true" />
+                <span>{voice.sayName}</span>
+              </button>
+            ))}
+          {mic.status === 'listening' && (
+            <p className="field__help" role="status">
+              {voice.listening} {mic.interim}
+            </p>
+          )}
+          {mic.error && (
+            <p className="field__help" role="alert">
+              {voice.errors[mic.error]}
+            </p>
+          )}
           <button type="submit" className="btn btn--primary btn--block btn--xl">
             <span>{common.continue}</span>
             <ArrowRight className="icon" aria-hidden="true" />
@@ -111,6 +137,7 @@ export function Welcome() {
           </div>
         </div>
       )}
+      {mic.status === 'consent' && <VoiceConsentDialog onAccept={mic.accept} onDecline={mic.decline} />}
     </div>
   )
 }

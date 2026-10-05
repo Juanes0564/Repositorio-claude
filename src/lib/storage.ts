@@ -20,6 +20,8 @@ export type SkillId = (typeof SKILL_IDS)[number]
 
 export type FontSize = 'normal' | 'large' | 'xlarge'
 export type VoiceRate = 'slow' | 'normal'
+/** Permiso para usar el micrófono: se pregunta con un aviso de privacidad antes del primer uso. */
+export type VoiceInputConsent = 'unknown' | 'granted' | 'declined'
 
 export interface Settings {
   /** Interruptor general del modo sencillo. */
@@ -31,6 +33,7 @@ export interface Settings {
   highContrast: boolean
   voiceEnabled: boolean
   voiceRate: VoiceRate
+  voiceInput: VoiceInputConsent
 }
 
 export interface SkillProgress {
@@ -56,6 +59,7 @@ export const DEFAULT_SETTINGS: Settings = {
   highContrast: false,
   voiceEnabled: true,
   voiceRate: 'slow',
+  voiceInput: 'unknown',
 }
 
 /** Ajustes que se aplican al encender el modo sencillo (sección 8 del brief). */
@@ -124,6 +128,7 @@ export function migrate(raw: unknown): StoredData {
       highContrast: pickBoolean(settings.highContrast, d.highContrast),
       voiceEnabled: pickBoolean(settings.voiceEnabled, d.voiceEnabled),
       voiceRate: pickOneOf(settings.voiceRate, ['slow', 'normal'] as const, d.voiceRate),
+      voiceInput: pickOneOf(settings.voiceInput, ['unknown', 'granted', 'declined'] as const, d.voiceInput),
     },
     progress: Object.fromEntries(
       SKILL_IDS.map((id) => {

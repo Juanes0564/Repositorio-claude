@@ -3,6 +3,7 @@ import { Layout } from './components/Layout'
 import { PhoneFrame } from './components/PhoneFrame'
 import { screenTitles } from './content'
 import { ComingSoon } from './screens/ComingSoon'
+import { Copilot } from './screens/Copilot'
 import { Home } from './screens/Home'
 import { NotFound } from './screens/NotFound'
 import { PlatformDetail } from './screens/PlatformDetail'
@@ -33,7 +34,7 @@ function Routed() {
         <Route path="/ayuda" element={<ComingSoon title={screenTitles.help} />} />
         <Route path="/practicar" element={<PlatformPicker />} />
         <Route path="/practicar/:platformId" element={<PlatformDetail />} />
-        <Route path="/copiloto" element={<ComingSoon title={screenTitles.copilot} />} />
+        <Route path="/copiloto" element={<Copilot />} />
         <Route path="/talleres" element={<ComingSoon title={screenTitles.workshops} />} />
         <Route path="/modo-sencillo" element={<ComingSoon title={screenTitles.simpleMode} />} />
         <Route path="*" element={<NotFound />} />

@@ -29,4 +29,6 @@ Se instalan con `npm install` y quedan **empaquetadas dentro de la app**: la app
 | @types/node, @types/react, @types/react-dom | — | MIT | Tipos para TypeScript |
 | @playwright/test | 1.56 | Apache-2.0 | Capturas de pantalla, íconos y pruebas de humo |
 
+Nota: no se usó Fuse.js; el copiloto usa un motor de coincidencia propio, sin dependencias.
+
 Nota: TypeScript se fijó en la serie 6.0 porque `typescript-eslint` todavía no es compatible con TypeScript 7.

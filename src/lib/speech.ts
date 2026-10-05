@@ -4,7 +4,8 @@
  */
 
 export const VOICE_ORDER = ['es-CO', 'es-419', 'es-MX', 'es-US'] as const
-export const RATES = { slow: 0.9, normal: 1 } as const
+/** Velocidades: lenta (por defecto, 0,9), normal, y más lenta para el botón "Más despacio". */
+export const RATES = { slower: 0.75, slow: 0.9, normal: 1 } as const
 
 type Listener = (speaking: boolean) => void
 const listeners = new Set<Listener>()

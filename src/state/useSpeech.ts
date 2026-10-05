@@ -11,7 +11,12 @@ export function useSpeech() {
 
   const enabled = data.settings.voiceEnabled && isSpeechSupported()
   const rate = RATES[data.settings.voiceRate]
-  const say = useCallback((text: string) => enabled && speak(text, rate), [enabled, rate])
+  const say = useCallback(
+    (text: string, opts?: { slower?: boolean }) => {
+      if (enabled) speak(text, opts?.slower ? RATES.slower : rate)
+    },
+    [enabled, rate],
+  )
 
-  return { enabled, speaking, say, stop: stopSpeaking }
+  return { enabled, supported: isSpeechSupported(), speaking, say, stop: stopSpeaking }
 }

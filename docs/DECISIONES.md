@@ -2,6 +2,23 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Fase 3
+
+1. **Motor de intención propio, sin Fuse.js.** Es pequeño (`src/copilot/intentEngine.ts`): normaliza el texto, quita palabras vacías, suma puntos por frases completas (pesan mucho) y por palabras clave con peso. Tolera un error de escritura o de dictado en palabras clave de 6 letras o más ("trasferencia", "jaqueen"). En claves cortas no, porque un error cambia el sentido ("estar" no es "estafa"). No se agregó ninguna dependencia.
+2. **Confianza:** alta (≥ 2,5 puntos y 1,5 de ventaja sobre la segunda) → "¿Quieres…?" Sí / No, otra cosa. Media → 2 o 3 opciones + "Ninguna de estas". Baja → "No te entendí bien" con botones de las tareas principales.
+3. **Órdenes directas:** repetir, más despacio, atrás e inicio se cumplen sin preguntar (preguntar "¿Quieres que repita?" estorba).
+4. **Procesamiento de voz en el celular APAGADO.** El brief pide usarlo si el navegador lo permite. Al probarlo, en Chromium tanto `SpeechRecognition.available({ processLocally: true })` como `processLocally = true` **cerraron la pestaña** cuando el modelo local no está instalado. Se dejó apagado con el interruptor `TRY_LOCAL_PROCESSING` en `src/lib/recognition.ts` y se usa el reconocimiento estándar, siempre con el aviso de privacidad antes del primer uso. Revisar cuando el navegador lo tenga estable y probar en un Android real.
+5. **Permiso del micrófono guardado:** `settings.voiceInput` (`unknown` / `granted` / `declined`). "Prefiero botones" esconde el micrófono en toda la app; se puede cambiar en Perfil. Si el navegador no tiene reconocimiento de voz, el micrófono no aparece y Perfil lo explica.
+6. **El botón "Detener voz" aparece mientras la app habla** (no tiene sentido mostrarlo callado).
+7. **"Más despacio"** lee con velocidad 0,75 y deja la voz en "Lenta" (0,9) de ahí en adelante.
+8. **La voz del copiloto solo suena después de que la persona toca algo** (los navegadores bloquean el sonido automático al abrir una página).
+9. **"Toca para hablar" va justo debajo del mensaje del copiloto** y antes de las sugerencias, para que siempre se vea sin desplazarse. El cuadro para escribir va al final.
+10. **Guías "en la vida real"** (`src/content/guides.ts`): pasos genéricos (las apps reales cambian). Siete guías: transferencias, citas, transporte, compras, WhatsApp, configuración del celular y seguridad. Las estafas se atienden con la rama "No entiendo un mensaje". Todo marcado `reviewed: false`.
+11. **"No entiendo un mensaje"** (`src/content/messageHelp.ts`): como el copiloto no ve la pantalla, pregunta qué pide el mensaje (clave, código, cuenta bloqueada, dinero, premio, otra cosa) y orienta. Sin teléfonos ni enlaces: "el número que aparece en tu tarjeta".
+12. **Pruebas de seguridad del contenido:** una prueba revisa que ningún archivo de contenido tenga enlaces web ni números de teléfono, y que guías, prácticas y ayuda con mensajes estén marcadas para revisión.
+13. **El nombre en la bienvenida se puede decir en voz alta** ("me llamo Marta Lucía" → "Marta").
+14. **Pantalla del copiloto oscura** con colores propios (contraste ≥ 7:1); en alto contraste, negro con amarillo claro.
+
 ## Fase 2
 
 1. **Motor separado de la pantalla.** `src/sim/engine.ts` es lógica pura (tocar, escribir, siguiente, volver, reiniciar, ayuda) y se prueba sin navegador. Las pantallas simuladas se arman con piezas reutilizables en `src/sim/blocks/`. Cada práctica es solo datos (`src/content/flows/`).

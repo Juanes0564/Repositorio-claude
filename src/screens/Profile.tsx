@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Check, ChevronRight, Trash2 } from 'lucide-react'
 import { ConfirmDialog } from '../components/ConfirmDialog'
 import { Switch } from '../components/Switch'
-import { common, profile } from '../content'
+import { common, profile, voice } from '../content'
+import { isRecognitionSupported } from '../lib/recognition'
 import { useAppState } from '../state/useAppState'
 
 /** Perfil: nombre, voz, modo sencillo, privacidad, acerca de y borrar datos. */
@@ -71,6 +72,16 @@ export function Profile() {
           checked={s.voiceEnabled}
           onChange={(v) => updateSettings({ voiceEnabled: v })}
         />
+        {isRecognitionSupported() ? (
+          <Switch
+            label={voice.profile.toggle}
+            help={voice.profile.help}
+            checked={s.voiceInput === 'granted'}
+            onChange={(v) => updateSettings({ voiceInput: v ? 'granted' : 'declined' })}
+          />
+        ) : (
+          <p className="muted">{voice.profile.unsupported}</p>
+        )}
         <fieldset className="choice-group">
           <legend>{profile.voice.rate}</legend>
           <div className="choice-row">

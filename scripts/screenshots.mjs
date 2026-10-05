@@ -26,8 +26,26 @@ const sim = {
   },
 }
 
-async function shoot(name, { w = 390, h = 844, scale = 1, data, path = '#/', frame = false, actions = [] }) {
+/** Micrófono falso para capturar los estados de voz sin hablar. */
+const fakeMic = () => {
+  class FakeRec {
+    constructor() { window.__rec = this }
+    start() {}
+    stop() { this.onend?.() }
+    abort() { this.onend?.() }
+  }
+  window.webkitSpeechRecognition = FakeRec
+  window.SpeechRecognition = FakeRec
+}
+const say = (text, final = false) => async (page) =>
+  page.evaluate(([t, f]) => {
+    window.__rec.onresult?.({ resultIndex: 0, results: [{ isFinal: f, 0: { transcript: t }, length: 1 }] })
+    if (f) window.__rec.onend?.()
+  }, [text, final])
+
+async function shoot(name, { w = 390, h = 844, scale = 1, data, path = '#/', frame = false, actions = [], mic = false }) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: scale, reducedMotion: 'reduce' })
+  if (mic) await ctx.addInitScript(fakeMic)
   const page = await ctx.newPage()
   page.on('request', (r) => { if (!r.url().startsWith(BASE)) external.add(r.url()) })
   page.on('console', (m) => { if (m.type() === 'error') problems.push(`${name}: consola: ${m.text()}`) })
@@ -52,6 +70,12 @@ async function shoot(name, { w = 390, h = 844, scale = 1, data, path = '#/', fra
 }
 
 const transfer = '#/practicar/bank/transfer-bank'
+const btn = (name) => async (page) => page.getByRole('button', { name }).first().click()
+const typeCopilot = (text) => async (page) => {
+  await page.getByLabel(/escríbelo aquí/i).fill(text)
+  await page.getByRole('button', { name: 'Enviar' }).click()
+}
+const micOn = { voiceInput: 'granted' }
 const shots = {
   'welcome-360': { w: 360, h: 640 },
   'home-390': { data: done() },
@@ -94,6 +118,25 @@ const shots = {
   'sim-simple-390': { data: done({ settings: simple }), path: transfer, actions: [sim.tap(/Banco Ejemplo/), sim.next] },
   'sim-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: transfer },
   'sim-zoom200': { w: 180, h: 320, scale: 4, data: done(), path: transfer },
+  'copilot-390': { data: done(), path: '#/copiloto' },
+  'copilot-360': { w: 360, h: 640, data: done(), path: '#/copiloto' },
+  'copilot-mic-390': { mic: true, data: done(), path: '#/copiloto' },
+  'copilot-consent-390': { mic: true, data: done(), path: '#/copiloto', actions: [btn(/Toca para hablar/)] },
+  'copilot-listening-390': { mic: true, data: done({ settings: micOn }), path: '#/copiloto', actions: [btn(/Toca para hablar/), say('quiero mandar plata a')] },
+  'copilot-confirm-390': { mic: true, data: done({ settings: micOn }), path: '#/copiloto', actions: [btn(/Toca para hablar/), say('quiero mandar plata a mi hija', true)] },
+  'copilot-choices-390': { data: done(), path: '#/copiloto', actions: [typeCopilot('quiero pagar en la tienda con el banco')] },
+  'copilot-lost-390': { data: done(), path: '#/copiloto', actions: [typeCopilot('el clima de mañana')] },
+  'copilot-guide-390': { data: done(), path: '#/copiloto', actions: [typeCopilot('necesito un taxi'), btn('Sí'), btn('Ya lo hice')] },
+  'copilot-guide-explain-390': { data: done(), path: '#/copiloto', actions: [btn('Quiero hacer una transferencia'), btn('Ya lo hice'), btn('No entiendo')] },
+  'copilot-message-390': { data: done(), path: '#/copiloto', actions: [btn('No entiendo un mensaje')] },
+  'copilot-answer-390': { data: done(), path: '#/copiloto', actions: [btn('No entiendo un mensaje'), btn('Me pide un código')] },
+  'copilot-xlarge-360': { w: 360, h: 640, mic: true, data: done({ settings: xlarge }), path: '#/copiloto' },
+  'copilot-guide-simple-390': { data: done({ settings: simple }), path: '#/copiloto', actions: [btn('Quiero hacer una transferencia')] },
+  'copilot-zoom200': { w: 180, h: 320, scale: 4, data: done(), path: '#/copiloto' },
+  'copilot-framed': { w: 1280, h: 920, mic: true, data: done(), path: '#/copiloto', frame: true },
+  'home-mic-390': { mic: true, data: done() },
+  'welcome-name-mic-390': { mic: true, path: '#/bienvenida', actions: [btn(/Comenzar/)] },
+  'profile-mic-390': { mic: true, data: done({ settings: micOn }), path: '#/perfil', actions: [async (p) => p.getByText('Velocidad de la voz').scrollIntoViewIfNeeded()] },
   'sim-framed': { w: 1280, h: 920, data: done(), path: transfer, frame: true, actions: [sim.tap(/Banco Ejemplo/), sim.next] },
 }
 

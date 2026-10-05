@@ -16,6 +16,7 @@ import {
 import { Logo } from '../components/Logo'
 import { home } from '../content'
 import { useAppState } from '../state/useAppState'
+import { isRecognitionSupported } from '../lib/recognition'
 
 const cards = [
   { to: '/practicar', Icon: MousePointerClick, copy: home.cards.simulate, tone: 'green' },
@@ -36,8 +37,10 @@ export function Home() {
   const { data } = useAppState()
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
+  // El micrófono solo se muestra si el navegador lo permite y la persona no eligió "Prefiero botones".
+  const micAvailable = isRecognitionSupported() && data.settings.voiceInput !== 'declined'
 
-  // El buscador usará el motor del copiloto (Fase 3). Por ahora lleva la pregunta al copiloto.
+  // El buscador usa el motor de intención del copiloto: la pregunta se responde en la pantalla del copiloto.
   const submit = (e: FormEvent) => {
     e.preventDefault()
     const q = query.trim()
@@ -69,15 +72,17 @@ export function Home() {
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <div className="search__actions">
+        <div className={micAvailable ? 'search__actions' : 'search__actions search__actions--single'}>
           <button type="submit" className="btn btn--secondary">
             <Search className="icon" aria-hidden="true" />
             <span>{home.search.submit}</span>
           </button>
-          <button type="button" className="btn btn--primary" onClick={() => navigate('/copiloto?voz=1')}>
-            <Mic className="icon" aria-hidden="true" />
-            <span>{home.search.mic}</span>
-          </button>
+          {micAvailable && (
+            <button type="button" className="btn btn--primary" onClick={() => navigate('/copiloto?voz=1')}>
+              <Mic className="icon" aria-hidden="true" />
+              <span>{home.search.mic}</span>
+            </button>
+          )}
         </div>
       </form>
 

@@ -16,6 +16,11 @@ Todos los textos que se ven en la app están en la carpeta `src/content/`. **No 
 | `platforms.ts` | Las plataformas ficticias (nombre, color, ícono). |
 | `simulator.ts` | Textos de las pantallas 3 y 4 (botones, avisos, felicitación). |
 | `flows/` | Una práctica por archivo (por ejemplo `transfer-bank.ts`). |
+| `copilot.ts` | Textos de la pantalla del copiloto. |
+| `intents.ts` | Lo que el copiloto entiende: frases y palabras de cada intención. |
+| `guides.ts` | Guías "para hacerlo en la vida real" (paso a paso). |
+| `messageHelp.ts` | Ayuda "No entiendo un mensaje" (seguridad). |
+| `voice.ts` | Micrófono: aviso de privacidad y mensajes de error. |
 
 ## Cambiar de "tú" a "usted"
 
@@ -85,6 +90,19 @@ Cada práctica es un archivo de datos en `src/content/flows/`. No hay que progra
 **Reglas del simulador:** solo nombres ficticios ("Banco Ejemplo"…); claves y códigos siempre de práctica y dichos en voz alta en la instrucción ("escribe 1234"); nombres y cuentas claramente inventados ("Rosa Ejemplo", "terminada en 4321").
 
 **Nota sobre el trato:** los textos *dentro* de la app ficticia (por ejemplo "¿Olvidaste tu clave?") imitan cómo hablan las apps reales y no cambian con `TREATMENT`. Los textos del coach y de Vínculo sí usan `tv()`.
+
+## Enseñarle al copiloto una forma nueva de decir algo
+
+Si en las pruebas con personas alguien dice algo que el copiloto no entiende:
+
+1. Abre `src/content/intents.ts` y busca la intención correcta (por ejemplo `transfer`).
+2. Agrega la frase completa en `phrases` (sin preocuparte por tildes ni mayúsculas), por ejemplo `'mandarle unos pesos'`.
+3. O agrega una palabra clave en `keywords` con su peso (1 = poco, 4 = mucho). Si terminas la palabra con `*`, acepta cualquier final: `'consign*'` sirve para consignar, consignación, consigné.
+4. Agrega la frase a la lista de pruebas en `src/copilot/intentEngine.test.ts` y corre `npm test`.
+
+## Guías "para hacerlo en la vida real"
+
+En `src/content/guides.ts`. Cada paso tiene `text` (la instrucción, máximo 12 palabras) y `detail` (la explicación para "No entiendo"). `practicePath` es a dónde lleva "Practicar esto en el simulador". Deben ser pasos genéricos: no nombres botones exactos de apps reales.
 
 ## Próximamente en este documento
 

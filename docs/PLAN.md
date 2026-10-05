@@ -31,14 +31,14 @@ Criterios:
 - [x] Pantalla final con aprendizaje, consejo, "Ver taller"/"Practicar otra vez"; progreso actualizado.
 - [x] Flujo completo de transferencia en Banco Ejemplo; pruebas del motor.
 
-## Fase 3 — Copiloto de voz
+## Fase 3 — Copiloto de voz ✅
 Criterios:
-- [ ] Pantalla 5 oscura con avatar, sugerencias y "Toca para hablar".
-- [ ] `speechSynthesis` con orden de voces es-CO → es-419 → es-MX → es-US → es; velocidad 0,9/1; frases divididas; botón detener.
-- [ ] Reconocimiento `es-CO` solo al tocar; detección de soporte; aviso de privacidad previo; errores amables; todo funciona sin micrófono.
-- [ ] Motor de intención local (normalización, sinónimos colombianos, confianza alta/media/baja) con ≥ 60 frases de prueba.
-- [ ] Buscador del menú usa el motor.
-- [ ] Guías "en la vida real" con Ya lo hice / Repetir / Más despacio / No entiendo / Practicar esto; rama "No entiendo un mensaje".
+- [x] Pantalla 5 oscura con avatar, sugerencias y "Toca para hablar".
+- [x] `speechSynthesis` con orden de voces es-CO → es-419 → es-MX → es-US → es; velocidad 0,9/1; frases divididas; botón detener.
+- [x] Reconocimiento `es-CO` solo al tocar; detección de soporte; aviso de privacidad previo; errores amables; todo funciona sin micrófono.
+- [x] Motor de intención local (normalización, sinónimos colombianos, confianza alta/media/baja) con ≥ 60 frases de prueba.
+- [x] Buscador del menú usa el motor.
+- [x] Guías "en la vida real" con Ya lo hice / Repetir / Más despacio / No entiendo / Practicar esto; rama "No entiendo un mensaje".
 
 ## Fase 4 — Talleres
 Criterios:

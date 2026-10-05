@@ -61,6 +61,11 @@ describe('storage', () => {
     expect(fixed.progress).not.toHaveProperty('desconocida')
   })
 
+  it('datos guardados antes de la Fase 3 reciben el permiso de micrófono "sin preguntar"', () => {
+    expect(migrate({ version: 1, settings: { fontSize: 'large' } }).settings.voiceInput).toBe('unknown')
+    expect(migrate({ settings: { voiceInput: 'declined' } }).settings.voiceInput).toBe('declined')
+  })
+
   it('limita el largo del nombre', () => {
     expect(migrate({ profile: { name: 'a'.repeat(100) } }).profile.name).toHaveLength(40)
   })

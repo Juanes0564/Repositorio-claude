@@ -63,6 +63,31 @@ Lista para revisar la app a mano. Marca cada casilla cuando la pruebes.
 - [ ] Después del modo con guía, "Practicar solo" queda disponible y no muestra pistas hasta tocar "Ayuda".
 - [ ] Con letra Muy grande, todo cabe y se puede usar.
 
+## Fase 3 — Copiloto de voz
+
+### Sin micrófono (siempre debe funcionar)
+- [ ] El copiloto se ve oscuro, con el avatar, "Estoy aquí para ayudarte. ¿Qué quieres hacer?" y las 5 sugerencias.
+- [ ] Escribir "quiero mandar plata" y tocar Enviar pregunta "¿Quieres hacer una transferencia?".
+- [ ] "Sí" abre la guía paso a paso; "No, otra cosa" vuelve a preguntar.
+- [ ] Escribir algo sin sentido ("el clima") muestra "No te entendí bien" con botones.
+- [ ] En la guía funcionan: Ya lo hice, Repetir, Más despacio, No entiendo, Practicar esto, Paso anterior y Salir de la guía.
+- [ ] "No entiendo un mensaje" pregunta qué pide el mensaje y da un consejo seguro.
+- [ ] El buscador del menú principal lleva la pregunta al copiloto.
+
+### Con micrófono (Chrome en Android)
+- [ ] La primera vez, "Toca para hablar" muestra el aviso: "Tu navegador puede enviar tu voz a su proveedor…".
+- [ ] "Usar voz" escucha y muestra en letra grande lo que va entendiendo.
+- [ ] "Prefiero botones" esconde el micrófono. En Perfil se puede volver a activar.
+- [ ] Si el micrófono está bloqueado, la app explica cómo activarlo y sigue funcionando con botones.
+- [ ] Si no se dice nada, la app dice "No te escuché" con amabilidad.
+- [ ] Sin internet, la app explica que la voz necesita internet y deja escribir.
+- [ ] Probar con la app **instalada en la pantalla de inicio** (Android y iPhone).
+- [ ] La voz del copiloto suena en español y se puede detener.
+- [ ] En la bienvenida, "Decir mi nombre" escribe el nombre dicho.
+
+### Frases para probar con personas mayores
+Pídeles que digan con sus palabras: "enviar plata a un hijo", "pedir cita con el médico", "pedir un taxi", "me llegó un mensaje raro". Anota lo que el copiloto no entienda y agrégalo (ver `docs/CONTENIDO.md`).
+
 ## Pruebas con personas (cuando el equipo pueda)
 
 - [ ] Probar en un Android real de gama baja.
