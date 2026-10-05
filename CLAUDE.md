@@ -37,6 +37,7 @@ Fuente de verdad: `docs/BRIEF.md`. Plan: `docs/PLAN.md`. Si hay duda, relee el b
 
 ## Forma de trabajo (§15)
 - La persona no es programadora: explicar en español sencillo, sin jerga.
+- No pedirle que revise código ni archivos. Revisar todo uno mismo (pruebas + capturas) y decidir con el brief. Si hace falta su opinión, mostrar capturas o preguntar en lenguaje sencillo ("¿te gusta así o así?").
 - Plan de 5–8 líneas al iniciar cada fase; preguntar solo si cambia reglas del brief.
 - Commit por fase: `feat(fase-N): ...`. Informe corto al terminar.
 - Mantener `README.md`, `docs/DECISIONES.md`, `docs/CONTENIDO.md`, `docs/ASSETS.md`.
