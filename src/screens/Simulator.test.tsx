@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom'
 import { App } from '../App'
 import { AppStateProvider } from '../state/AppState'
 import { STORAGE_KEY, defaultData } from '../lib/storage'
+import { tv } from '../content'
 
 function renderAt(hash: string, seed = defaultData()) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...seed, onboardingDone: true }))
@@ -40,7 +41,7 @@ describe('pantalla 3: selección de plataforma', () => {
     renderAt('#/practicar/bank')
     expect(screen.getByRole('link', { name: /Practicar con guía/ })).toBeTruthy()
     expect(screen.queryByRole('link', { name: /Practicar solo/ })).toBeNull()
-    expect(screen.getByText(/Se activa cuando termines/)).toBeTruthy()
+    expect(screen.getByText(/Se activa cuando termin/)).toBeTruthy()
   })
 })
 
@@ -71,7 +72,7 @@ describe('pantalla 4: simulador de transferencia', () => {
     renderAt('#/practicar/bank/transfer-bank')
     next()
     expect(screen.getByText('Paso 1 de 8', { selector: 'p' })).toBeTruthy()
-    expect(screen.getByRole('status').textContent).toMatch(/Primero haz lo que dice el paso/)
+    expect(screen.getByRole('status').textContent).toMatch(/Primero ha(z|ga) lo que dice el paso/)
   })
 
   it('se completa toda la práctica y se guarda el avance', () => {
@@ -85,8 +86,8 @@ describe('pantalla 4: simulador de transferencia', () => {
     typeDigits('5678'); tap('Enviar dinero'); next()
     tap('Guardar comprobante'); next()
 
-    expect(screen.getByRole('heading', { name: '¡Lo lograste!' })).toBeTruthy()
-    expect(screen.getByText(/Ahora también puedes practicar solo/)).toBeTruthy()
+    expect(screen.getByRole('heading', { name: tv('¡Lo lograste!', '¡Lo logró!') })).toBeTruthy()
+    expect(screen.getByText(/Ahora también pued(es|e) practicar solo/)).toBeTruthy()
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)!)
     expect(saved.progress.transfers.simulatorGuidedDone).toBe(true)
   })

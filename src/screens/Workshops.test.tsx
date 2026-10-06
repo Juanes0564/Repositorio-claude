@@ -5,6 +5,7 @@ import { App } from '../App'
 import { AppStateProvider } from '../state/AppState'
 import { STORAGE_KEY, defaultData } from '../lib/storage'
 import { workshops } from '../content/workshops'
+import { workshopsUi } from '../content'
 
 function renderAt(hash: string) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...defaultData(), onboardingDone: true }))
@@ -46,7 +47,7 @@ describe('pantalla 6: talleres', () => {
     expect(screen.getByText(`Tarjeta 1 de ${w.cards.length}`)).toBeTruthy()
     for (let i = 0; i < w.cards.length - 1; i++) click('Siguiente')
     click('Terminar')
-    expect(screen.getByRole('heading', { name: '¡Terminaste el taller!' })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: workshopsUi.done.title })).toBeTruthy()
     expect(JSON.parse(localStorage.getItem(STORAGE_KEY)!).progress.transfers.workshopDone).toBe(true)
   })
 
@@ -66,7 +67,7 @@ describe('pantalla 6: talleres', () => {
     click('Siguiente pregunta')
     click('Cuelgo y lo llamo a su número de siempre')
     click('Ver resultado')
-    expect(screen.getByRole('heading', { name: 'Acertaste 2 de 3.' })).toBeTruthy()
+    expect(screen.getByRole('heading', { name: workshopsUi.quiz.result(2, 3) })).toBeTruthy()
   })
 
   it('"Ver taller" desde el simulador abre el taller de esa habilidad', () => {

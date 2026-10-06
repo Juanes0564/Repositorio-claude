@@ -76,7 +76,7 @@ export const transferBank: Flow = {
             maxLength: 4,
             submit: { id: 'login-submit', label: 'Entrar' },
           },
-          { type: 'actions', items: [{ id: 'forgot', label: '¿Olvidaste tu clave?', variant: 'link' }] },
+          { type: 'actions', items: [{ id: 'forgot', label: tv('¿Olvidaste tu clave?', '¿Olvidó su clave?'), variant: 'link' }] },
         ],
       },
     },
@@ -117,11 +117,11 @@ export const transferBank: Flow = {
       target: { kind: 'tap', id: 'contact-rosa' },
       screen: {
         chrome: 'platform',
-        title: '¿A quién le envías?',
+        title: tv('¿A quién le envías?', '¿A quién le envía?'),
         blocks: [
           {
             type: 'list',
-            title: 'Tus contactos de práctica',
+            title: tv('Tus contactos de práctica', 'Sus contactos de práctica'),
             items: [
               { id: 'contact-carlos', label: 'Carlos Ejemplo', detail: 'Ahorros terminada en 1111', icon: 'user' },
               { id: 'contact-rosa', label: 'Rosa Ejemplo', detail: 'Ahorros terminada en 4321', icon: 'user' },
@@ -146,7 +146,7 @@ export const transferBank: Flow = {
       target: { kind: 'input', keypadId: 'amount', expected: '50000' },
       screen: {
         chrome: 'platform',
-        title: '¿Cuánto vas a enviar?',
+        title: tv('¿Cuánto vas a enviar?', '¿Cuánto va a enviar?'),
         blocks: [
           { type: 'text', tone: 'muted', text: 'Para: Rosa Ejemplo' },
           {
@@ -174,7 +174,7 @@ export const transferBank: Flow = {
       target: { kind: 'tap', id: 'confirm' },
       screen: {
         chrome: 'platform',
-        title: 'Revisa antes de enviar',
+        title: tv('Revisa antes de enviar', 'Revise antes de enviar'),
         blocks: [
           {
             type: 'summary',
@@ -209,18 +209,18 @@ export const transferBank: Flow = {
       target: { kind: 'input', keypadId: 'otp', expected: '5678' },
       screen: {
         chrome: 'platform',
-        title: 'Confirma con tu código',
+        title: tv('Confirma con tu código', 'Confirme con su código'),
         blocks: [
           {
             type: 'sms',
             sender: 'Banco Ejemplo',
             time: 'Ahora',
-            body: 'Tu código de práctica es 5678. No lo compartas con nadie.',
+            body: tv('Tu código de práctica es 5678. No lo compartas con nadie.', 'Su código de práctica es 5678. No lo comparta con nadie.'),
           },
           {
             type: 'notice',
             tone: 'warning',
-            text: 'Este código es solo para ti. El banco nunca te lo pide por llamada.',
+            text: tv('Este código es solo para ti. El banco nunca te lo pide por llamada.', 'Este código es solo para usted. El banco nunca se lo pide por llamada.'),
           },
           {
             type: 'keypad',

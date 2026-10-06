@@ -43,7 +43,7 @@ export const platformDetail = {
     'Se activa cuando termines la práctica con guía.',
     'Se activa cuando termine la práctica con guía.',
   ),
-  done: 'Ya la hiciste',
+  done: tv('Ya la hiciste', 'Ya la hizo'),
   notFound: 'No encontramos esta plataforma.',
 }
 
@@ -89,7 +89,7 @@ export const simulator = {
       'Ahora también puedes practicar solo, sin guía.',
       'Ahora también puede practicar solo, sin guía.',
     ),
-    passport: 'Tu avance quedó guardado en Mis avances.',
+    passport: tv('Tu avance quedó guardado en Mis avances.', 'Su avance quedó guardado en Mis avances.'),
     again: 'Practicar otra vez',
     workshop: 'Ver taller',
     home: 'Volver al inicio',

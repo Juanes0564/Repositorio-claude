@@ -5,7 +5,7 @@
  */
 export type Treatment = 'tu' | 'usted'
 
-export const TREATMENT: Treatment = 'tu'
+export const TREATMENT: Treatment = 'usted'
 
 export function tv(tu: string, usted: string): string {
   return TREATMENT === 'tu' ? tu : usted

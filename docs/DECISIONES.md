@@ -2,6 +2,13 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Trato: "usted" (decidido por el equipo antes de la Fase 5)
+
+- La app trata de **"usted"** (`TREATMENT = 'usted'` en `src/content/treatment.ts`). Volver a "tú" es cambiar esa línea.
+- Los textos dentro de las apps ficticias del simulador también siguen el trato elegido.
+- Excepción: el lema "Aprende, practica y hazlo tú" se mantiene como está en el brief.
+- Las pruebas automáticas comparan con el contenido (no con frases fijas), así funcionan con cualquiera de los dos tratos.
+
 ## Fase 4
 
 1. **Una tarjeta a la vez con botones Anterior / Siguiente** (fijos abajo), sin deslizar ni avanzar solos: así no es un carrusel (prohibido en el brief). "Anterior" en la primera tarjeta vuelve a la lista.

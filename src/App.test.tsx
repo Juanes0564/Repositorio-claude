@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom'
 import { App } from './App'
 import { AppStateProvider } from './state/AppState'
 import { STORAGE_KEY } from './lib/storage'
+import { tv } from './content'
 
 function renderApp() {
   return render(
@@ -28,7 +29,7 @@ describe('App', () => {
     expect(screen.getByText('Aprende, practica y hazlo tú')).toBeTruthy()
 
     fireEvent.click(screen.getByRole('button', { name: /Comenzar/ }))
-    fireEvent.change(screen.getByLabelText('Tu nombre'), { target: { value: 'Marta' } })
+    fireEvent.change(screen.getByLabelText(tv('Tu nombre', 'Su nombre')), { target: { value: 'Marta' } })
     fireEvent.click(screen.getByRole('button', { name: /Continuar/ }))
     fireEvent.click(screen.getByRole('button', { name: 'No, por ahora' }))
 

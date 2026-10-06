@@ -300,7 +300,7 @@ export const guides: Guide[] = [
   },
   {
     skill: 'security',
-    title: 'Proteger tu celular y tus claves',
+    title: tv('Proteger tu celular y tus claves', 'Proteger su celular y sus claves'),
     intro: tv('Vamos paso a paso. Son cuidados sencillos.', 'Vamos paso a paso. Son cuidados sencillos.'),
     practicePath: '/practicar',
     reviewed: false,

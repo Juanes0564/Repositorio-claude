@@ -12,7 +12,7 @@ export const copilot = {
     { label: 'Necesito sacar una cita médica', intent: 'medical' },
     { label: 'Quiero pedir un transporte', intent: 'transport' },
     { label: 'No entiendo un mensaje', intent: 'message' },
-    { label: 'Háblame más despacio', intent: 'slower' },
+    { label: tv('Háblame más despacio', 'Hábleme más despacio'), intent: 'slower' },
   ] satisfies { label: string; intent: IntentId }[],
   /** Opciones que se ofrecen cuando no se entendió. */
   fallbackIntents: ['transfer', 'medical', 'transport', 'shopping', 'whatsapp', 'message', 'humanHelp'] satisfies IntentId[],
@@ -24,7 +24,7 @@ export const copilot = {
   noneOfThese: 'Ninguna de estas',
   yes: 'Sí',
   noOther: 'No, otra cosa',
-  you: 'Tú dijiste:',
+  you: tv('Tú dijiste:', 'Usted dijo:'),
   typeLabel: tv('O escríbelo aquí', 'O escríbalo aquí'),
   typePlaceholder: 'Por ejemplo: quiero pedir un taxi',
   send: 'Enviar',

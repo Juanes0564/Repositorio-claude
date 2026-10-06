@@ -11,7 +11,7 @@ export const voice = {
     yes: 'Usar voz',
     no: 'Prefiero botones',
   },
-  talk: 'Toca para hablar',
+  talk: tv('Toca para hablar', 'Toque para hablar'),
   listening: tv('Te escucho…', 'Le escucho…'),
   stopListening: 'Dejar de escuchar',
   heard: 'Entendí:',
