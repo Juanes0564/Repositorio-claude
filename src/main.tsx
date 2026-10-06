@@ -6,6 +6,7 @@ import '@fontsource/atkinson-hyperlegible/700.css'
 import './styles/index.css'
 import './styles/simulator.css'
 import './styles/copilot.css'
+import './styles/workshops.css'
 import { App } from './App'
 import { AppStateProvider } from './state/AppState'
 

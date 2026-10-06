@@ -11,6 +11,7 @@ Esta lista dice qué debe reemplazar el equipo cuando tenga las versiones finale
 | Ilustración de bienvenida (celular con marca de "bien hecho") | `src/components/WelcomeIllustration.tsx` | Provisional | Reemplazar por ilustración final (SVG preferido, liviano). |
 | Marcas de las plataformas ficticias | `src/components/PlatformMark.tsx` + colores en `src/content/platforms.ts` | Provisional | Cuadro de color con ícono genérico. Se pueden reemplazar por logos ficticios dibujados por el equipo (nunca parecidos a marcas reales). |
 | Avatar del copiloto (cara amable con audífonos) | `src/components/CopilotAvatar.tsx` | Provisional | Reemplazar por el personaje final (SVG). |
+| Ilustraciones de los talleres (32 dibujos simples) | `src/components/Illustration.tsx` | Provisional | Se pueden reemplazar por ilustraciones finales en SVG, manteniendo los mismos nombres. |
 | Íconos de la interfaz | Librería `lucide-react` | Definitivo | No requiere cambio. |
 | Tipografía Atkinson Hyperlegible | `@fontsource/atkinson-hyperlegible` | Definitivo | Licencia OFL. |
 

@@ -88,6 +88,19 @@ Lista para revisar la app a mano. Marca cada casilla cuando la pruebes.
 ### Frases para probar con personas mayores
 Pídeles que digan con sus palabras: "enviar plata a un hijo", "pedir cita con el médico", "pedir un taxi", "me llegó un mensaje raro". Anota lo que el copiloto no entienda y agrégalo (ver `docs/CONTENIDO.md`).
 
+## Fase 4 — Talleres
+
+- [ ] "Tutoriales y talleres" muestra los 8 talleres con duración ("5 min") y nivel ("Básico").
+- [ ] Los filtros Todos, Bancos, Salud, Seguridad y Más temas funcionan.
+- [ ] Dentro de un taller se ve "Tarjeta X de Y", el dibujo, el título, el texto y el "Ojo".
+- [ ] Anterior / Siguiente cambian de tarjeta. Nada avanza solo ni hay que deslizar.
+- [ ] "Leer en voz alta" lee la tarjeta y "Detener voz" la calla.
+- [ ] Al tocar "Terminar" aparece "¡Terminaste el taller!" y el taller sale como "Visto" en la lista.
+- [ ] El mini repaso explica cada respuesta y no regaña.
+- [ ] "Ver taller" al final de una práctica abre el taller correcto.
+- [ ] (Cuando haya video) "Ver el video aquí" carga el video; sin tocarlo, no se carga nada.
+- [ ] Una persona del equipo revisa los textos de los 8 talleres (todos están como borrador).
+
 ## Pruebas con personas (cuando el equipo pueda)
 
 - [ ] Probar en un Android real de gama baja.

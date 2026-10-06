@@ -2,6 +2,19 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Fase 4
+
+1. **Una tarjeta a la vez con botones Anterior / Siguiente** (fijos abajo), sin deslizar ni avanzar solos: así no es un carrusel (prohibido en el brief). "Anterior" en la primera tarjeta vuelve a la lista.
+2. **El taller cuenta como visto al tocar "Terminar" en la última tarjeta.** Ahí suma su 50 % al Pasaporte. El mini repaso es opcional y no afecta el avance.
+3. **Mini repaso en los 8 talleres** (3 preguntas cada uno). Al responder muestra la respuesta correcta con ícono, borde y texto ("Respuesta correcta" / "Tu respuesta"), no solo con color, y explica por qué. El resultado es suave ("Acertaste 2 de 3. Repasar ayuda a recordar."), sin rachas ni presión.
+4. **Video solo al tocar.** Aunque el brief permite incrustar el video, se muestra primero un botón "Ver el video aquí": nada de YouTube se carga hasta que la persona lo pide (más privacidad y menos datos). Siempre `youtube-nocookie.com`, más un enlace para abrirlo en YouTube. Solo se aceptan enlaces de YouTube (`src/lib/video.ts`).
+5. **Filtros:** Todos, Bancos, Salud, Seguridad y "Más temas" (transporte, compras, WhatsApp y celular).
+6. **El taller de accesibilidad del celular** (sección 8 del brief) es "Tu celular más cómodo": letra grande, brillo, volumen, wifi y modo avión.
+7. **"Ver taller" desde el simulador** abre directamente el taller de esa habilidad.
+8. **Ilustraciones** SVG simples y originales (`src/components/Illustration.tsx`), con los colores del tema para que funcionen en alto contraste.
+9. **Textos en "tú" y "usted":** se escribieron en "tú" y la versión "usted" se generó y revisó frase por frase.
+10. **Con letra Grande o Muy grande**, los botones Anterior/Siguiente quitan la flecha para que quepan las palabras.
+
 ## Fase 3
 
 1. **Motor de intención propio, sin Fuse.js.** Es pequeño (`src/copilot/intentEngine.ts`): normaliza el texto, quita palabras vacías, suma puntos por frases completas (pesan mucho) y por palabras clave con peso. Tolera un error de escritura o de dictado en palabras clave de 6 letras o más ("trasferencia", "jaqueen"). En claves cortas no, porque un error cambia el sentido ("estar" no es "estafa"). No se agregó ninguna dependencia.

@@ -20,7 +20,7 @@ Vínculo es una app para que personas mayores en Colombia aprendan y practiquen 
 | 1 | Base, diseño, bienvenida, menú principal, perfil | ✅ Lista |
 | 2 | Simulador y transferencia bancaria | ✅ Lista |
 | 3 | Copiloto de voz | ✅ Lista |
-| 4 | Talleres | Pendiente |
+| 4 | Talleres | ✅ Lista |
 | 5 | Simuladores: citas, transporte, compras, estafas | Pendiente |
 | 6 | Simuladores: WhatsApp, celular, seguridad | Pendiente |
 | 7 | Modo sencillo completo, Pasaporte, Ayuda | Pendiente |

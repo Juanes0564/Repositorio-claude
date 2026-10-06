@@ -21,6 +21,8 @@ Todos los textos que se ven en la app están en la carpeta `src/content/`. **No 
 | `guides.ts` | Guías "para hacerlo en la vida real" (paso a paso). |
 | `messageHelp.ts` | Ayuda "No entiendo un mensaje" (seguridad). |
 | `voice.ts` | Micrófono: aviso de privacidad y mensajes de error. |
+| `workshops.ts` | Los 8 talleres: tarjetas, mini repaso y video opcional. |
+| `workshopsUi.ts` | Textos de la pantalla de talleres (botones, filtros, repaso). |
 
 ## Cambiar de "tú" a "usted"
 
@@ -104,6 +106,38 @@ Si en las pruebas con personas alguien dice algo que el copiloto no entiende:
 
 En `src/content/guides.ts`. Cada paso tiene `text` (la instrucción, máximo 12 palabras) y `detail` (la explicación para "No entiendo"). `practicePath` es a dónde lleva "Practicar esto en el simulador". Deben ser pasos genéricos: no nombres botones exactos de apps reales.
 
-## Próximamente en este documento
+## Cómo cambiar o agregar un taller
 
-- Cómo agregar un taller y un video de YouTube (Fase 4).
+Los talleres están en `src/content/workshops.ts`. Cada taller tiene:
+
+| Campo | Qué es |
+|---|---|
+| `id` | Nombre corto sin espacios ni tildes (aparece en la dirección: `#/talleres/estafas`). |
+| `skill` | La habilidad del Pasaporte a la que suma (una de las 8). |
+| `category` | El filtro donde aparece: `banks` (Bancos), `health` (Salud), `security` (Seguridad) o `more` (Más temas). |
+| `title`, `summary` | Título y una frase que lo resume. |
+| `minutes`, `level` | Duración ("5 min") y nivel (`basic` = Básico, `intermediate` = Intermedio). |
+| `cards` | De 4 a 6 tarjetas. Cada una con `illustration`, `title`, `body` (1 o 2 frases) y `tip` (el "Ojo", opcional). |
+| `quiz` | "Mini repaso" opcional: 3 preguntas con `options`, `answer` (posición de la correcta, empezando en 0) y `explanation`. |
+| `videoUrl` | Video opcional (ver abajo). |
+| `reviewed` | `false` hasta que una persona del equipo lo revise. |
+
+Ilustraciones disponibles para `illustration`: `bank`, `phone`, `check`, `code`, `receipt`, `calendar`, `clinic`, `car`, `plate`, `map`, `cart`, `shop`, `warning`, `lock`, `shield`, `update`, `chat`, `mic`, `photo`, `video`, `group`, `settings`, `text`, `sun`, `volume`, `wifi`, `plane`, `hurry`, `link`, `gift`, `family`, `hangup`. (Están en `src/components/Illustration.tsx`.)
+
+Para agregar un taller nuevo, copia uno existente dentro de la lista, cámbialo y corre `npm test`: las pruebas revisan que tenga entre 4 y 6 tarjetas, frases cortas y un mini repaso válido.
+
+## Cómo agregar un video de YouTube a un taller
+
+1. Sube el video a YouTube (puede ser "No listado").
+2. En YouTube toca **Compartir** y copia el enlace (por ejemplo `https://youtu.be/AbCdEfGhIjK`).
+3. En `src/content/workshops.ts`, dentro del taller, agrega una línea:
+
+   ```ts
+   videoUrl: 'https://youtu.be/AbCdEfGhIjK',
+   ```
+
+4. Corre `npm test` (revisa que el enlace sea de YouTube y válido) y `npm run build`.
+
+Cómo se ve: al inicio del taller aparece "Ver el video aquí". El video **solo se carga si la persona toca ese botón**, y siempre con el modo de privacidad ampliada de YouTube (`youtube-nocookie.com`). También hay un enlace "Abrir el video en YouTube". Si el taller no tiene `videoUrl`, solo se ven las tarjetas y no se conecta nada con YouTube.
+
+Nota: el video necesita internet; las tarjetas funcionan sin conexión.

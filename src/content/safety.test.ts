@@ -17,7 +17,8 @@ function files(dir: string): string[] {
 describe('contenido seguro', () => {
   for (const file of files(join(process.cwd(), 'src/content'))) {
     it(`sin enlaces ni teléfonos: ${file.replace(process.cwd() + '/', '')}`, () => {
-      const text = readFileSync(file, 'utf8')
+      // Único enlace permitido: el videoUrl de un taller, y solo de YouTube (excepción 4b del brief).
+      const text = readFileSync(file, 'utf8').replace(/videoUrl:\s*'https:\/\/(www\.)?(youtube\.com|youtu\.be)\/[^']*'/g, '')
       expect(text).not.toMatch(/https?:\/\/|www\./i)
       expect(text).not.toMatch(/\b\d{3}[\s-]?\d{3}[\s-]?\d{4}\b/) // celulares de 10 dígitos
       expect(text).not.toMatch(/01\s?8000/) // líneas gratuitas

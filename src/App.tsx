@@ -11,6 +11,8 @@ import { PlatformPicker } from './screens/PlatformPicker'
 import { Profile } from './screens/Profile'
 import { Simulator } from './screens/Simulator'
 import { Welcome } from './screens/Welcome'
+import { WorkshopView } from './screens/WorkshopView'
+import { Workshops } from './screens/Workshops'
 import { useAppState } from './state/useAppState'
 
 function Routed() {
@@ -35,7 +37,8 @@ function Routed() {
         <Route path="/practicar" element={<PlatformPicker />} />
         <Route path="/practicar/:platformId" element={<PlatformDetail />} />
         <Route path="/copiloto" element={<Copilot />} />
-        <Route path="/talleres" element={<ComingSoon title={screenTitles.workshops} />} />
+        <Route path="/talleres" element={<Workshops />} />
+        <Route path="/talleres/:workshopId" element={<WorkshopView />} />
         <Route path="/modo-sencillo" element={<ComingSoon title={screenTitles.simpleMode} />} />
         <Route path="*" element={<NotFound />} />
       </Route>

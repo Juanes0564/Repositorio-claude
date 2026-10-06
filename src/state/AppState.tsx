@@ -18,6 +18,8 @@ export interface AppState {
   completeOnboarding: () => void
   /** Marca una práctica terminada (Guiado suma al Pasaporte; Libre queda registrado). */
   markSimulatorDone: (skill: SkillId, mode: 'guided' | 'free') => void
+  /** Marca un taller visto completo (suma al Pasaporte). */
+  markWorkshopDone: (skill: SkillId) => void
   eraseAll: () => void
 }
 
@@ -64,14 +66,22 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     })
   }, [])
 
+  const markWorkshopDone = useCallback((skill: SkillId) => {
+    setData((d) =>
+      d.progress[skill].workshopDone
+        ? d
+        : { ...d, progress: { ...d.progress, [skill]: { ...d.progress[skill], workshopDone: true } } },
+    )
+  }, [])
+
   const eraseAll = useCallback(() => {
     clearData()
     setData(defaultData())
   }, [])
 
   const value = useMemo(
-    () => ({ data, setName, updateSettings, setSimpleMode, completeOnboarding, markSimulatorDone, eraseAll }),
-    [data, setName, updateSettings, setSimpleMode, completeOnboarding, markSimulatorDone, eraseAll],
+    () => ({ data, setName, updateSettings, setSimpleMode, completeOnboarding, markSimulatorDone, markWorkshopDone, eraseAll }),
+    [data, setName, updateSettings, setSimpleMode, completeOnboarding, markSimulatorDone, markWorkshopDone, eraseAll],
   )
 
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>

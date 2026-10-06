@@ -137,6 +137,21 @@ const shots = {
   'home-mic-390': { mic: true, data: done() },
   'welcome-name-mic-390': { mic: true, path: '#/bienvenida', actions: [btn(/Comenzar/)] },
   'profile-mic-390': { mic: true, data: done({ settings: micOn }), path: '#/perfil', actions: [async (p) => p.getByText('Velocidad de la voz').scrollIntoViewIfNeeded()] },
+  'workshops-390': { data: done(), path: '#/talleres' },
+  'workshops-security-360': { w: 360, h: 640, data: done(), path: '#/talleres?tema=security' },
+  'workshop-card1-390': { data: done(), path: '#/talleres/transferencias' },
+  'workshop-card2-390': { data: done(), path: '#/talleres/transferencias', actions: [btn('Siguiente')] },
+  'workshop-card-360': { w: 360, h: 640, data: done(), path: '#/talleres/estafas', actions: [btn('Siguiente'), btn('Siguiente'), btn('Siguiente'), btn('Siguiente')] },
+  'workshop-phone-390': { data: done(), path: '#/talleres/celular-comodo', actions: [btn('Siguiente')] },
+  'workshop-done-390': { data: done(), path: '#/talleres/transporte', actions: [btn('Siguiente'), btn('Siguiente'), btn('Siguiente'), btn('Siguiente'), btn('Terminar')] },
+  'workshop-quiz-390': {
+    data: done(), path: '#/talleres/estafas',
+    actions: [btn('Siguiente'), btn('Siguiente'), btn('Siguiente'), btn('Siguiente'), btn('Siguiente'), btn('Terminar'), btn(/mini repaso/), btn('Es seguro')],
+  },
+  'workshop-simple-390': { data: done({ settings: simple }), path: '#/talleres/whatsapp', actions: [btn('Siguiente'), btn('Siguiente')] },
+  'workshop-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: '#/talleres/seguridad' },
+  'workshop-zoom200': { w: 180, h: 320, scale: 4, data: done(), path: '#/talleres/compras' },
+  'workshops-framed': { w: 1280, h: 920, data: done(), path: '#/talleres', frame: true },
   'sim-framed': { w: 1280, h: 920, data: done(), path: transfer, frame: true, actions: [sim.tap(/Banco Ejemplo/), sim.next] },
 }
 

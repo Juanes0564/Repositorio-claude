@@ -40,13 +40,13 @@ Criterios:
 - [x] Buscador del menú usa el motor.
 - [x] Guías "en la vida real" con Ya lo hice / Repetir / Más despacio / No entiendo / Practicar esto; rama "No entiendo un mensaje".
 
-## Fase 4 — Talleres
+## Fase 4 — Talleres ✅
 Criterios:
-- [ ] Pantalla 6 con filtros (Todos, Bancos, Salud, Seguridad y más), duración y nivel.
-- [ ] Motor de tarjetas (4–6), "Ojo", ilustración SVG, "Leer en voz alta".
-- [ ] `videoUrl` opcional con `youtube-nocookie.com` + enlace.
-- [ ] 8 talleres completos con `reviewed: false`; incluye taller de accesibilidad del celular.
-- [ ] `docs/CONTENIDO.md` explica cómo agregar taller y video.
+- [x] Pantalla 6 con filtros (Todos, Bancos, Salud, Seguridad y más), duración y nivel.
+- [x] Motor de tarjetas (4–6), "Ojo", ilustración SVG, "Leer en voz alta".
+- [x] `videoUrl` opcional con `youtube-nocookie.com` + enlace.
+- [x] 8 talleres completos con `reviewed: false`; incluye taller de accesibilidad del celular.
+- [x] `docs/CONTENIDO.md` explica cómo agregar taller y video.
 
 ## Fase 5 — Simuladores 2 a 5
 Criterios:
