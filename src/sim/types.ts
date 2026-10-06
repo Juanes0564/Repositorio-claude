@@ -88,7 +88,8 @@ export type SimBlock =
       type: 'chat'
       contact: Copy
       messages: { from: 'me' | 'them'; text: Copy; kind?: 'text' | 'audio' | 'photo' }[]
-      composer?: { placeholder: Copy; buttons: (Tappable & { icon: SimIconName })[] }
+      /** Caja para escribir. `value` = texto ya escrito (el simulador no tiene teclado de letras). */
+      composer?: { placeholder: Copy; value?: Copy; buttons: (Tappable & { icon: SimIconName })[] }
     }
   /** Decisión con botones grandes, por ejemplo "Es seguro" / "Es una estafa". */
   | { type: 'decision'; prompt?: Copy; options: (Tappable & { tone: 'safe' | 'danger' | 'neutral' })[] }

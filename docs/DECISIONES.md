@@ -2,6 +2,17 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Fase 6
+
+1. **Las 8 habilidades ya tienen práctica.** Las tres nuevas son solo datos; el motor no cambió salvo dos detalles reutilizables: la caja de mensaje del chat puede mostrar un texto ya escrito (`composer.value`) y los interruptores de Ajustes cambian de "No" a "Sí" (o al revés) al tocar el correcto.
+2. **Mensajería con "Chat Ejemplo", sin decir "WhatsApp" dentro del simulador** (regla 5 del brief). Los talleres y el copiloto sí lo nombran como referencia. El archivo se llama `chat-basics.ts`.
+3. **El audio se envía con un toque.** En la app real se mantiene el dedo, pero el brief prohíbe gestos obligatorios; la pista explica cómo es en el celular de verdad.
+4. **El mensaje ya viene escrito** ("Muy bien, mija. ¿Y usted?") porque el simulador no tiene teclado de letras; la persona practica enviarlo.
+5. **Ajustes es genérico:** una lista sencilla (wifi, tamaño de letra, brillo, sonido, actualización, modo avión) que no copia la de ningún fabricante.
+6. **Modo avión:** la práctica lo muestra encendido y pide apagarlo (el problema más común: "no me entran llamadas"). "Las señales" explica que se enciende y apaga tocando la misma fila.
+7. **Seguridad digital en formato de decisiones** (en Ajustes): clave, códigos, bloqueo de pantalla, actualización, permisos y apps desde enlaces. **Todas las opciones se ven iguales** (sin colores ni íconos de "seguro"/"peligro") para no delatar la respuesta; una prueba automática lo vigila. El mini repaso está en el taller de seguridad.
+8. **Las guías del copiloto** ("Practicar esto en el simulador") ahora llevan directo a cada práctica.
+
 ## Fase 5
 
 1. **El mismo motor para todo.** Las 4 prácticas nuevas son solo datos (`src/content/flows/`). No se duplicó código: se agregaron piezas reutilizables al motor.

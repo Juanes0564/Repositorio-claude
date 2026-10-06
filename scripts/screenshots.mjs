@@ -168,6 +168,17 @@ const shots = {
   'scam-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: '#/practicar/chat/scams-check' },
   'scam-zoom200': { w: 180, h: 320, scale: 4, data: done(), path: '#/practicar/chat/scams-check' },
   'platform-chat-390': { data: done(), path: '#/practicar/chat' },
+  'chat-send-390': { data: done(), path: '#/practicar/chat/chat-basics', actions: [sim.tap(/Chat Ejemplo/), sim.next, sim.tap(/Rosa \(hija\)/), sim.next] },
+  'chat-video-390': { data: done(), path: '#/practicar/chat/chat-basics', actions: [sim.tap(/Chat Ejemplo/), sim.next, sim.tap(/Rosa \(hija\)/), sim.next, sim.tap('Enviar'), sim.next, sim.tap('Audio'), sim.next, sim.tap('Foto'), sim.next] },
+  'chat-mute-390': { data: done(), path: '#/practicar/chat/chat-basics', actions: [sim.tap(/Chat Ejemplo/), sim.next, sim.tap(/Rosa \(hija\)/), sim.next, sim.tap('Enviar'), sim.next, sim.tap('Audio'), sim.next, sim.tap('Foto'), sim.next, sim.tap('Videollamada'), sim.next, sim.tap(/Familia/), sim.next, sim.tap(/Silenciar/)] },
+  'settings-list-390': { data: done(), path: '#/practicar/settings/phone-settings', actions: [sim.tap(/Ajustes/), sim.next] },
+  'settings-wifi-390': { data: done(), path: '#/practicar/settings/phone-settings', actions: [sim.tap(/Ajustes/), sim.next, sim.tap(/Tamaño de letra/), sim.next, sim.tap(/^Grande/), sim.next, sim.tap('Subir brillo'), sim.next, sim.tap('Subir volumen'), sim.next] },
+  'settings-plane-390': { data: done(), path: '#/practicar/settings/phone-settings', actions: [sim.tap(/Ajustes/), sim.next, sim.tap(/Tamaño de letra/), sim.next, sim.tap(/^Grande/), sim.next, sim.tap('Subir brillo'), sim.next, sim.tap('Subir volumen'), sim.next, sim.tap(/Casa Ejemplo/), sim.next, sim.tap('Instalar ahora'), sim.next] },
+  'security-pw-390': { data: done(), path: '#/practicar/settings/security-check' },
+  'security-pw-wrong2-390': { data: done(), path: '#/practicar/settings/security-check', actions: [sim.tap('1234'), sim.tap(/fecha de nacimiento/)] },
+  'security-perm-390': { data: done(), path: '#/practicar/settings/security-check', actions: [sim.tap(/perro come arepa/), sim.next, sim.tap(/No se lo doy/), sim.next, sim.tap(/PIN o mi huella/), sim.next, sim.tap(/La instalo con wifi/), sim.next, sim.tap('No permitir')] },
+  'security-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: '#/practicar/settings/security-check' },
+  'platform-settings-390': { data: done(), path: '#/practicar/settings' },
   'sim-framed': { w: 1280, h: 920, data: done(), path: transfer, frame: true, actions: [sim.tap(/Banco Ejemplo/), sim.next] },
 }
 

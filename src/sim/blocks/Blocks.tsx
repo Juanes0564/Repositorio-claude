@@ -10,7 +10,7 @@ import { SimButton } from './SimButton'
 
 /** Dibuja un bloque de pantalla simulada. Cada tipo es una pieza reutilizable. */
 export function Block({ block }: { block: SimBlock }) {
-  const { text } = useSim()
+  const { text, doneId } = useSim()
   switch (block.type) {
     case 'heading':
       return <h3 className="sim-heading">{text(block.text)}</h3>
@@ -178,7 +178,9 @@ export function Block({ block }: { block: SimBlock }) {
           </ol>
           {block.composer && (
             <div className="sim-chat__composer">
-              <span className="sim-chat__input">{text(block.composer.placeholder)}</span>
+              <span className={block.composer.value ? 'sim-chat__input sim-chat__input--filled' : 'sim-chat__input'}>
+                {text(block.composer.value ?? block.composer.placeholder)}
+              </span>
               <div className="sim-chat__buttons">
                 {block.composer.buttons.map((b) => {
                   const Icon = simIcons[b.icon]
@@ -256,6 +258,8 @@ export function Block({ block }: { block: SimBlock }) {
         <div className="sim-settings">
           {block.rows.map((r) => {
             const Icon = r.icon ? simIcons[r.icon] : null
+            // Al tocar el interruptor correcto, cambia de estado como en un celular de verdad.
+            const on = r.control === 'toggle' && doneId === r.id ? !r.on : r.on
             return (
               <SimButton key={r.id} id={r.id} className="sim-row sim-setting">
                 {Icon && (
@@ -268,7 +272,7 @@ export function Block({ block }: { block: SimBlock }) {
                   {r.value && <span className="sim-row__detail">{text(r.value)}</span>}
                 </span>
                 {r.control === 'toggle' ? (
-                  <span className={`sim-toggle ${r.on ? 'is-on' : ''}`}>{r.on ? common.yes : common.no}</span>
+                  <span className={`sim-toggle ${on ? 'is-on' : ''}`}>{on ? common.yes : common.no}</span>
                 ) : (
                   <ChevronRight className="icon sim-row__chevron" aria-hidden="true" />
                 )}

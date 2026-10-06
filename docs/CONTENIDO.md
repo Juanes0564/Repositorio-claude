@@ -55,7 +55,7 @@ Si un texto necesita una versión más corta para el modo sencillo, escríbelo a
 
 ## Cómo agregar una práctica al simulador
 
-Prácticas actuales: `transfer-bank.ts` (Banco Ejemplo), `appointment-eps.ts` (EPS Salud Ejemplo), `ride-transport.ts` (Transporte Ejemplo), `shopping-store.ts` (Tienda Ejemplo) y `scams-check.ts` (Chat Ejemplo, estafas).
+Prácticas actuales: `transfer-bank.ts` (Banco Ejemplo), `appointment-eps.ts` (EPS Salud Ejemplo), `ride-transport.ts` (Transporte Ejemplo), `shopping-store.ts` (Tienda Ejemplo), `scams-check.ts` (Chat Ejemplo, estafas), `chat-basics.ts` (Chat Ejemplo, mensajes), `phone-settings.ts` (Ajustes) y `security-check.ts` (Ajustes, seguridad).
 
 Cada práctica es un archivo de datos en `src/content/flows/`. No hay que programar pantallas: el simulador arma cada pantalla con piezas que ya existen.
 
@@ -85,7 +85,7 @@ Cada práctica es un archivo de datos en `src/content/flows/`. No hay que progra
 | `sms` | Mensaje de texto recibido (puede tener un enlace que se toca) |
 | `chat` | Conversación con botones para escribir, enviar audio, foto… |
 | `settings` | Filas de ajustes con interruptor o flecha |
-| `decision` | Botones grandes para decidir ("Es seguro" / "Es una estafa"). `tone`: `safe`, `danger` o `neutral` |
+| `decision` | Botones grandes para decidir ("Es seguro" / "Es una estafa"). `tone`: `safe`, `danger` o `neutral`. En preguntas tipo examen usa `neutral` en todas para no delatar la respuesta |
 | `call` | Llamada entrante: quién llama y lo que dice |
 | `plate` | Placa de un carro |
 | `rating` | Calificar con estrellas (el objetivo se escribe `'<id>.star.5'`) |
@@ -97,6 +97,8 @@ Cada práctica es un archivo de datos en `src/content/flows/`. No hay que progra
 5. Deja `reviewed: false` hasta que una persona del equipo revise el contenido.
 6. Agrega la práctica a la lista en `src/content/flows/index.ts`.
 7. Corre `npm test`. Las pruebas revisan automáticamente que cada paso tenga su botón objetivo, que haya entre 6 y 8 pasos, que las instrucciones sean cortas y que no aparezcan nombres de marcas reales.
+
+**Ojo:** dentro de las prácticas no se escriben nombres de apps reales ("WhatsApp", nombres de bancos…). Una prueba lo revisa.
 
 **Reglas del simulador:** solo nombres ficticios ("Banco Ejemplo"…); claves y códigos siempre de práctica y dichos en voz alta en la instrucción ("escribe 1234"); nombres y cuentas claramente inventados ("Rosa Ejemplo", "terminada en 4321").
 

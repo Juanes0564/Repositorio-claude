@@ -26,7 +26,8 @@ describe('sin marcas reales en el simulador', () => {
   const targets = [join(root, 'platforms.ts'), join(root, 'simulator.ts'), ...files(join(root, 'flows'))]
   for (const file of targets) {
     it(file.replace(process.cwd() + '/', ''), () => {
-      const text = readFileSync(file, 'utf8').toLowerCase()
+      // `skill: 'whatsapp'` es un nombre interno de la habilidad (no se ve en pantalla).
+      const text = readFileSync(file, 'utf8').toLowerCase().replace(/skill: '\w+'/g, '')
       for (const brand of BANNED) {
         const escaped = brand.replace(/[.*+?^${}()|[\]\\!]/g, '\\$&')
         const found = new RegExp(`(^|[^a-záéíóúñ])${escaped}($|[^a-záéíóúñ])`).test(text)

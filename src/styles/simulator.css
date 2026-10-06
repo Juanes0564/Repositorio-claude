@@ -575,3 +575,4 @@
   .sim-rating__stars { grid-template-columns: repeat(3, 1fr); }
 }
 :root[data-font='xlarge'] .sim-decision__options { grid-template-columns: 1fr; }
+.sim-chat__input--filled { color: #1C2629; font-weight: 700; border-color: var(--brand); }

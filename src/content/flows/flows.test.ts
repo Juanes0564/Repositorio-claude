@@ -8,9 +8,9 @@ import { SKILL_IDS } from '../../lib/storage'
 const words = (c: Copy) => resolveCopy(c, false).split(/\s+/).filter(Boolean).length
 
 describe('flujos de práctica (datos)', () => {
-  it('hay prácticas de las habilidades de las fases 2 y 5', () => {
+  it('las 8 habilidades tienen su práctica', () => {
     const skills = new Set(flows.map((f) => f.skill))
-    for (const s of ['transfers', 'medical', 'transport', 'shopping', 'scams'] as const) expect(skills.has(s), s).toBe(true)
+    for (const s of SKILL_IDS) expect(skills.has(s), s).toBe(true)
   })
 
   it('la práctica de estafas tiene casos seguros y estafas', () => {
@@ -88,4 +88,15 @@ describe('flujos de práctica (datos)', () => {
       })
     })
   }
+})
+
+describe('seguridad digital', () => {
+  it('las opciones no delatan la respuesta: todas se ven iguales', () => {
+    const security = flows.find((f) => f.skill === 'security')!
+    for (const step of security.steps) {
+      for (const b of step.screen.blocks) {
+        if (b.type === 'decision') expect(new Set(b.options.map((o) => o.tone))).toEqual(new Set(['neutral']))
+      }
+    }
+  })
 })

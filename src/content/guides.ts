@@ -235,7 +235,7 @@ export const guides: Guide[] = [
     skill: 'whatsapp',
     title: 'Usar WhatsApp',
     intro: tv('Vamos paso a paso con lo más útil.', 'Vamos paso a paso con lo más útil.'),
-    practicePath: '/practicar/chat',
+    practicePath: '/practicar/chat/chat-basics',
     reviewed: false,
     steps: [
       { text: tv('Abre WhatsApp y toca el chat de la persona.', 'Abra WhatsApp y toque el chat de la persona.'), detail: tv(
@@ -269,7 +269,7 @@ export const guides: Guide[] = [
     skill: 'phoneSettings',
     title: 'Configurar el celular',
     intro: tv('Vamos paso a paso. Todo está en Ajustes o Configuración.', 'Vamos paso a paso. Todo está en Ajustes o Configuración.'),
-    practicePath: '/practicar/settings',
+    practicePath: '/practicar/settings/phone-settings',
     reviewed: false,
     steps: [
       { text: tv('Abre Ajustes o Configuración. Tiene forma de engranaje.', 'Abra Ajustes o Configuración. Tiene forma de engranaje.'), detail: tv(
@@ -302,7 +302,7 @@ export const guides: Guide[] = [
     skill: 'security',
     title: tv('Proteger tu celular y tus claves', 'Proteger su celular y sus claves'),
     intro: tv('Vamos paso a paso. Son cuidados sencillos.', 'Vamos paso a paso. Son cuidados sencillos.'),
-    practicePath: '/practicar',
+    practicePath: '/practicar/settings/security-check',
     reviewed: false,
     steps: [
       { text: tv('Usa una clave fácil de recordar para ti, difícil para otros.', 'Use una clave fácil de recordar para usted, difícil para otros.'), detail: tv(

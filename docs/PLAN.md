@@ -53,9 +53,9 @@ Criterios:
 - [x] Citas médicas, transporte, compras (con pago contra entrega) y estafas (decisiones "Es seguro"/"Es una estafa" con explicación de señales).
 - [x] Sin duplicar código; nuevos componentes reutilizables si hacen falta.
 
-## Fase 6 — Simuladores 6 a 8
+## Fase 6 — Simuladores 6 a 8 ✅
 Criterios:
-- [ ] WhatsApp (Chat Ejemplo), configuración del celular (Ajustes) y seguridad digital (decisiones + mini repaso).
+- [x] WhatsApp (Chat Ejemplo), configuración del celular (Ajustes) y seguridad digital (decisiones + mini repaso).
 
 ## Fase 7 — Modo sencillo, Pasaporte, Ayuda y Perfil final
 Criterios:

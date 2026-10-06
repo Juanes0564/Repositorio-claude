@@ -112,6 +112,14 @@ Pídeles que digan con sus palabras: "enviar plata a un hijo", "pedir cita con e
 - [ ] Desde el copiloto, "Practicar cómo identificar estafas" abre la práctica de estafas.
 - [ ] Una persona del equipo revisa los textos de las estafas (borrador).
 
+## Fase 6 — Últimas prácticas
+
+- [ ] **Mensajes** (Chat Ejemplo): abrir el chat de Rosa, enviar el mensaje, un audio y una foto, videollamada, abrir el grupo Familia y silenciarlo (el interruptor pasa a "Sí").
+- [ ] **Celular más cómodo** (Ajustes): letra Grande, subir brillo y volumen, wifi Casa Ejemplo, instalar actualización, apagar el modo avión (pasa a "No").
+- [ ] **Seguridad** (Ajustes): 6 decisiones. Las opciones no delatan la respuesta. Al acertar aparece "Las señales".
+- [ ] En "Simular y practicar", cada plataforma muestra cuántas prácticas tiene (Billetera y Domicilios: "Muy pronto").
+- [ ] Desde el copiloto, "Practicar esto en el simulador" lleva a la práctica correcta en las 7 guías.
+
 ## Pruebas con personas (cuando el equipo pueda)
 
 - [ ] Probar en un Android real de gama baja.
