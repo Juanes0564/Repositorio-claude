@@ -10,7 +10,8 @@ export function useSpeech() {
   useEffect(() => () => stopSpeaking(), [])
 
   const enabled = data.settings.voiceEnabled && isSpeechSupported()
-  const rate = RATES[data.settings.voiceRate]
+  // En modo sencillo, la voz lenta es aún más lenta.
+  const rate = data.settings.simpleMode && data.settings.voiceRate === 'slow' ? RATES.simple : RATES[data.settings.voiceRate]
   const say = useCallback(
     (text: string, opts?: { slower?: boolean }) => {
       if (enabled) speak(text, opts?.slower ? RATES.slower : rate)

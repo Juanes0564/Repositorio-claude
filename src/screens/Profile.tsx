@@ -115,6 +115,14 @@ export function Profile() {
         </Link>
       </section>
 
+      <section className="panel" aria-labelledby="p-passport">
+        <h2 id="p-passport">{profile.passport.heading}</h2>
+        <Link to="/avances" className="row-link">
+          <span>{profile.passport.link}</span>
+          <ChevronRight className="icon" aria-hidden="true" />
+        </Link>
+      </section>
+
       <section className="panel" aria-labelledby="p-privacy">
         <h2 id="p-privacy">{profile.privacy.heading}</h2>
         <ul className="bullets">

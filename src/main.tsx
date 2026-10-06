@@ -7,8 +7,12 @@ import './styles/index.css'
 import './styles/simulator.css'
 import './styles/copilot.css'
 import './styles/workshops.css'
+import './styles/screens.css'
 import { App } from './App'
 import { AppStateProvider } from './state/AppState'
+import { setupInstallPrompt } from './lib/install'
+
+setupInstallPrompt()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

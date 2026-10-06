@@ -2,6 +2,19 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Fase 7
+
+1. **Modo sencillo (pantalla 7):** el interruptor general enciende todo (letra Grande, íconos grandes, menos opciones, lenguaje sencillo, alto contraste, voz lenta). Cada ajuste se puede cambiar por separado y se aplica al instante en toda la app; la propia pantalla sirve de vista previa en vivo, más un recuadro "Vista previa".
+2. **Voz en modo sencillo:** "Lenta" pasa de 0,9 a 0,8.
+3. **Inicio simplificado (pantalla 8):** con "menos opciones", el inicio muestra solo 4 botones enormes (Enviar dinero, Sacar cita médica, Pedir un transporte, Comprar por internet) y la barra inferior queda en Inicio, Ayuda y Perfil. **Cada botón abre la guía paso a paso del copiloto** (hacerlo en la vida real), y desde la guía se puede practicar. "Ver todas las opciones" muestra el menú completo sin apagar el ajuste.
+4. **Lenguaje sencillo:** versiones cortas (campo `simple`, función `sv()`) para los textos clave: pregunta del inicio, tarjetas del menú, bienvenida, avisos del simulador, copiloto, listas de plataformas y talleres, y ánimo del Pasaporte.
+5. **Pasaporte (pantalla 9):** insignia con "X de 8 habilidades completadas", estado de cada habilidad con ícono **y** texto (Sin empezar / En progreso / Completa) y "Sello" en las completas. Muestra qué parte falta (práctica o taller) con enlace directo. **Siguiente reto sugerido:** primero termina lo que está a medias, luego sigue el orden del Pasaporte. Mensajes de ánimo suaves, sin rachas.
+6. **Certificado:** aparece al completar las 8. Lleva el nombre (o "Esta persona" si no hay nombre, con invitación a agregarlo) y la fecha del día. Se imprime o se guarda como PDF desde el navegador; al imprimir se oculta todo menos el certificado.
+7. **Ayuda (pantalla 10):** sin indicador "En línea". "Llamada por videollamada" y "Chat en tiempo real" muestran "Próximamente" y llevan al copiloto y a los talleres. `HUMAN_HELP_ENABLED = false` en `src/config/humanHelp.ts`, con el número de WhatsApp vacío y las instrucciones para activarlo (enlace `wa.me`, sin servicios de pago).
+8. **Instalar la app:** guía paso a paso para Android e iPhone. En Chrome/Android, además, aparece el botón "Instalar ahora" cuando el navegador lo permite; si ya está instalada, lo dice.
+9. **Perfil final:** se agregó el acceso a "Mis avances" (útil cuando la barra inferior es mínima).
+10. Se eliminó la pantalla provisional "Estamos preparando esta sección": ya no queda ninguna sección pendiente.
+
 ## Fase 6
 
 1. **Las 8 habilidades ya tienen práctica.** Las tres nuevas son solo datos; el motor no cambió salvo dos detalles reutilizables: la caja de mensaje del chat puede mostrar un texto ya escrito (`composer.value`) y los interruptores de Ajustes cambian de "No" a "Sí" (o al revés) al tocar el correcto.

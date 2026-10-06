@@ -27,7 +27,7 @@ export function Workshops() {
   return (
     <div className="page">
       <TopBar title={workshopsUi.title} backTo="/" />
-      <p>{workshopsUi.intro}</p>
+      <p>{text(workshopsUi.intro)}</p>
       <div className="filters" role="group" aria-label={workshopsUi.filtersLabel}>
         {FILTERS.map((f) => (
           <button

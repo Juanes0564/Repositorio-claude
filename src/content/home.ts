@@ -1,8 +1,9 @@
+import { sv } from './types'
 import { tv } from './treatment'
 
 export const home = {
   greeting: (name: string) => (name ? `¡Hola, ${name}!` : '¡Hola!'),
-  question: tv('¿Qué te gustaría hacer hoy?', '¿Qué le gustaría hacer hoy?'),
+  question: sv(tv('¿Qué te gustaría hacer hoy?', '¿Qué le gustaría hacer hoy?'), tv('¿Qué quieres hacer?', '¿Qué quiere hacer?')),
   search: {
     label: tv('Pregúntame lo que necesites…', 'Pregúnteme lo que necesite…'),
     placeholder: tv('Escribe aquí…', 'Escriba aquí…'),
@@ -13,20 +14,20 @@ export const home = {
   cards: {
     simulate: {
       title: 'Simular y practicar',
-      body: tv('Practica sin riesgo, paso a paso.', 'Practique sin riesgo, paso a paso.'),
+      body: sv(tv('Practica sin riesgo, paso a paso.', 'Practique sin riesgo, paso a paso.'), 'Practicar sin miedo.'),
     },
     copilot: {
       title: 'Hacerlo con ayuda',
       badge: 'Copiloto',
-      body: tv('Te guío con voz mientras lo haces.', 'Le guío con voz mientras lo hace.'),
+      body: sv(tv('Te guío con voz mientras lo haces.', 'Le guío con voz mientras lo hace.'), 'Ayuda paso a paso.'),
     },
     workshops: {
       title: 'Tutoriales y talleres',
-      body: tv('Aprende con explicaciones cortas.', 'Aprenda con explicaciones cortas.'),
+      body: sv(tv('Aprende con explicaciones cortas.', 'Aprenda con explicaciones cortas.'), 'Aprender con tarjetas.'),
     },
     simpleMode: {
       title: 'Ajustar mi modo sencillo',
-      body: 'Letra grande y menos opciones.',
+      body: sv('Letra grande y menos opciones.', 'Letra grande.'),
     },
   },
   quickTitle: 'Accesos rápidos',

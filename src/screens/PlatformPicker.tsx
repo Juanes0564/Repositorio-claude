@@ -4,6 +4,7 @@ import { PlatformMark } from '../components/PlatformMark'
 import { TopBar } from '../components/TopBar'
 import { picker, platforms, type PlatformCategory } from '../content'
 import { flowsForPlatform } from '../content/flows'
+import { useCopy } from '../state/useAppState'
 
 /** Filtros de la pantalla 3. La clave es la que va en la dirección (?categoria=bancos). */
 const FILTERS = [
@@ -17,6 +18,7 @@ const FILTERS = [
 /** Pantalla 3: selección de plataforma. */
 export function PlatformPicker() {
   const [params, setParams] = useSearchParams()
+  const text = useCopy()
   const active = FILTERS.find((f) => f.key === params.get('categoria')) ?? FILTERS[0]
   const list = platforms
     .filter((p) => active.category === null || p.category === active.category)
@@ -25,7 +27,7 @@ export function PlatformPicker() {
   return (
     <div className="page">
       <TopBar title={picker.title} backTo="/" />
-      <p>{picker.intro}</p>
+      <p>{text(picker.intro)}</p>
 
       <div className="filters" role="group" aria-label={picker.filtersLabel}>
         {FILTERS.map((f) => (

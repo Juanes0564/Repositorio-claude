@@ -137,7 +137,7 @@ function SimulatorRun({ flow }: { flow: Flow }) {
       : state.feedback === 'wrong'
         ? text(step.wrong ?? simulator.wrong)
         : nextLocked
-          ? simulator.nextLocked
+          ? text(simulator.nextLocked)
           : ''
 
   return (
@@ -222,7 +222,7 @@ function SimulatorRun({ flow }: { flow: Flow }) {
                 )}
                 <span>
                   {feedbackMessage}
-                  {highlight && state.feedback === 'wrong' && ` ${simulator.highlighted}`}
+                  {highlight && state.feedback === 'wrong' && ` ${text(simulator.highlighted)}`}
                 </span>
               </>
             )}
@@ -296,7 +296,7 @@ function FinishView({
         <h1 ref={headingRef} tabIndex={-1}>
           {d.title}
         </h1>
-        <p>{d.body}</p>
+        <p>{text(d.body)}</p>
         {showFreeUnlocked && <p className="finish__unlocked">{d.freeUnlocked}</p>}
       </div>
       <section className="panel" aria-labelledby="learned">

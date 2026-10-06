@@ -6,7 +6,7 @@ import {
 import { CopilotAvatar } from '../components/CopilotAvatar'
 import { TopBar } from '../components/TopBar'
 import { VoiceConsentDialog } from '../components/VoiceConsentDialog'
-import { copilot, getGuide, getIntent, messageHelp, voice, type IntentId } from '../content'
+import { copilot, getGuide, getIntent, messageHelp, voice, type Copy, type IntentId } from '../content'
 import { detectIntent } from '../copilot/intentEngine'
 import type { SkillId } from '../lib/storage'
 import { useAppState, useCopy } from '../state/useAppState'
@@ -33,14 +33,14 @@ interface CopilotState {
 const DIRECT: IntentId[] = ['repeat', 'slower', 'back', 'home']
 
 /** Convierte lo dicho en la siguiente pantalla del copiloto, según la confianza (sección 6 del brief). */
-function analyze(text: string): CopilotState {
+function analyze(text: string, t: (c: Copy) => string): CopilotState {
   const r = detectIntent(text)
   if (r.confidence === 'high' && r.best) return { view: { kind: 'confirm', intent: r.best }, bubble: getIntent(r.best).confirm, heard: text }
   if (r.confidence === 'medium') {
     const options = r.candidates.length >= 2 ? r.candidates : [...r.candidates, ...copilot.fallbackIntents.filter((i) => !r.candidates.includes(i)).slice(0, 2)]
     return { view: { kind: 'choices', options }, bubble: copilot.choose, heard: text }
   }
-  return { view: { kind: 'notUnderstood' }, bubble: copilot.notUnderstood, heard: text }
+  return { view: { kind: 'notUnderstood' }, bubble: t(copilot.notUnderstood), heard: text }
 }
 
 /** Pantalla 5: copiloto de voz. Funciona igual con micrófono, con texto o solo con botones. */
@@ -51,9 +51,14 @@ export function Copilot() {
   const text = useCopy()
   const speech = useSpeech()
   const initialQuery = params.get('q')
-  const [state, setState] = useState<CopilotState>(() =>
-    initialQuery ? analyze(initialQuery) : { view: { kind: 'home' }, bubble: copilot.greeting, heard: null },
-  )
+  const greetingAgain = text(copilot.greetingAgain)
+  const initialGuide = params.get('guia')
+  const [state, setState] = useState<CopilotState>(() => {
+    // Desde el inicio sencillo (pantalla 8) se abre directo la guía de esa tarea.
+    const guide = initialGuide ? getGuide(initialGuide as SkillId) : undefined
+    if (guide) return { view: { kind: 'guide', skill: guide.skill, step: 0, explain: false, finished: false }, bubble: text(guide.intro), heard: null }
+    return initialQuery ? analyze(initialQuery, text) : { view: { kind: 'home' }, bubble: text(copilot.greeting), heard: null }
+  })
   const [typed, setTyped] = useState('')
   const { view, bubble, heard } = state
   const bubbleRef = useRef(bubble)
@@ -109,13 +114,13 @@ export function Copilot() {
           speech.say(`${copilot.slowerDone} ${bubbleRef.current === copilot.slowerDone ? '' : bubbleRef.current}`, { slower: true })
           return
         case 'back':
-          show({ view: { kind: 'home' }, bubble: copilot.greetingAgain, heard: null })
+          show({ view: { kind: 'home' }, bubble: greetingAgain, heard: null })
           return
         default:
           return
       }
     },
-    [navigate, show, speech, text, updateSettings],
+    [navigate, show, speech, text, updateSettings, greetingAgain],
   )
 
   const handleText = useCallback(
@@ -127,9 +132,9 @@ export function Copilot() {
         run(r.best, clean)
         return
       }
-      show(analyze(clean))
+      show(analyze(clean, text))
     },
-    [run, show],
+    [run, show, text],
   )
 
   const mic = useVoiceInput(handleText)
@@ -231,7 +236,7 @@ export function Copilot() {
           <button
             type="button"
             className="btn btn--option btn--block"
-            onClick={() => show({ view: { kind: 'home' }, bubble: copilot.greetingAgain, heard: null })}
+            onClick={() => show({ view: { kind: 'home' }, bubble: greetingAgain, heard: null })}
           >
             <X className="icon" aria-hidden="true" />
             <span>{copilot.noOther}</span>
@@ -253,7 +258,7 @@ export function Copilot() {
               <button
                 type="button"
                 className="btn btn--ghost btn--block"
-                onClick={() => show({ view: { kind: 'notUnderstood' }, bubble: copilot.notUnderstood, heard })}
+                onClick={() => show({ view: { kind: 'notUnderstood' }, bubble: text(copilot.notUnderstood), heard })}
               >
                 {copilot.noneOfThese}
               </button>
@@ -266,7 +271,7 @@ export function Copilot() {
         <GuideView
           state={view}
           onChange={(next) => setState((s) => ({ ...s, view: next }))}
-          onExit={() => show({ view: { kind: 'home' }, bubble: copilot.greetingAgain, heard: null })}
+          onExit={() => show({ view: { kind: 'home' }, bubble: greetingAgain, heard: null })}
         />
       )}
 
@@ -277,7 +282,7 @@ export function Copilot() {
             setState((s) => ({ ...s, view: { kind: 'message', answer } }))
             speech.say(answer ? `${answer} ${messageHelp.remember}` : messageHelp.question)
           }}
-          onDone={() => show({ view: { kind: 'home' }, bubble: copilot.greetingAgain, heard: null })}
+          onDone={() => show({ view: { kind: 'home' }, bubble: greetingAgain, heard: null })}
         />
       )}
 

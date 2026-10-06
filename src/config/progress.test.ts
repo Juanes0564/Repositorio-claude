@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { PROGRESS_WEIGHTS, skillPercent, skillStatus } from './progress'
+import { PROGRESS_WEIGHTS, completedCount, nextSuggestion, skillPercent, skillStatus } from './progress'
+import { SKILL_IDS } from '../lib/storage'
 
 const p = (simulatorGuidedDone: boolean, workshopDone: boolean, simulatorFreeDone = false) => ({
   simulatorGuidedDone,
@@ -30,5 +31,30 @@ describe('progreso de una habilidad', () => {
   it('el modo libre solo no suma, pero cuenta como "en progreso"', () => {
     expect(skillPercent(p(false, false, true))).toBe(0)
     expect(skillStatus(p(false, false, true))).toBe('inProgress')
+  })
+})
+
+describe('siguiente reto sugerido', () => {
+  const all = (fn: (id: (typeof SKILL_IDS)[number]) => ReturnType<typeof p>) =>
+    Object.fromEntries(SKILL_IDS.map((id) => [id, fn(id)])) as Parameters<typeof nextSuggestion>[0]
+
+  it('sin avances: la práctica de la primera habilidad', () => {
+    expect(nextSuggestion(all(() => p(false, false)))).toEqual({ skill: 'transfers', action: 'practice' })
+  })
+  it('termina primero lo que está a medias', () => {
+    const prog = all(() => p(false, false))
+    prog.scams = p(true, false)
+    expect(nextSuggestion(prog)).toEqual({ skill: 'scams', action: 'workshop' })
+  })
+  it('salta las completas', () => {
+    const prog = all(() => p(false, false))
+    prog.transfers = p(true, true)
+    expect(nextSuggestion(prog)).toEqual({ skill: 'medical', action: 'practice' })
+    expect(completedCount(prog)).toBe(1)
+  })
+  it('null cuando todo está completo', () => {
+    const prog = all(() => p(true, true))
+    expect(nextSuggestion(prog)).toBeNull()
+    expect(completedCount(prog)).toBe(8)
   })
 })

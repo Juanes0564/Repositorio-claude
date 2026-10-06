@@ -12,7 +12,6 @@ Todos los textos que se ven en la app están en la carpeta `src/content/`. **No 
 | `home.ts` | Menú principal (pantalla 2). |
 | `profile.ts` | Perfil, privacidad, acerca de, borrar datos. |
 | `skills.ts` | Nombres de las 8 habilidades del Pasaporte. |
-| `screens.ts` | Títulos de secciones. |
 | `platforms.ts` | Las plataformas ficticias (nombre, color, ícono). |
 | `simulator.ts` | Textos de las pantallas 3 y 4 (botones, avisos, felicitación). |
 | `flows/` | Una práctica por archivo (por ejemplo `transfer-bank.ts`). |
@@ -23,6 +22,9 @@ Todos los textos que se ven en la app están en la carpeta `src/content/`. **No 
 | `voice.ts` | Micrófono: aviso de privacidad y mensajes de error. |
 | `workshops.ts` | Los 8 talleres: tarjetas, mini repaso y video opcional. |
 | `workshopsUi.ts` | Textos de la pantalla de talleres (botones, filtros, repaso). |
+| `simpleMode.ts` | Pantalla del modo sencillo y los 4 botones del inicio simplificado. |
+| `passport.ts` | Pasaporte digital y certificado. |
+| `help.ts` | Ayuda: ayuda humana, preguntas frecuentes y cómo instalar. |
 
 ## Cambiar de "tú" a "usted"
 
@@ -38,11 +40,17 @@ tv('Escribe tu nombre', 'Escriba su nombre')
 
 ## Lenguaje sencillo
 
-Si un texto necesita una versión más corta para el modo sencillo, escríbelo así:
+Si un texto necesita una versión más corta para el modo sencillo, escríbelo con `sv(textoNormal, textoSencillo)`:
 
 ```ts
-{ text: 'Revisa el nombre y el valor antes de confirmar.', simple: 'Revisa nombre y valor.' }
+question: sv(tv('¿Qué te gustaría hacer hoy?', '¿Qué le gustaría hacer hoy?'), tv('¿Qué quieres hacer?', '¿Qué quiere hacer?')),
 ```
+
+En la pantalla, ese texto se muestra con `text(...)` (de `useCopy()`), que elige la versión según el ajuste "Lenguaje sencillo".
+
+## Activar la ayuda humana
+
+Ver las instrucciones al inicio de `src/config/humanHelp.ts` (cambiar `HUMAN_HELP_ENABLED` a `true` y escribir el número de WhatsApp del equipo).
 
 ## Reglas de redacción (resumen del brief)
 

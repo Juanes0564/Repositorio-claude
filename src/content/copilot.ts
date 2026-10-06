@@ -1,9 +1,10 @@
+import { sv } from './types'
 import type { IntentId } from './intents'
 import { tv } from './treatment'
 
 export const copilot = {
   title: 'Copiloto',
-  greeting: tv('Estoy aquí para ayudarte. ¿Qué quieres hacer?', 'Estoy aquí para ayudarle. ¿Qué quiere hacer?'),
+  greeting: sv(tv('Estoy aquí para ayudarte. ¿Qué quieres hacer?', 'Estoy aquí para ayudarle. ¿Qué quiere hacer?'), tv('¿Qué quieres hacer?', '¿Qué quiere hacer?')),
   greetingAgain: tv('Está bien. ¿Qué quieres hacer?', 'Está bien. ¿Qué quiere hacer?'),
   suggestionsLabel: 'Sugerencias',
   /** Botones de sugerencia de la pantalla 5. */
@@ -16,9 +17,9 @@ export const copilot = {
   ] satisfies { label: string; intent: IntentId }[],
   /** Opciones que se ofrecen cuando no se entendió. */
   fallbackIntents: ['transfer', 'medical', 'transport', 'shopping', 'whatsapp', 'message', 'humanHelp'] satisfies IntentId[],
-  notUnderstood: tv(
-    'No te entendí bien. ¿Quieres hacer alguna de estas cosas?',
-    'No le entendí bien. ¿Quiere hacer alguna de estas cosas?',
+  notUnderstood: sv(
+    tv('No te entendí bien. ¿Quieres hacer alguna de estas cosas?', 'No le entendí bien. ¿Quiere hacer alguna de estas cosas?'),
+    tv('No entendí. Elige una opción.', 'No entendí. Elija una opción.'),
   ),
   choose: tv('Creo que quieres una de estas cosas. ¿Cuál?', 'Creo que quiere una de estas cosas. ¿Cuál?'),
   noneOfThese: 'Ninguna de estas',

@@ -57,13 +57,13 @@ Criterios:
 Criterios:
 - [x] WhatsApp (Chat Ejemplo), configuración del celular (Ajustes) y seguridad digital (decisiones + mini repaso).
 
-## Fase 7 — Modo sencillo, Pasaporte, Ayuda y Perfil final
+## Fase 7 — Modo sencillo, Pasaporte, Ayuda y Perfil final ✅
 Criterios:
-- [ ] Pantalla 7 con interruptor, letra, íconos, menos opciones, lenguaje sencillo (`simple`), alto contraste, velocidad de voz y vista previa en vivo.
-- [ ] Pantalla 8: Inicio con 4 botones enormes y barra mínima.
-- [ ] Pantalla 9: Pasaporte (regla 50/50 en un archivo de configuración), estados con sello, siguiente reto, certificado imprimible.
-- [ ] Pantalla 10: ayuda humana "Próximamente", `HUMAN_HELP_ENABLED = false`, lugar para `wa.me`, preguntas frecuentes, guía de instalación Android/iPhone.
-- [ ] Verificado en modo sencillo con letra Muy grande.
+- [x] Pantalla 7 con interruptor, letra, íconos, menos opciones, lenguaje sencillo (`simple`), alto contraste, velocidad de voz y vista previa en vivo.
+- [x] Pantalla 8: Inicio con 4 botones enormes y barra mínima.
+- [x] Pantalla 9: Pasaporte (regla 50/50 en un archivo de configuración), estados con sello, siguiente reto, certificado imprimible.
+- [x] Pantalla 10: ayuda humana "Próximamente", `HUMAN_HELP_ENABLED = false`, lugar para `wa.me`, preguntas frecuentes, guía de instalación Android/iPhone.
+- [x] Verificado en modo sencillo con letra Muy grande.
 
 ## Fase 8 — Pulido y entrega
 Criterios:

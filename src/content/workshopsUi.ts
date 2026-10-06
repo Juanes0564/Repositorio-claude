@@ -1,11 +1,15 @@
+import { sv } from './types'
 import { tv } from './treatment'
 import type { WorkshopCategory } from './workshops'
 
 export const workshopsUi = {
   title: 'Tutoriales y talleres',
-  intro: tv(
-    'Explicaciones cortas, una tarjeta a la vez. Puedes escucharlas en voz alta.',
-    'Explicaciones cortas, una tarjeta a la vez. Puede escucharlas en voz alta.',
+  intro: sv(
+    tv(
+      'Explicaciones cortas, una tarjeta a la vez. Puedes escucharlas en voz alta.',
+      'Explicaciones cortas, una tarjeta a la vez. Puede escucharlas en voz alta.',
+    ),
+    'Una tarjeta a la vez.',
   ),
   filtersLabel: 'Mostrar',
   filters: { all: 'Todos', banks: 'Bancos', health: 'Salud', security: 'Seguridad', more: 'Más temas' } satisfies Record<

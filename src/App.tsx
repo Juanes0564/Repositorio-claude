@@ -1,9 +1,11 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { PhoneFrame } from './components/PhoneFrame'
-import { screenTitles } from './content'
-import { ComingSoon } from './screens/ComingSoon'
+import { Certificate } from './screens/Certificate'
 import { Copilot } from './screens/Copilot'
+import { Help } from './screens/Help'
+import { Passport } from './screens/Passport'
+import { SimpleModeSettings } from './screens/SimpleModeSettings'
 import { Home } from './screens/Home'
 import { NotFound } from './screens/NotFound'
 import { PlatformDetail } from './screens/PlatformDetail'
@@ -32,14 +34,15 @@ function Routed() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/perfil" element={<Profile />} />
-        <Route path="/avances" element={<ComingSoon title={screenTitles.progress} />} />
-        <Route path="/ayuda" element={<ComingSoon title={screenTitles.help} />} />
+        <Route path="/avances" element={<Passport />} />
+        <Route path="/avances/certificado" element={<Certificate />} />
+        <Route path="/ayuda" element={<Help />} />
         <Route path="/practicar" element={<PlatformPicker />} />
         <Route path="/practicar/:platformId" element={<PlatformDetail />} />
         <Route path="/copiloto" element={<Copilot />} />
         <Route path="/talleres" element={<Workshops />} />
         <Route path="/talleres/:workshopId" element={<WorkshopView />} />
-        <Route path="/modo-sencillo" element={<ComingSoon title={screenTitles.simpleMode} />} />
+        <Route path="/modo-sencillo" element={<SimpleModeSettings />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -1,10 +1,14 @@
+import { sv } from './types'
 import { tv } from './treatment'
 
 export const welcome = {
   start: 'Comenzar',
-  intro: tv(
-    'Practica trámites digitales sin miedo. Aquí nada es real y nada se daña.',
-    'Practique trámites digitales sin miedo. Aquí nada es real y nada se daña.',
+  intro: sv(
+    tv(
+      'Practica trámites digitales sin miedo. Aquí nada es real y nada se daña.',
+      'Practique trámites digitales sin miedo. Aquí nada es real y nada se daña.',
+    ),
+    'Aquí nada es real. Practique sin miedo.',
   ),
   nameStep: {
     title: tv('¿Cómo te llamas?', '¿Cómo se llama?'),

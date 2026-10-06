@@ -351,7 +351,8 @@ input::placeholder { color: var(--ink-soft); opacity: 1; }
   cursor: pointer;
 }
 .switch--on { border-color: var(--primary); background: var(--primary-soft); }
-.switch__text { display: flex; flex-direction: column; gap: var(--space-1); }
+.switch { flex-wrap: wrap; }
+.switch__text { flex: 1 1 9rem; display: flex; flex-direction: column; gap: var(--space-1); min-width: 0; }
 .switch__label { font-weight: 700; }
 .switch__help { font-size: 0.9rem; color: var(--ink-soft); }
 .switch__control { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); flex: none; }

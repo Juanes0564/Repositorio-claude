@@ -5,7 +5,7 @@ import { App } from '../App'
 import { AppStateProvider } from '../state/AppState'
 import { STORAGE_KEY, defaultData } from '../lib/storage'
 import { FakeRecognition, installFakeRecognition, removeFakeRecognition } from '../test/fakeRecognition'
-import { copilot, getIntent, voice } from '../content'
+import { copilot, getIntent, resolveCopy, voice } from '../content'
 
 function renderAt(hash: string, settings: Partial<ReturnType<typeof defaultData>['settings']> = {}) {
   const data = defaultData()
@@ -36,7 +36,7 @@ describe('pantalla 5: copiloto sin micrófono', () => {
 
   it('saluda, muestra las sugerencias del brief y no muestra micrófono', () => {
     renderAt('#/copiloto')
-    expect(screen.getByText(copilot.greeting)).toBeTruthy()
+    expect(screen.getByText(resolveCopy(copilot.greeting, false))).toBeTruthy()
     for (const s of copilot.suggestions.map((x) => x.label)) {
       expect(screen.getByRole('button', { name: s })).toBeTruthy()
     }
@@ -75,7 +75,7 @@ describe('pantalla 5: copiloto sin micrófono', () => {
     renderAt('#/copiloto')
     typeAndSend('necesito un taxi')
     click('No, otra cosa')
-    expect(screen.getByText(copilot.greetingAgain)).toBeTruthy()
+    expect(screen.getByText(resolveCopy(copilot.greetingAgain, false))).toBeTruthy()
   })
 
   it('confianza media: ofrece 2 o 3 opciones', () => {
@@ -88,7 +88,7 @@ describe('pantalla 5: copiloto sin micrófono', () => {
   it('confianza baja: "No te entendí bien" con botones', () => {
     renderAt('#/copiloto')
     typeAndSend('el clima de mañana')
-    expect(screen.getByText(copilot.notUnderstood)).toBeTruthy()
+    expect(screen.getByText(resolveCopy(copilot.notUnderstood, false))).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Enviar dinero' })).toBeTruthy()
     expect(screen.getByRole('button', { name: 'Hablar con una persona' })).toBeTruthy()
   })

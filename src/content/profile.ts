@@ -19,6 +19,10 @@ export const profile = {
     slow: 'Lenta',
     normal: 'Normal',
   },
+  passport: {
+    heading: 'Mis avances',
+    link: 'Ver mi Pasaporte Digital',
+  },
   simple: {
     heading: 'Modo sencillo',
     toggle: 'Usar modo sencillo',

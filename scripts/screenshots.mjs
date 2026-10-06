@@ -76,6 +76,10 @@ const typeCopilot = (text) => async (page) => {
   await page.getByRole('button', { name: 'Enviar' }).click()
 }
 const micOn = { voiceInput: 'granted' }
+const all = (fn) => Object.fromEntries(['transfers', 'medical', 'transport', 'shopping', 'security', 'whatsapp', 'phoneSettings', 'scams'].map((id, i) => [id, fn(id, i)]))
+const someProgress = { progress: all((id, i) => ({ simulatorGuidedDone: i < 3, simulatorFreeDone: false, workshopDone: i < 2 })) }
+const fullProgress = { progress: all(() => ({ simulatorGuidedDone: true, simulatorFreeDone: false, workshopDone: true })) }
+const simpleOn = { ...simple, voiceRate: 'slow' }
 const shots = {
   'welcome-360': { w: 360, h: 640 },
   'home-390': { data: done() },
@@ -179,6 +183,23 @@ const shots = {
   'security-perm-390': { data: done(), path: '#/practicar/settings/security-check', actions: [sim.tap(/perro come arepa/), sim.next, sim.tap(/No se lo doy/), sim.next, sim.tap(/PIN o mi huella/), sim.next, sim.tap(/La instalo con wifi/), sim.next, sim.tap('No permitir')] },
   'security-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: '#/practicar/settings/security-check' },
   'platform-settings-390': { data: done(), path: '#/practicar/settings' },
+  'simple-settings-390': { data: done(), path: '#/modo-sencillo' },
+  'simple-settings-on-390': { data: done({ settings: simpleOn }), path: '#/modo-sencillo' },
+  'simple-home-390': { data: done({ settings: simpleOn }) },
+  'simple-home-xlarge-360': { w: 360, h: 640, data: done({ settings: { ...simpleOn, fontSize: 'xlarge' } }) },
+  'simple-home-zoom200': { w: 180, h: 320, scale: 4, data: done({ settings: simpleOn }) },
+  'passport-empty-390': { data: done(), path: '#/avances' },
+  'passport-some-390': { data: done(someProgress), path: '#/avances' },
+  'passport-some-simple-390': { data: done({ ...someProgress, settings: simpleOn }), path: '#/avances' },
+  'passport-full-390': { data: done(fullProgress), path: '#/avances' },
+  'certificate-390': { data: done(fullProgress), path: '#/avances/certificado' },
+  'certificate-framed': { w: 1280, h: 920, data: done(fullProgress), path: '#/avances/certificado', frame: true },
+  'help-390': { data: done(), path: '#/ayuda' },
+  'help-soon-390': { data: done(), path: '#/ayuda', actions: [btn(/Chat en tiempo real/)] },
+  'help-simple-xlarge-360': { w: 360, h: 640, data: done({ settings: { ...simpleOn, fontSize: 'xlarge' } }), path: '#/ayuda' },
+  'help-install-390': { data: done(), path: '#/ayuda', actions: [async (p) => p.getByText('En iPhone (Safari)').scrollIntoViewIfNeeded()] },
+  'profile-simple-xlarge-360': { w: 360, h: 640, data: done({ settings: { ...simpleOn, fontSize: 'xlarge' } }), path: '#/perfil' },
+  'copilot-guide-from-simple-390': { data: done({ settings: simpleOn }), path: '#/copiloto?guia=medical' },
   'sim-framed': { w: 1280, h: 920, data: done(), path: transfer, frame: true, actions: [sim.tap(/Banco Ejemplo/), sim.next] },
 }
 

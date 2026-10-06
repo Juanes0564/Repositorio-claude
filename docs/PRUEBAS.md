@@ -120,6 +120,20 @@ Pídeles que digan con sus palabras: "enviar plata a un hijo", "pedir cita con e
 - [ ] En "Simular y practicar", cada plataforma muestra cuántas prácticas tiene (Billetera y Domicilios: "Muy pronto").
 - [ ] Desde el copiloto, "Practicar esto en el simulador" lleva a la práctica correcta en las 7 guías.
 
+## Fase 7 — Modo sencillo, Pasaporte y Ayuda
+
+- [ ] Inicio → "Ajustar mi modo sencillo": el interruptor general cambia todo al instante.
+- [ ] Cada ajuste (letra, íconos, menos opciones, lenguaje sencillo, alto contraste, voz) cambia por separado.
+- [ ] Con "menos opciones", el inicio tiene 4 botones enormes y abajo solo Inicio, Ayuda y Perfil.
+- [ ] Cada botón enorme abre la guía paso a paso del copiloto.
+- [ ] "Ver todas las opciones" muestra el menú completo.
+- [ ] "Mis avances" dice cuántas habilidades lleva, el estado de cada una (con palabras, no solo colores) y el siguiente reto.
+- [ ] Al completar las 8 (práctica con guía + taller), aparece "Ver mi certificado", con nombre y fecha. "Imprimir o guardar" abre la impresión.
+- [ ] Ayuda: los botones de videollamada y chat dicen "Próximamente" y ofrecen el copiloto y los talleres. No dice "En línea" en ninguna parte.
+- [ ] Preguntas frecuentes se abren y cierran tocándolas.
+- [ ] La guía "Cómo instalar Vínculo" sirve en Android y en iPhone.
+- [ ] Todo lo anterior también con modo sencillo y letra Muy grande.
+
 ## Pruebas con personas (cuando el equipo pueda)
 
 - [ ] Probar en un Android real de gama baja.

@@ -1,11 +1,12 @@
+import { sv } from './types'
 import { tv } from './treatment'
 import type { PlatformCategory } from './platforms'
 
 export const picker = {
   title: 'Simular y practicar',
-  intro: tv(
-    'Elige dónde quieres practicar. Nada de esto es real.',
-    'Elija dónde quiere practicar. Nada de esto es real.',
+  intro: sv(
+    tv('Elige dónde quieres practicar. Nada de esto es real.', 'Elija dónde quiere practicar. Nada de esto es real.'),
+    tv('Elige dónde practicar.', 'Elija dónde practicar.'),
   ),
   filtersLabel: 'Mostrar',
   filters: {
@@ -61,10 +62,10 @@ export const simulator = {
   exit: 'Salir',
   restart: 'Reiniciar',
   success: '¡Bien!',
-  wrong: 'No pasa nada. Intentemos de nuevo.',
-  highlighted: tv('Mira el recuadro con la flecha.', 'Mire el recuadro con la flecha.'),
+  wrong: sv('No pasa nada. Intentemos de nuevo.', 'No pasa nada. Otra vez.'),
+  highlighted: sv(tv('Mira el recuadro con la flecha.', 'Mire el recuadro con la flecha.'), tv('Toca donde dice Aquí.', 'Toque donde dice Aquí.')),
   hintLabel: 'Pista',
-  nextLocked: tv('Primero haz lo que dice el paso.', 'Primero haga lo que dice el paso.'),
+  nextLocked: sv(tv('Primero haz lo que dice el paso.', 'Primero haga lo que dice el paso.'), tv('Primero haz el paso.', 'Primero haga el paso.')),
   pointer: 'Aquí',
   keypadDelete: 'Borrar',
   keypadEmpty: 'Vacío',
@@ -82,7 +83,7 @@ export const simulator = {
   },
   done: {
     title: tv('¡Lo lograste!', '¡Lo logró!'),
-    body: tv('Terminaste la práctica. Lo hiciste muy bien.', 'Terminó la práctica. Lo hizo muy bien.'),
+    body: sv(tv('Terminaste la práctica. Lo hiciste muy bien.', 'Terminó la práctica. Lo hizo muy bien.'), '¡Muy bien!'),
     learnedTitle: tv('Lo que aprendiste', 'Lo que aprendió'),
     tipTitle: 'Consejo de seguridad',
     freeUnlocked: tv(

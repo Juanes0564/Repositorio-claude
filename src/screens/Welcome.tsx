@@ -6,7 +6,7 @@ import { VoiceConsentDialog } from '../components/VoiceConsentDialog'
 import { WelcomeIllustration } from '../components/WelcomeIllustration'
 import { common, voice, welcome } from '../content'
 import { extractName } from '../lib/extractName'
-import { useAppState } from '../state/useAppState'
+import { useAppState, useCopy } from '../state/useAppState'
 import { useVoiceInput } from '../state/useVoiceInput'
 
 type Step = 'intro' | 'name' | 'simple'
@@ -15,6 +15,7 @@ type Step = 'intro' | 'name' | 'simple'
 export function Welcome() {
   const { data, setName, setSimpleMode, completeOnboarding } = useAppState()
   const navigate = useNavigate()
+  const text = useCopy()
   const [step, setStep] = useState<Step>('intro')
   const [name, setNameDraft] = useState(data.profile.name)
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -47,7 +48,7 @@ export function Welcome() {
         <div className="welcome__art">
           <WelcomeIllustration />
         </div>
-        <p className="welcome__intro">{welcome.intro}</p>
+        <p className="welcome__intro">{text(welcome.intro)}</p>
         <button type="button" className="btn btn--primary btn--block btn--xl" onClick={() => setStep('name')}>
           <span>{welcome.start}</span>
           <ArrowRight className="icon" aria-hidden="true" />

@@ -14,8 +14,9 @@ import {
   Stethoscope,
 } from 'lucide-react'
 import { Logo } from '../components/Logo'
-import { home } from '../content'
-import { useAppState } from '../state/useAppState'
+import { home, simpleModeUi } from '../content'
+import { SimpleHome } from '../components/SimpleHome'
+import { useAppState, useCopy } from '../state/useAppState'
 import { isRecognitionSupported } from '../lib/recognition'
 
 const cards = [
@@ -35,8 +36,12 @@ const quick = [
 /** Pantalla 2: menú principal. */
 export function Home() {
   const { data } = useAppState()
+  const text = useCopy()
   const navigate = useNavigate()
   const [query, setQuery] = useState('')
+  // "Menos opciones" (modo sencillo): 4 botones enormes. Se puede ver todo por un rato sin cambiar el ajuste.
+  const [showAll, setShowAll] = useState(false)
+  const simple = data.settings.fewerOptions && !showAll
   // El micrófono solo se muestra si el navegador lo permite y la persona no eligió "Prefiero botones".
   const micAvailable = isRecognitionSupported() && data.settings.voiceInput !== 'declined'
 
@@ -52,77 +57,93 @@ export function Home() {
       <header className="home__header">
         <div>
           <h1 className="home__greeting">{home.greeting(data.profile.name)}</h1>
-          <p className="home__question">{home.question}</p>
+          <p className="home__question">{text(home.question)}</p>
         </div>
         <Logo size={56} />
       </header>
 
-      <form className="search" role="search" onSubmit={submit}>
-        <label htmlFor="home-search" className="search__label">
-          {home.search.label}
-        </label>
-        <div className="search__box">
-          <Search className="icon search__icon" aria-hidden="true" />
-          <input
-            id="home-search"
-            type="search"
-            enterKeyHint="search"
-            placeholder={home.search.placeholder}
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </div>
-        <div className={micAvailable ? 'search__actions' : 'search__actions search__actions--single'}>
-          <button type="submit" className="btn btn--secondary">
-            <Search className="icon" aria-hidden="true" />
-            <span>{home.search.submit}</span>
+      {simple ? (
+        <>
+          <SimpleHome />
+          <button type="button" className="btn btn--ghost btn--block" onClick={() => setShowAll(true)}>
+            {simpleModeUi.home.more}
           </button>
-          {micAvailable && (
-            <button type="button" className="btn btn--primary" onClick={() => navigate('/copiloto?voz=1')}>
-              <Mic className="icon" aria-hidden="true" />
-              <span>{home.search.mic}</span>
+        </>
+      ) : (
+        <>
+        <form className="search" role="search" onSubmit={submit}>
+          <label htmlFor="home-search" className="search__label">
+            {home.search.label}
+          </label>
+          <div className="search__box">
+            <Search className="icon search__icon" aria-hidden="true" />
+            <input
+              id="home-search"
+              type="search"
+              enterKeyHint="search"
+              placeholder={home.search.placeholder}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
+          <div className={micAvailable ? 'search__actions' : 'search__actions search__actions--single'}>
+            <button type="submit" className="btn btn--secondary">
+              <Search className="icon" aria-hidden="true" />
+              <span>{home.search.submit}</span>
+            </button>
+            {micAvailable && (
+              <button type="button" className="btn btn--primary" onClick={() => navigate('/copiloto?voz=1')}>
+                <Mic className="icon" aria-hidden="true" />
+                <span>{home.search.mic}</span>
+              </button>
+            )}
+          </div>
+        </form>
+
+        <section aria-label={home.cardsLabel}>
+          <ul className="card-grid">
+            {cards.map(({ to, Icon, copy, tone }) => (
+              <li key={to}>
+                <Link to={to} className={`big-card big-card--${tone}`}>
+                  <span className="big-card__icon">
+                    <Icon className="icon" aria-hidden="true" />
+                  </span>
+                  <span className="big-card__text">
+                    <span className="big-card__title">
+                      {copy.title}
+                      {'badge' in copy && <span className="badge">{copy.badge}</span>}
+                    </span>
+                    <span className="big-card__body">{text(copy.body)}</span>
+                  </span>
+                  <ChevronRight className="icon big-card__chevron" aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="quick-title">
+          <h2 id="quick-title" className="section-title">
+            {home.quickTitle}
+          </h2>
+          <ul className="quick-grid">
+            {quick.map(({ to, Icon, label }) => (
+              <li key={to}>
+                <Link to={to} className="quick">
+                  <Icon className="icon" aria-hidden="true" />
+                  <span>{label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+          {data.settings.fewerOptions && (
+            <button type="button" className="btn btn--ghost btn--block" onClick={() => setShowAll(false)}>
+              {simpleModeUi.home.less}
             </button>
           )}
-        </div>
-      </form>
-
-      <section aria-label={home.cardsLabel}>
-        <ul className="card-grid">
-          {cards.map(({ to, Icon, copy, tone }) => (
-            <li key={to}>
-              <Link to={to} className={`big-card big-card--${tone}`}>
-                <span className="big-card__icon">
-                  <Icon className="icon" aria-hidden="true" />
-                </span>
-                <span className="big-card__text">
-                  <span className="big-card__title">
-                    {copy.title}
-                    {'badge' in copy && <span className="badge">{copy.badge}</span>}
-                  </span>
-                  <span className="big-card__body">{copy.body}</span>
-                </span>
-                <ChevronRight className="icon big-card__chevron" aria-hidden="true" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-labelledby="quick-title">
-        <h2 id="quick-title" className="section-title">
-          {home.quickTitle}
-        </h2>
-        <ul className="quick-grid">
-          {quick.map(({ to, Icon, label }) => (
-            <li key={to}>
-              <Link to={to} className="quick">
-                <Icon className="icon" aria-hidden="true" />
-                <span>{label}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
+        </>
+      )}
     </div>
   )
 }
