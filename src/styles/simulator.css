@@ -475,3 +475,103 @@
   /* Con tan poco espacio, la barra deja de estar fija para no tapar la práctica. */
   .sim-bottom { position: static; box-shadow: none; }
 }
+
+/* ---------- Piezas de la Fase 5 ---------- */
+/* Señales después de acertar (en la nota del coach) */
+.coach__explain {
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 3px solid var(--primary);
+}
+.coach__explain p { margin: 0; }
+.coach__explain-title { font-weight: 700; color: var(--primary); margin-bottom: var(--space-1) !important; }
+
+/* Decisión: "Es seguro" / "Es una estafa" (ícono + texto, no solo color) */
+.sim-decision { display: flex; flex-direction: column; gap: var(--space-2); }
+.sim-decision__prompt { margin: 0; font-weight: 700; font-size: 1.05rem; }
+.sim-decision__options { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.sim-decision__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-2);
+  border-radius: 1rem;
+  border: 3px solid;
+  background: #FFFFFF;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+}
+.sim-decision__btn .icon { width: 1.8rem; height: 1.8rem; }
+.sim-decision__btn--safe { border-color: #1D6B3A; color: #14522C; }
+.sim-decision__btn--danger { border-color: #9B2C1F; color: #7A1A10; }
+.sim-decision__btn--neutral { border-color: #45524F; color: #1C2629; }
+
+/* Llamada entrante */
+.sim-call {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-3);
+  border-radius: 1rem;
+  background: #1C2629;
+  color: #FFFFFF;
+  text-align: center;
+}
+.sim-call p { margin: 0; }
+.sim-call__label { font-size: 0.85rem; color: #CFD8D3; }
+.sim-call__caller { font-size: 1.3rem; font-weight: 700; }
+.sim-call__note { font-size: 0.9rem; color: #CFD8D3; }
+.sim-call__transcript {
+  margin-top: var(--space-2) !important;
+  padding: var(--space-3);
+  border-radius: 0.8rem;
+  background: #2E3B40;
+  font-style: italic;
+  text-align: left;
+}
+
+/* Placa de carro */
+.sim-plate { display: flex; flex-direction: column; align-items: center; gap: var(--space-1); }
+.sim-plate p { margin: 0; }
+.sim-plate__label { font-weight: 700; font-size: 0.9rem; }
+.sim-plate__number {
+  padding: 0.2rem 1.2rem;
+  border: 4px solid #1C2629;
+  border-radius: 0.6rem;
+  background: #FFE08A;
+  color: #1C2629;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.sim-plate__detail { font-size: 0.85rem; color: #45524F; }
+
+/* Calificación con estrellas */
+.sim-rating { display: flex; flex-direction: column; align-items: center; gap: var(--space-2); }
+.sim-rating__label { margin: 0; font-weight: 700; }
+.sim-rating__stars { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-1); width: 100%; }
+.sim-star {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: var(--space-1) 0;
+  border: 2px solid #D0D6DA;
+  border-radius: 0.8rem;
+  background: #FFFFFF;
+  color: #8A5A00;
+}
+.sim-star .icon { width: 1.5rem; height: 1.5rem; fill: #FFD24D; }
+.sim-star__n { font-size: 0.8rem; font-weight: 700; color: #1C2629; }
+
+@media (max-width: 300px) {
+  .sim-decision__options { grid-template-columns: 1fr; }
+  .sim-rating__stars { grid-template-columns: repeat(3, 1fr); }
+}
+:root[data-font='xlarge'] .sim-decision__options { grid-template-columns: 1fr; }

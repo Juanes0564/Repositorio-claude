@@ -1,6 +1,7 @@
-import { CheckCircle2, ChevronRight, Info, MessageSquareText, Mic, Image, TriangleAlert, UserRound } from 'lucide-react'
+import { CheckCircle2, ChevronRight, Info, MessageSquareText, Mic, Image, PhoneIncoming, ShieldAlert, ShieldCheck, Star, TriangleAlert, UserRound } from 'lucide-react'
 import { PlatformMark } from '../../components/PlatformMark'
-import { common } from '../../content'
+import { common, simulator } from '../../content'
+import { starId } from '../engine'
 import type { SimBlock } from '../types'
 import { useSim } from '../SimContext'
 import { simIcons } from './icons'
@@ -191,6 +192,62 @@ export function Block({ block }: { block: SimBlock }) {
               </div>
             </div>
           )}
+        </div>
+      )
+
+    case 'decision':
+      return (
+        <div className="sim-decision">
+          {block.prompt && <p className="sim-decision__prompt">{text(block.prompt)}</p>}
+          <div className="sim-decision__options">
+            {block.options.map((o) => {
+              const Icon = o.tone === 'safe' ? ShieldCheck : o.tone === 'danger' ? ShieldAlert : null
+              return (
+                <SimButton key={o.id} id={o.id} className={`sim-decision__btn sim-decision__btn--${o.tone}`}>
+                  {Icon && <Icon className="icon" aria-hidden="true" />}
+                  <span>{text(o.label)}</span>
+                </SimButton>
+              )
+            })}
+          </div>
+        </div>
+      )
+
+    case 'call':
+      return (
+        <div className="sim-call">
+          <p className="sim-call__label">
+            <PhoneIncoming className="icon icon--inline" aria-hidden="true" /> {simulator.incomingCall}
+          </p>
+          <p className="sim-call__caller">{text(block.caller)}</p>
+          {block.note && <p className="sim-call__note">{text(block.note)}</p>}
+          <p className="sim-call__transcript">“{text(block.transcript)}”</p>
+        </div>
+      )
+
+    case 'plate':
+      return (
+        <div className="sim-plate">
+          <p className="sim-plate__label">{text(block.label)}</p>
+          <p className="sim-plate__number">{block.plate}</p>
+          {block.detail && <p className="sim-plate__detail">{text(block.detail)}</p>}
+        </div>
+      )
+
+    case 'rating':
+      return (
+        <div className="sim-rating">
+          <p className="sim-rating__label">{text(block.label)}</p>
+          <div className="sim-rating__stars">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <SimButton key={n} id={starId(block.id, n)} className="sim-star" label={simulator.stars(n)}>
+                <Star className="icon" aria-hidden="true" />
+                <span className="sim-star__n" aria-hidden="true">
+                  {n}
+                </span>
+              </SimButton>
+            ))}
+          </div>
         </div>
       )
 

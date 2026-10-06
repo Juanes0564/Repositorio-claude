@@ -35,6 +35,10 @@ export const ERRORS_BEFORE_HIGHLIGHT = 2
 
 export const KEY_DELETE = 'delete'
 
+export function starId(ratingId: string, n: number): string {
+  return `${ratingId}.star.${n}`
+}
+
 export function keyId(keypadId: string, key: string): string {
   return `${keypadId}.key.${key}`
 }
@@ -151,6 +155,12 @@ export function tappableIds(step: FlowStep): string[] {
         break
       case 'keypad':
         ids.push(b.submit.id)
+        break
+      case 'decision':
+        ids.push(...b.options.map((o) => o.id))
+        break
+      case 'rating':
+        ids.push(...[1, 2, 3, 4, 5].map((n) => starId(b.id, n)))
         break
       case 'sms':
         if (b.link) ids.push(b.link.id)

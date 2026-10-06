@@ -68,6 +68,14 @@ function SimulatorRun({ flow }: { flow: Flow }) {
       ?.scrollIntoView?.({ block: 'center', behavior: reduce ? 'auto' : 'smooth' })
   }, [highlight])
 
+  // Si el paso tiene explicación (las señales), al acertar se lleva a la vista.
+  const explainRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (!stepState.done || !step.explain) return
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    explainRef.current?.scrollIntoView?.({ block: 'start', behavior: reduce ? 'auto' : 'smooth' })
+  }, [stepState.done, step.explain])
+
   // Al terminar, se guarda el avance.
   useEffect(() => {
     if (state.finished) markSimulatorDone(flow.skill, mode)
@@ -180,6 +188,14 @@ function SimulatorRun({ flow }: { flow: Flow }) {
                 <strong>{simulator.hintLabel}:</strong> {text(step.hint)}
               </span>
             </p>
+          )}
+          {step.explain && stepState.done && (
+            <div className="coach__explain" aria-live="polite" ref={explainRef}>
+              <p className="coach__explain-title">
+                <ShieldCheck className="icon icon--inline" aria-hidden="true" /> {simulator.explainTitle}
+              </p>
+              <p>{text(step.explain)}</p>
+            </div>
           )}
           {speech.speaking && (
             <button type="button" className="btn btn--secondary" onClick={speech.stop}>

@@ -1,13 +1,25 @@
 import { describe, expect, it } from 'vitest'
 import { flows } from '.'
 import { platforms } from '../platforms'
-import { tappableIds } from '../../sim/engine'
+import { initialState, simReducer, tappableIds, type SimAction } from '../../sim/engine'
 import { resolveCopy, type Copy } from '../types'
 import { SKILL_IDS } from '../../lib/storage'
 
 const words = (c: Copy) => resolveCopy(c, false).split(/\s+/).filter(Boolean).length
 
 describe('flujos de práctica (datos)', () => {
+  it('hay prácticas de las habilidades de las fases 2 y 5', () => {
+    const skills = new Set(flows.map((f) => f.skill))
+    for (const s of ['transfers', 'medical', 'transport', 'shopping', 'scams'] as const) expect(skills.has(s), s).toBe(true)
+  })
+
+  it('la práctica de estafas tiene casos seguros y estafas', () => {
+    const scams = flows.find((f) => f.skill === 'scams')!
+    const targets = scams.steps.map((s) => (s.target.kind === 'tap' ? s.target.id : ''))
+    expect(targets.some((t) => t.endsWith('-safe'))).toBe(true)
+    expect(targets.some((t) => t.endsWith('-scam'))).toBe(true)
+  })
+
   it('los ids de los flujos son únicos', () => {
     expect(new Set(flows.map((f) => f.id)).size).toBe(flows.length)
   })
@@ -46,6 +58,29 @@ describe('flujos de práctica (datos)', () => {
 
       it('las instrucciones del coach son cortas (≤ 12 palabras)', () => {
         for (const step of flow.steps) expect(words(step.coach), step.id).toBeLessThanOrEqual(12)
+      })
+
+      it('se puede completar de principio a fin', () => {
+        let state = initialState(flow)
+        const act = (a: SimAction) => (state = simReducer(flow, state, a))
+        for (const step of flow.steps) {
+          if (step.target.kind === 'tap') act({ type: 'tap', id: step.target.id })
+          else {
+            const { keypadId, expected } = step.target
+            for (const key of expected) act({ type: 'key', keypadId, key })
+            const keypad = step.screen.blocks.find((b) => b.type === 'keypad' && b.id === keypadId)
+            if (keypad?.type === 'keypad') act({ type: 'tap', id: keypad.submit.id })
+          }
+          expect(state.feedback, step.id).toBe('success')
+          act({ type: 'next' })
+        }
+        expect(state.finished).toBe(true)
+      })
+
+      it('cada paso de decisión explica las señales', () => {
+        for (const step of flow.steps) {
+          if (step.screen.blocks.some((b) => b.type === 'decision')) expect(step.explain, step.id).toBeDefined()
+        }
       })
 
       it('el contenido de dinero y seguridad está marcado para revisión', () => {

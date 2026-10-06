@@ -101,6 +101,17 @@ Pídeles que digan con sus palabras: "enviar plata a un hijo", "pedir cita con e
 - [ ] (Cuando haya video) "Ver el video aquí" carga el video; sin tocarlo, no se carga nada.
 - [ ] Una persona del equipo revisa los textos de los 8 talleres (todos están como borrador).
 
+## Fase 5 — Más prácticas
+
+- [ ] La app habla de "usted" en todas las pantallas (menos el lema "Aprende, practica y hazlo tú").
+- [ ] **Citas médicas** (EPS Salud Ejemplo): clave 2468, Citas, medicina general, Sede Centro, jueves 9:30, confirmar y ver dónde cancelar.
+- [ ] **Transporte** (Transporte Ejemplo): destino, precio, pedir, compartir viaje, comparar placas, pagar y calificar con 5 estrellas.
+- [ ] **Compras** (Tienda Ejemplo): buscar, olla de presión, carrito con total y envío, dirección, pago contra entrega, confirmar y seguimiento.
+- [ ] **Estafas** (Chat Ejemplo): 6 casos. Si se equivoca, el mensaje es amable. Al acertar aparece "Las señales".
+- [ ] Hay 2 casos que **sí son seguros**. Preguntar a los participantes si los entienden.
+- [ ] Desde el copiloto, "Practicar cómo identificar estafas" abre la práctica de estafas.
+- [ ] Una persona del equipo revisa los textos de las estafas (borrador).
+
 ## Pruebas con personas (cuando el equipo pueda)
 
 - [ ] Probar en un Android real de gama baja.

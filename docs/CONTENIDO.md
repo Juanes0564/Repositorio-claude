@@ -55,6 +55,8 @@ Si un texto necesita una versión más corta para el modo sencillo, escríbelo a
 
 ## Cómo agregar una práctica al simulador
 
+Prácticas actuales: `transfer-bank.ts` (Banco Ejemplo), `appointment-eps.ts` (EPS Salud Ejemplo), `ride-transport.ts` (Transporte Ejemplo), `shopping-store.ts` (Tienda Ejemplo) y `scams-check.ts` (Chat Ejemplo, estafas).
+
 Cada práctica es un archivo de datos en `src/content/flows/`. No hay que programar pantallas: el simulador arma cada pantalla con piezas que ya existen.
 
 1. Copia `src/content/flows/transfer-bank.ts` con un nombre nuevo, por ejemplo `appointment-eps.ts`.
@@ -83,6 +85,13 @@ Cada práctica es un archivo de datos en `src/content/flows/`. No hay que progra
 | `sms` | Mensaje de texto recibido (puede tener un enlace que se toca) |
 | `chat` | Conversación con botones para escribir, enviar audio, foto… |
 | `settings` | Filas de ajustes con interruptor o flecha |
+| `decision` | Botones grandes para decidir ("Es seguro" / "Es una estafa"). `tone`: `safe`, `danger` o `neutral` |
+| `call` | Llamada entrante: quién llama y lo que dice |
+| `plate` | Placa de un carro |
+| `rating` | Calificar con estrellas (el objetivo se escribe `'<id>.star.5'`) |
+
+   - `explain` (opcional): "Las señales". Aparece después de acertar. Úsalo en las decisiones para explicar por qué.
+   - `success` (opcional): qué decir al acertar (por ejemplo "¡Muy bien! Es una estafa.").
 
 4. Escribe `finish.learned` (qué aprendió) y `finish.tip` (consejo de seguridad).
 5. Deja `reviewed: false` hasta que una persona del equipo revise el contenido.

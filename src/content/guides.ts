@@ -94,7 +94,7 @@ export const guides: Guide[] = [
     skill: 'medical',
     title: 'Sacar una cita médica',
     intro: tv('Vamos paso a paso. Ten a mano tu documento.', 'Vamos paso a paso. Tenga a mano su documento.'),
-    practicePath: '/practicar?categoria=salud',
+    practicePath: '/practicar/eps/appointment-eps',
     reviewed: false,
     steps: [
       {
@@ -156,7 +156,7 @@ export const guides: Guide[] = [
     skill: 'transport',
     title: 'Pedir un transporte',
     intro: tv('Vamos paso a paso. Antes de subir, siempre revisa la placa.', 'Vamos paso a paso. Antes de subir, siempre revise la placa.'),
-    practicePath: '/practicar?categoria=transporte',
+    practicePath: '/practicar/transport/ride-transport',
     reviewed: false,
     steps: [
       { text: tv('Abre la aplicación de transporte que usas.', 'Abra la aplicación de transporte que usa.'), detail: tv(
@@ -194,7 +194,7 @@ export const guides: Guide[] = [
     skill: 'shopping',
     title: 'Comprar por internet',
     intro: tv('Vamos paso a paso. Compra solo en tiendas que conozcas.', 'Vamos paso a paso. Compre solo en tiendas que conozca.'),
-    practicePath: '/practicar?categoria=compras',
+    practicePath: '/practicar/store/shopping-store',
     reviewed: false,
     steps: [
       { text: tv('Abre la aplicación de la tienda que conoces.', 'Abra la aplicación de la tienda que conoce.'), detail: tv(

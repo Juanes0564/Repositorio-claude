@@ -119,4 +119,32 @@ describe('pantalla 4: simulador de transferencia', () => {
     renderAt('#/practicar/bank/transfer-bank?modo=libre')
     expect(screen.getByText('Con guía')).toBeTruthy()
   })
+
+  it('estafas: decide, recibe un aviso amable si se equivoca y ve las señales al acertar', () => {
+    renderAt('#/practicar/chat/scams-check')
+    expect(screen.getByText('PRÁCTICA – no es real')).toBeTruthy()
+    tap('Es seguro')
+    expect(screen.getByRole('status').textContent).toMatch(/enlace/)
+    expect(screen.queryByText('Las señales')).toBeNull()
+    tap('Es una estafa')
+    expect(screen.getByRole('status').textContent).toMatch(/Es una estafa/)
+    expect(screen.getByText('Las señales')).toBeTruthy()
+    expect(screen.getByText(/número de (tu|su) tarjeta/)).toBeTruthy()
+  })
+
+  it('transporte: calificar con estrellas', () => {
+    renderAt('#/practicar/transport/ride-transport')
+    tap(/Transporte Ejemplo/); next()
+    tap(/Centro de salud Ejemplo/); next()
+    tap(/Económico/); next()
+    tap('Pedir viaje'); next()
+    tap('Compartir viaje'); next()
+    tap(/Coinciden, me subo/); next()
+    tap('Pagué en efectivo'); next()
+    tap('4 estrellas')
+    expect(screen.getByRole('status').textContent).toMatch(/quinta estrella|última estrella/)
+    tap('5 estrellas')
+    expect(screen.getByRole('status').textContent).toMatch('¡Bien!')
+  })
 })
+

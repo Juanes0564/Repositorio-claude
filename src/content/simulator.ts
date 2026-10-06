@@ -96,5 +96,8 @@ export const simulator = {
   },
   notFound: 'No encontramos esta práctica.',
   phoneHome: 'Pantalla de inicio del celular',
+  stars: (n: number) => (n === 1 ? '1 estrella' : `${n} estrellas`),
+  incomingCall: 'Llamada entrante',
+  explainTitle: 'Las señales',
   practiceScreen: 'Pantalla de práctica',
 }

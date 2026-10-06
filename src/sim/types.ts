@@ -90,6 +90,14 @@ export type SimBlock =
       messages: { from: 'me' | 'them'; text: Copy; kind?: 'text' | 'audio' | 'photo' }[]
       composer?: { placeholder: Copy; buttons: (Tappable & { icon: SimIconName })[] }
     }
+  /** Decisión con botones grandes, por ejemplo "Es seguro" / "Es una estafa". */
+  | { type: 'decision'; prompt?: Copy; options: (Tappable & { tone: 'safe' | 'danger' | 'neutral' })[] }
+  /** Llamada entrante: quién llama y lo que dice. */
+  | { type: 'call'; caller: Copy; note?: Copy; transcript: Copy }
+  /** Placa de un carro, como se ve en la calle. */
+  | { type: 'plate'; label: Copy; plate: string; detail?: Copy }
+  /** Calificar con estrellas: cada estrella es tocable (id + ".star." + número). */
+  | { type: 'rating'; id: string; label: Copy }
   | {
       type: 'settings'
       rows: (Tappable & { icon?: SimIconName; value?: Copy; control: 'toggle' | 'chevron'; on?: boolean })[]
@@ -98,6 +106,7 @@ export type SimBlock =
 export interface SimScreen {
   /** 'phone' = pantalla de inicio del celular; 'platform' = dentro de la app ficticia. */
   chrome: 'phone' | 'platform'
+  /** Título de la pantalla. En 'phone' reemplaza "Pantalla de inicio del celular" (por ejemplo "Mensajes"). */
   title?: Copy
   blocks: SimBlock[]
 }
@@ -120,6 +129,8 @@ export interface FlowStep {
   wrong?: Copy
   /** Mensaje al acertar. Si falta, "¡Bien!". */
   success?: Copy
+  /** Explicación que aparece después de acertar (por ejemplo, las señales de una estafa). */
+  explain?: Copy
 }
 
 export interface Flow {

@@ -463,7 +463,7 @@ function MessageView({
         <button type="button" className="btn btn--primary btn--block" onClick={() => onAnswer(null)}>
           {messageHelp.otherQuestion}
         </button>
-        <button type="button" className="btn btn--option btn--block" onClick={() => navigate('/practicar')}>
+        <button type="button" className="btn btn--option btn--block" onClick={() => navigate('/practicar/chat/scams-check')}>
           <Dumbbell className="icon" aria-hidden="true" />
           <span>{copilot.message.practice}</span>
         </button>

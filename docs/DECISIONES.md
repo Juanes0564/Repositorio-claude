@@ -2,6 +2,17 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Fase 5
+
+1. **El mismo motor para todo.** Las 4 prácticas nuevas son solo datos (`src/content/flows/`). No se duplicó código: se agregaron piezas reutilizables al motor.
+2. **Piezas nuevas de pantalla simulada:** `decision` (botones grandes como "Es seguro" / "Es una estafa", con ícono y texto, no solo color), `call` (llamada entrante con lo que dice quien llama), `plate` (placa de carro) y `rating` (calificar con estrellas; cada estrella dice su número).
+3. **Campo nuevo `explain` en cada paso:** aparece en un recuadro "Las señales" después de acertar, y la pantalla sube sola para mostrarlo. Lo usan las decisiones (estafas y revisar la placa).
+4. **"¿Es seguro o es una estafa?"** tiene 6 casos: mensaje con enlace y amenaza de bloqueo, llamada falsa del banco que pide el código, premio que pide pagar envío, "nieto" con número nuevo que pide plata urgente y en secreto, y **dos casos seguros** (mensaje de la hija guardada en contactos y aviso de compra del banco sin enlace que remite al número de la tarjeta), para enseñar a mirar las señales y no a desconfiar de todo.
+5. **Los "enlaces" de las estafas son texto inventado** (`banco-ejemplo-verifica.falso`): no se pueden tocar ni abrir y no imitan dominios reales.
+6. **Dónde está cada práctica:** citas en EPS Salud Ejemplo, transporte en Transporte Ejemplo, compras en Tienda Ejemplo y estafas en Chat Ejemplo (es donde llegan mensajes). El copiloto ("Practicar cómo identificar estafas"), las guías y los talleres llevan directo a cada una.
+7. **Billetera Ejemplo y Domicilios Ejemplo siguen en "Muy pronto".** El brief las nombra junto a transferencias y compras, pero los pasos son los mismos que Banco Ejemplo y Tienda Ejemplo. Se pueden agregar después copiando esos archivos.
+8. **Pasos que "escriben" texto** (buscar "olla", elegir destino) se simulan con listas y campos que se tocan, porque el simulador no tiene teclado de letras. Así nadie escribe datos reales.
+
 ## Trato: "usted" (decidido por el equipo antes de la Fase 5)
 
 - La app trata de **"usted"** (`TREATMENT = 'usted'` en `src/content/treatment.ts`). Volver a "tú" es cambiar esa línea.

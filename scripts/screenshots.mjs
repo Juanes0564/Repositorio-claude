@@ -72,7 +72,7 @@ async function shoot(name, { w = 390, h = 844, scale = 1, data, path = '#/', fra
 const transfer = '#/practicar/bank/transfer-bank'
 const btn = (name) => async (page) => page.getByRole('button', { name }).first().click()
 const typeCopilot = (text) => async (page) => {
-  await page.getByLabel(/escríbelo aquí/i).fill(text)
+  await page.getByLabel(/escr[íi]b[ae]lo aquí/i).fill(text)
   await page.getByRole('button', { name: 'Enviar' }).click()
 }
 const micOn = { voiceInput: 'granted' }
@@ -121,9 +121,9 @@ const shots = {
   'copilot-390': { data: done(), path: '#/copiloto' },
   'copilot-360': { w: 360, h: 640, data: done(), path: '#/copiloto' },
   'copilot-mic-390': { mic: true, data: done(), path: '#/copiloto' },
-  'copilot-consent-390': { mic: true, data: done(), path: '#/copiloto', actions: [btn(/Toca para hablar/)] },
-  'copilot-listening-390': { mic: true, data: done({ settings: micOn }), path: '#/copiloto', actions: [btn(/Toca para hablar/), say('quiero mandar plata a')] },
-  'copilot-confirm-390': { mic: true, data: done({ settings: micOn }), path: '#/copiloto', actions: [btn(/Toca para hablar/), say('quiero mandar plata a mi hija', true)] },
+  'copilot-consent-390': { mic: true, data: done(), path: '#/copiloto', actions: [btn(/To(ca|que) para hablar/)] },
+  'copilot-listening-390': { mic: true, data: done({ settings: micOn }), path: '#/copiloto', actions: [btn(/To(ca|que) para hablar/), say('quiero mandar plata a')] },
+  'copilot-confirm-390': { mic: true, data: done({ settings: micOn }), path: '#/copiloto', actions: [btn(/To(ca|que) para hablar/), say('quiero mandar plata a mi hija', true)] },
   'copilot-choices-390': { data: done(), path: '#/copiloto', actions: [typeCopilot('quiero pagar en la tienda con el banco')] },
   'copilot-lost-390': { data: done(), path: '#/copiloto', actions: [typeCopilot('el clima de mañana')] },
   'copilot-guide-390': { data: done(), path: '#/copiloto', actions: [typeCopilot('necesito un taxi'), btn('Sí'), btn('Ya lo hice')] },
@@ -152,6 +152,22 @@ const shots = {
   'workshop-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: '#/talleres/seguridad' },
   'workshop-zoom200': { w: 180, h: 320, scale: 4, data: done(), path: '#/talleres/compras' },
   'workshops-framed': { w: 1280, h: 920, data: done(), path: '#/talleres', frame: true },
+  'eps-slot-390': { data: done(), path: '#/practicar/eps/appointment-eps', actions: [sim.tap(/EPS Salud Ejemplo/), sim.next, sim.type('2468'), sim.tap('Entrar'), sim.next, sim.tap(/Citas/), sim.next, sim.tap(/Medicina general/), sim.next, sim.tap(/Sede Centro/), sim.next] },
+  'eps-receipt-390': { data: done(), path: '#/practicar/eps/appointment-eps', actions: [sim.tap(/EPS Salud Ejemplo/), sim.next, sim.type('2468'), sim.tap('Entrar'), sim.next, sim.tap(/Citas/), sim.next, sim.tap(/Medicina general/), sim.next, sim.tap(/Sede Centro/), sim.next, sim.tap(/Jueves/), sim.next, sim.tap('Confirmar cita'), sim.next] },
+  'ride-driver-390': { data: done(), path: '#/practicar/transport/ride-transport', actions: [sim.tap(/Transporte Ejemplo/), sim.next, sim.tap(/Centro de salud/), sim.next, sim.tap(/Económico/), sim.next, sim.tap('Pedir viaje'), sim.next] },
+  'ride-plate-390': { data: done(), path: '#/practicar/transport/ride-transport', actions: [sim.tap(/Transporte Ejemplo/), sim.next, sim.tap(/Centro de salud/), sim.next, sim.tap(/Económico/), sim.next, sim.tap('Pedir viaje'), sim.next, sim.tap('Compartir viaje'), sim.next, sim.tap(/Coinciden/)] },
+  'ride-rating-390': { data: done(), path: '#/practicar/transport/ride-transport', actions: [sim.tap(/Transporte Ejemplo/), sim.next, sim.tap(/Centro de salud/), sim.next, sim.tap(/Económico/), sim.next, sim.tap('Pedir viaje'), sim.next, sim.tap('Compartir viaje'), sim.next, sim.tap(/Coinciden/), sim.next, sim.tap('Pagué en efectivo'), sim.next, sim.tap('3 estrellas'), sim.tap('2 estrellas')] },
+  'shop-cart-390': { data: done(), path: '#/practicar/store/shopping-store', actions: [sim.tap(/Buscar productos/), sim.next, sim.tap(/Olla de presión/), sim.next, sim.tap('Agregar al carrito'), sim.next] },
+  'shop-payment-390': { data: done(), path: '#/practicar/store/shopping-store', actions: [sim.tap(/Buscar productos/), sim.next, sim.tap(/Olla de presión/), sim.next, sim.tap('Agregar al carrito'), sim.next, sim.tap('Continuar compra'), sim.next, sim.tap('Usar esta dirección'), sim.next] },
+  'scam-sms-390': { data: done(), path: '#/practicar/chat/scams-check' },
+  'scam-sms-wrong-390': { data: done(), path: '#/practicar/chat/scams-check', actions: [sim.tap('Es seguro')] },
+  'scam-sms-right-390': { data: done(), path: '#/practicar/chat/scams-check', actions: [sim.tap('Es una estafa')] },
+  'scam-call-390': { data: done(), path: '#/practicar/chat/scams-check', actions: [sim.tap('Es una estafa'), sim.next] },
+  'scam-family-390': { data: done(), path: '#/practicar/chat/scams-check', actions: [sim.tap('Es una estafa'), sim.next, sim.tap('Es una estafa'), sim.next, sim.tap('Es una estafa'), sim.next] },
+  'scam-safe-right-390': { data: done(), path: '#/practicar/chat/scams-check', actions: [sim.tap('Es una estafa'), sim.next, sim.tap('Es una estafa'), sim.next, sim.tap('Es una estafa'), sim.next, sim.tap('Es una estafa'), sim.next, sim.tap('Es seguro')] },
+  'scam-xlarge-360': { w: 360, h: 640, data: done({ settings: xlarge }), path: '#/practicar/chat/scams-check' },
+  'scam-zoom200': { w: 180, h: 320, scale: 4, data: done(), path: '#/practicar/chat/scams-check' },
+  'platform-chat-390': { data: done(), path: '#/practicar/chat' },
   'sim-framed': { w: 1280, h: 920, data: done(), path: transfer, frame: true, actions: [sim.tap(/Banco Ejemplo/), sim.next] },
 }
 

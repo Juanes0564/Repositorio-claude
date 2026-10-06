@@ -48,10 +48,10 @@ Criterios:
 - [x] 8 talleres completos con `reviewed: false`; incluye taller de accesibilidad del celular.
 - [x] `docs/CONTENIDO.md` explica cómo agregar taller y video.
 
-## Fase 5 — Simuladores 2 a 5
+## Fase 5 — Simuladores 2 a 5 ✅
 Criterios:
-- [ ] Citas médicas, transporte, compras (con pago contra entrega) y estafas (decisiones "Es seguro"/"Es una estafa" con explicación de señales).
-- [ ] Sin duplicar código; nuevos componentes reutilizables si hacen falta.
+- [x] Citas médicas, transporte, compras (con pago contra entrega) y estafas (decisiones "Es seguro"/"Es una estafa" con explicación de señales).
+- [x] Sin duplicar código; nuevos componentes reutilizables si hacen falta.
 
 ## Fase 6 — Simuladores 6 a 8
 Criterios:

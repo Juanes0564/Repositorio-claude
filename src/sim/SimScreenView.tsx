@@ -21,7 +21,7 @@ export function SimScreenView({ screen, platform }: { screen: SimScreen; platfor
           </span>
         </div>
       ) : (
-        <p className="sim-phonebar">{simulator.phoneHome}</p>
+        <p className="sim-phonebar">{screen.title ? text(screen.title) : simulator.phoneHome}</p>
       )}
       <div className="sim-body">
         {screen.blocks.map((b, i) => (
