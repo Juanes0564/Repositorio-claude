@@ -1,0 +1,40 @@
+import {
+  Bell, Calendar, Camera, Car, Check, CircleHelp, CreditCard, Download, History, House, Image,
+  Link, Lock, MapPin, MessageCircle, Mic, Phone, Plane, Receipt, Search, Send, ShoppingBag, ShoppingCart, Star,
+  Sun, Type, UserRound, Video, Volume2, Wifi, type LucideIcon,
+} from 'lucide-react'
+import type { SimIconName } from '../types'
+
+export const simIcons: Record<SimIconName, LucideIcon> = {
+  send: Send,
+  pay: Receipt,
+  history: History,
+  help: CircleHelp,
+  user: UserRound,
+  card: CreditCard,
+  calendar: Calendar,
+  pin: MapPin,
+  car: Car,
+  cart: ShoppingCart,
+  bag: ShoppingBag,
+  chat: MessageCircle,
+  phone: Phone,
+  video: Video,
+  mic: Mic,
+  camera: Camera,
+  image: Image,
+  bell: Bell,
+  wifi: Wifi,
+  sun: Sun,
+  volume: Volume2,
+  text: Type,
+  plane: Plane,
+  download: Download,
+  lock: Lock,
+  home: House,
+  search: Search,
+  star: Star,
+  check: Check,
+  link: Link,
+}
+

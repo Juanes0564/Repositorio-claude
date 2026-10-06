@@ -1,0 +1,101 @@
+/* Pantalla 6 (talleres), tarjetas, video y mini repaso. */
+
+.illustration { display: block; width: 100%; height: auto; }
+.illustration--md { max-width: 12rem; max-height: min(18vh, 9rem); margin: 0 auto; }
+.illustration--sm { width: 100%; height: 100%; }
+
+.workshop-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+.workshop-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 2px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 2px 0 var(--c-shadow);
+  min-height: calc(var(--tap) * 1.3);
+}
+:root[data-contrast='high'] .workshop-card { border: 3px solid var(--ink); }
+.workshop-card > .icon { color: var(--primary); }
+.workshop-card__art {
+  flex: none;
+  width: 4.2rem;
+  height: 3.2rem;
+  padding: 0.2rem;
+  border-radius: 0.8rem;
+  background: var(--primary-soft);
+}
+.workshop-card__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.1rem; }
+.workshop-card__title { font-weight: 700; font-size: 1.05rem; line-height: 1.25; }
+.workshop-card__summary { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.3; }
+.workshop-card__meta { display: flex; flex-wrap: wrap; gap: 0 var(--space-3); font-size: 0.85rem; color: var(--ink-soft); }
+.workshop-card__seen { color: var(--primary); font-weight: 700; }
+
+.workshop { gap: var(--space-3); }
+.page > .coach__step { align-self: flex-start; }
+.workshop-slide .illustration { width: auto; }
+.workshop-slide { align-items: stretch; gap: var(--space-3); }
+.workshop-slide .illustration { background: var(--primary-soft); border-radius: var(--radius); padding: var(--space-2); }
+.workshop-slide__title { font-size: 1.4rem; margin: 0; }
+.workshop-slide__body { font-size: 1.1rem; margin: 0; }
+.workshop-slide__tip {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  margin: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--accent-soft);
+  border: 3px solid var(--accent);
+}
+:root[data-contrast='high'] .workshop-slide__tip { border-color: var(--ink); }
+.workshop-slide__tip .icon { margin-top: 0.1rem; }
+.workshop { padding-bottom: 0; }
+.workshop-nav {
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-2);
+  margin: auto calc(-1 * var(--space-4)) 0;
+  padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 2px solid var(--border-soft);
+  box-shadow: 0 -4px 12px var(--c-shadow);
+}
+
+/* Video opcional */
+.video__frame { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); overflow: hidden; background: #000; }
+.video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* Mini repaso */
+.quiz__question { font-size: 1.3rem; margin: 0; }
+.quiz__options { display: flex; flex-direction: column; gap: var(--space-2); }
+.btn--option-light {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  text-align: left;
+  background: var(--surface);
+  color: var(--ink);
+  border: 3px solid var(--border);
+}
+.btn--option-light:disabled { cursor: default; opacity: 1; }
+.btn--option-light.is-right { border-color: var(--primary); background: var(--primary-soft); box-shadow: inset 0 0 0 2px var(--primary); }
+.btn--option-light.is-wrong { border-style: dashed; border-color: var(--danger); }
+.btn--option-light.is-dim { color: var(--ink-soft); }
+.quiz__tag { flex-basis: 100%; font-size: 0.85rem; font-weight: 700; }
+.quiz__verdict { font-weight: 700; font-size: 1.15rem; }
+.panel--good { background: var(--primary-soft); border-color: var(--primary); }
+
+:root[data-font='large'] .workshop-nav .icon,
+:root[data-font='xlarge'] .workshop-nav .icon { display: none; }
+:root[data-font='large'] .workshop-nav .btn,
+:root[data-font='xlarge'] .workshop-nav .btn { padding-inline: var(--space-2); }
+@media (max-width: 300px) {
+  .workshop-nav { grid-template-columns: 1fr; position: static; box-shadow: none; margin: 0; padding-inline: 0; background: transparent; border: 0; }
+  .workshop-card__art { display: none; }
+}
