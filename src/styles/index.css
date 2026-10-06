@@ -213,6 +213,8 @@ a { color: var(--primary); }
 
 /* ---------- Estructura de pantalla ---------- */
 .content {
+  /* Con letra muy grande o zoom, una palabra larga se parte antes de salirse de la pantalla. */
+  overflow-wrap: anywhere;
   flex: 1;
   min-height: 0;
   overflow-y: auto;

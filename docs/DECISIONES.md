@@ -2,6 +2,17 @@
 
 Registro de decisiones técnicas y de diseño.
 
+## Fase 8
+
+1. **Lighthouse (móvil):** Rendimiento **97**, Accesibilidad **100**, Buenas prácticas **100**. Se midió la primera pantalla (bienvenida), que es la que ve una persona nueva; Lighthouse no puede entrar con datos guardados. Las demás pantallas se revisaron con axe (ver punto 3).
+2. **No se dividió el código en partes.** La app es un solo archivo de ~145 KB comprimido; con Rendimiento 97 no hace falta, y dividirlo complicaría el trabajo sin conexión. Se subió el límite del aviso de tamaño a 650 KB (`vite.config.ts`).
+3. **Pruebas de humo en navegador (`npm run test:e2e`, 30 pruebas):** bienvenida, práctica completa con avance en el Pasaporte, copiloto sin micrófono, taller completo, certificado, **accesibilidad automática con axe en 11 pantallas, en modo normal y en modo sencillo con letra Muy grande** (cero problemas serios o críticos), teclado (saltar al contenido, foco visible, navegar con Tab y Enter), sin conexión, zoom al 200 % y **ningún pedido a internet**.
+4. **Zoom al 200 % / letra muy grande:** las palabras largas se parten antes de salirse de la pantalla (`overflow-wrap: anywhere` en el contenido) y los íconos decorativos se ocultan en pantallas muy angostas.
+5. **Sin conexión:** verificado con el service worker: tras abrir la app una vez, se recarga sin internet y se pueden abrir talleres y prácticas. Lo único que necesita internet es el micrófono (y los videos, si los hubiera).
+6. **Revisión de llamadas externas:** el código no usa `fetch`, `XMLHttpRequest`, WebSocket ni similares. Las únicas direcciones en el código son `wa.me` (apagado), `youtube-nocookie.com` y `youtube.com` (solo con `videoUrl`). En la app construida aparecen otras direcciones, pero solo dentro de mensajes de error de librerías o como base para procesar enlaces: nunca se visitan.
+7. **Publicación gratis:** se agregó `.github/workflows/publicar.yml` (GitHub Pages, corre lint y pruebas antes de publicar) y `public/_headers` para Netlify/Cloudflare (el service worker siempre se revisa).
+8. **Documento para revisar contenido:** `npm run content:export` genera `docs/REVISION-CONTENIDO.md` con todos los textos de prácticas, guías, ayuda con mensajes y talleres, en el trato actual, para que una persona del equipo lo revise sin abrir código.
+
 ## Fase 7
 
 1. **Modo sencillo (pantalla 7):** el interruptor general enciende todo (letra Grande, íconos grandes, menos opciones, lenguaje sencillo, alto contraste, voz lenta). Cada ajuste se puede cambiar por separado y se aplica al instante en toda la app; la propia pantalla sirve de vista previa en vivo, más un recuadro "Vista previa".

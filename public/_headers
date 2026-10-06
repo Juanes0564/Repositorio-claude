@@ -1,0 +1,3 @@
+# Netlify / Cloudflare Pages: el service worker siempre se revisa para recibir actualizaciones.
+/sw.js
+  Cache-Control: no-cache

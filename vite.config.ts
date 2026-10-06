@@ -39,6 +39,11 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    // Todo el contenido (prácticas y talleres) va en un solo archivo de ~145 KB comprimido.
+    // Lighthouse móvil da Rendimiento 97, así que no se divide (ver docs/DECISIONES.md).
+    chunkSizeWarningLimit: 650,
+  },
   test: {
     environment: 'jsdom',
     include: ['src/**/*.test.{ts,tsx}'],

@@ -65,11 +65,11 @@ Criterios:
 - [x] Pantalla 10: ayuda humana "Próximamente", `HUMAN_HELP_ENABLED = false`, lugar para `wa.me`, preguntas frecuentes, guía de instalación Android/iPhone.
 - [x] Verificado en modo sencillo con letra Muy grande.
 
-## Fase 8 — Pulido y entrega
+## Fase 8 — Pulido y entrega ✅
 Criterios:
-- [ ] Trabajo sin conexión verificado.
-- [ ] Lighthouse móvil: Accesibilidad ≥ 95, Rendimiento ≥ 85 (o explicación).
-- [ ] Accesibilidad: teclado, foco, lector de pantalla básico, zoom 200 %.
-- [ ] Prueba de humo con Playwright.
-- [ ] Docs completas y guía de publicación gratuita paso a paso.
-- [ ] Confirmación escrita: sin llamadas externas ni dependencias de pago.
+- [x] Trabajo sin conexión verificado.
+- [x] Lighthouse móvil: Accesibilidad 100, Rendimiento 97, Buenas prácticas 100.
+- [x] Accesibilidad: teclado, foco, lector de pantalla básico, zoom 200 %.
+- [x] Prueba de humo con Playwright.
+- [x] Docs completas y guía de publicación gratuita paso a paso.
+- [x] Confirmación escrita: sin llamadas externas ni dependencias de pago.

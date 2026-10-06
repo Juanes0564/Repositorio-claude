@@ -28,6 +28,15 @@ Se instalan con `npm install` y quedan **empaquetadas dentro de la app**: la app
 | eslint, @eslint/js, typescript-eslint, eslint-plugin-react-hooks, globals | 10.12 / 10.0 / 8.71 / 7.1 / 17.13 | MIT | Revisión de estilo del código (lint) |
 | @types/node, @types/react, @types/react-dom | — | MIT | Tipos para TypeScript |
 | @playwright/test | 1.56 | Apache-2.0 | Capturas de pantalla, íconos y pruebas de humo |
+| @axe-core/playwright, axe-core | 4.13 | MPL-2.0 | Revisión automática de accesibilidad en las pruebas de humo |
+
+## Resumen de licencias (revisado en la Fase 8)
+
+- **Lo que viaja dentro de la app:** 12 paquetes, todos libres: MIT (9), ISC (1, `lucide-react`), OFL-1.1 (1, la tipografía). El paquete "UNLICENSED" es Vínculo mismo (proyecto privado).
+- **Todo lo que se usa para construir y probar** (unos 500 paquetes contando los internos): MIT, Apache-2.0, ISC, BSD, BlueOak, MPL-2.0, CC0 y CC-BY. Todas son licencias libres y gratuitas.
+- **Ninguna dependencia es de pago**, pide clave de API ni requiere cuenta o tarjeta.
+
+Para revisarlo de nuevo: `npx license-checker-rseidelsohn --summary` (todo) o agregando `--production` (solo lo que viaja en la app).
 
 Nota: no se usó Fuse.js; el copiloto usa un motor de coincidencia propio, sin dependencias.
 

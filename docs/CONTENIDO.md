@@ -1,5 +1,7 @@
 # Cómo editar el contenido
 
+> Para **revisar** todos los textos sin abrir código, use `docs/REVISION-CONTENIDO.md` (se actualiza con `npm run content:export`).
+
 Todos los textos que se ven en la app están en la carpeta `src/content/`. **No hace falta tocar los componentes** para cambiar una frase.
 
 ## Archivos

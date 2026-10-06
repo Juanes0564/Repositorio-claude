@@ -134,8 +134,31 @@ Pídeles que digan con sus palabras: "enviar plata a un hijo", "pedir cita con e
 - [ ] La guía "Cómo instalar Vínculo" sirve en Android y en iPhone.
 - [ ] Todo lo anterior también con modo sencillo y letra Muy grande.
 
+## Fase 8 — Pruebas automáticas (ya corren solas)
+
+- `npm test`: más de 340 pruebas de lógica, contenido y pantallas.
+- `npm run test:e2e`: 30 pruebas en un navegador real (recorridos, accesibilidad con axe en modo normal y sencillo, teclado, sin conexión, zoom 200 %, sin pedidos a internet).
+
+## Fase 8 — Pruebas manuales antes de entregar
+
+- [ ] Publicar (README → "Publicarla gratis") y abrir el enlace en un **Android real de gama baja**.
+- [ ] Instalarla en la pantalla de inicio (Android e iPhone) y abrirla **sin internet**.
+- [ ] Probar el **micrófono** con la app publicada y también instalada: Copiloto → "Toque para hablar".
+- [ ] Probar con **TalkBack** (Android): activar en Ajustes → Accesibilidad. Cada botón debe decir su nombre; la instrucción del paso se lee al cambiar de paso.
+- [ ] Probar con la **letra del celular al máximo** (Ajustes del celular → Pantalla → Tamaño de letra).
+- [ ] Imprimir o guardar como PDF el certificado (completar las 8 habilidades o usar datos de prueba).
+- [ ] Una persona del equipo lee `docs/REVISION-CONTENIDO.md` y anota correcciones (sobre todo seguridad y estafas).
+
 ## Pruebas con personas (cuando el equipo pueda)
 
-- [ ] Probar en un Android real de gama baja.
-- [ ] Probar con 2 o 3 adultos mayores reales. Observar sin ayudar: ¿entienden la bienvenida? ¿encuentran "Simular y practicar"? ¿leen bien la letra?
-- [ ] Anotar dudas, palabras que no entienden y dónde se equivocan.
+Con **2 o 3 personas mayores reales**, cada una por separado, unos 30 minutos:
+
+- [ ] Explicar que es una práctica y que nada es real. Pedir que piensen en voz alta.
+- [ ] **Observar sin ayudar** (solo intervenir si se frustran). Tareas sugeridas:
+  1. Pasar la bienvenida y decir su nombre.
+  2. "Practique enviar dinero a Rosa" (simulador con guía).
+  3. "Pídale al copiloto ayuda para sacar una cita" (con voz y con botones).
+  4. "Revise si este mensaje es una estafa" (práctica de estafas).
+  5. "Ponga la letra más grande" (modo sencillo).
+- [ ] Anotar: dónde dudan, qué palabras no entienden, si leen bien la letra, si encuentran los botones, qué frases le dicen al copiloto que no entiende (agregarlas según `docs/CONTENIDO.md`).
+- [ ] Preguntar al final: ¿qué fue lo más fácil? ¿lo más difícil? ¿la usaría de nuevo? ¿prefiere "tú" o "usted"?
