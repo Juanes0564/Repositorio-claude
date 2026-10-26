@@ -40,6 +40,14 @@ npm run build    # crea la versión para publicar en la carpeta dist
 
 ## Cómo publicarla con un link (gratis)
 
+### Versión publicada
+
+Ya está publicada en **https://claude.ai/artifact/37wAd6bfknLNnhgsbfEVvU**. Para que otras personas la abran, compártela desde el menú *Compartir* de esa página.
+
+### Un solo archivo
+
+Ejecuta `npm run build:single`. Esto crea `dist-single/econoplay.html`, un único archivo con todo incluido. Puedes abrirlo con doble clic en cualquier computador, sin internet, o subirlo a cualquier hosting.
+
 ### Opción A — Netlify Drop (la más rápida, unos 5 minutos)
 
 1. Ejecuta `npm run build`. Se crea la carpeta `econoplay/dist`.

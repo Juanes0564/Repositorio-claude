@@ -10,7 +10,8 @@
     "preview": "vite preview --host",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "screenshots": "node scripts/screenshots.mjs"
+    "screenshots": "node scripts/screenshots.mjs",
+    "build:single": "npm run build && node scripts/build-single.mjs"
   },
   "dependencies": {
     "@fontsource-variable/nunito": "^5.3.0",

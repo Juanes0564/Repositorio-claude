@@ -147,7 +147,7 @@ svg {
 /* ===== Encabezado y navegación ===== */
 .header {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top, 0px);
   z-index: 10;
   display: flex;
   align-items: center;
@@ -196,7 +196,8 @@ svg {
   z-index: 10;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  height: var(--tabbar-h);
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: var(--surface);
   border-top: 1px solid var(--line);
   box-shadow: 0 -0.25rem 1rem rgb(76 29 149 / 0.06);
