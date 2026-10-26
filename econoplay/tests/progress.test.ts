@@ -17,20 +17,24 @@ import {
 } from '../src/lib/progress';
 
 describe('desbloqueo de niveles', () => {
-  it('solo el nivel 1 está abierto al inicio', () => {
-    expect(isLevelUnlocked(initialProgress, 'nivel-1')).toBe(true);
-    expect(isLevelUnlocked(initialProgress, 'nivel-2')).toBe(false);
+  it('con niveles en secuencia, solo el nivel 1 está abierto al inicio', () => {
+    expect(isLevelUnlocked(initialProgress, 'nivel-1', false)).toBe(true);
+    expect(isLevelUnlocked(initialProgress, 'nivel-2', false)).toBe(false);
   });
 
   it('terminar un nivel abre el siguiente, sin importar el puntaje', () => {
     const { progress } = completeLevel(initialProgress, 'nivel-1', 0, 8);
-    expect(isLevelUnlocked(progress, 'nivel-2')).toBe(true);
-    expect(isLevelUnlocked(progress, 'nivel-3')).toBe(false);
+    expect(isLevelUnlocked(progress, 'nivel-2', false)).toBe(true);
+    expect(isLevelUnlocked(progress, 'nivel-3', false)).toBe(false);
   });
 
   it('el modo presentador abre todo', () => {
     const p = { ...initialProgress, unlockAll: true };
-    expect(levels.every((l) => isLevelUnlocked(p, l.id))).toBe(true);
+    expect(levels.every((l) => isLevelUnlocked(p, l.id, false))).toBe(true);
+  });
+
+  it('con ALL_LEVELS_OPEN todos los niveles están abiertos desde el inicio', () => {
+    expect(levels.every((l) => isLevelUnlocked(initialProgress, l.id, true))).toBe(true);
   });
 });
 

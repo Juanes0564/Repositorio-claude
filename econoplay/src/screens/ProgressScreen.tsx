@@ -5,7 +5,7 @@ import type { Collectible } from '../data/types';
 import { CollectibleCard } from '../components/CollectibleCard';
 import { CollectibleDetail } from '../components/CollectibleDetail';
 import { ProgressBar } from '../components/ProgressBar';
-import { completedLevels, overallProgress } from '../lib/progress';
+import { ALL_LEVELS_OPEN, completedLevels, overallProgress } from '../lib/progress';
 import { useProgress } from '../state/ProgressContext';
 
 export function ProgressScreen() {
@@ -82,17 +82,19 @@ export function ProgressScreen() {
 
       <section className="panel" aria-labelledby="settings-title">
         <h2 id="settings-title">Opciones</h2>
-        <label className="switch">
-          <input
-            type="checkbox"
-            checked={progress.unlockAll}
-            onChange={(e) => set((p) => ({ ...p, unlockAll: e.target.checked }))}
-          />
-          <span>
-            <strong>Modo presentador</strong>
-            <span>Abre todos los niveles sin terminarlos. Útil para exponer en clase.</span>
-          </span>
-        </label>
+        {!ALL_LEVELS_OPEN && (
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={progress.unlockAll}
+              onChange={(e) => set((p) => ({ ...p, unlockAll: e.target.checked }))}
+            />
+            <span>
+              <strong>Modo presentador</strong>
+              <span>Abre todos los niveles sin terminarlos. Útil para exponer en clase.</span>
+            </span>
+          </label>
+        )}
         {!confirmReset ? (
           <button type="button" className="btn btn--ghost btn--block" onClick={() => setConfirmReset(true)}>
             <Trash2 aria-hidden="true" /> Borrar mi progreso

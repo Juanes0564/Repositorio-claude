@@ -3,6 +3,12 @@ import type { SchoolId } from '../data/types';
 
 export const STORAGE_KEY = 'econoplay.v1';
 
+/**
+ * true: todos los niveles están abiertos para todos (versión para presentar).
+ * false: cada nivel se abre al terminar el anterior.
+ */
+export const ALL_LEVELS_OPEN = true;
+
 export const POINTS_PER_CORRECT = 10;
 export const MAX_TIME_BONUS = 5;
 export const STREAK_BONUS = 2;
@@ -67,9 +73,9 @@ export function saveProgress(p: Progress): void {
   }
 }
 
-export function isLevelUnlocked(p: Progress, levelId: string): boolean {
+export function isLevelUnlocked(p: Progress, levelId: string, allOpen = ALL_LEVELS_OPEN): boolean {
   const index = levels.findIndex((l) => l.id === levelId);
-  if (index <= 0 || p.unlockAll) return true;
+  if (index <= 0 || allOpen || p.unlockAll) return true;
   return Boolean(p.levels[levels[index - 1].id]?.completed);
 }
 

@@ -64,7 +64,7 @@ La carpeta `dist` funciona en cualquier hosting estático, porque la app usa rut
 
 ## Para la exposición
 
-- En **Progreso → Opciones**, activa el **Modo presentador**. Abre todos los niveles sin tener que terminarlos.
+- Por ahora **todos los niveles están abiertos** para todos. Para volver a abrirlos uno por uno, cambia `ALL_LEVELS_OPEN` a `false` en `src/lib/progress.ts`. Así aparece de nuevo el **Modo presentador** en Progreso → Opciones.
 - En **Competir**, elige de 2 a 6 equipos y el número de rondas.
 - En cada turno, un equipo responde en 20 segundos. Gana 500 puntos por acertar y hasta 500 más por rapidez.
 
