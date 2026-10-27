@@ -1,0 +1,17 @@
+{
+  "name": "Econoplay",
+  "short_name": "Econoplay",
+  "description": "Aprende jugando la escuela neoclásica y la escuela austriaca.",
+  "lang": "es-CO",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f1ff",
+  "theme_color": "#5b21b6",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -36,6 +36,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         navigateFallback: 'index.html',
+        // Econoplay se publica en /econoplay/ del mismo sitio: no debe abrirse Vínculo ahí.
+        navigateFallbackDenylist: [/\/econoplay\//],
       },
     }),
   ],
