@@ -1,0 +1,1281 @@
+{
+  "app": {
+    "nombre": "Econoplay",
+    "lema": "La economía se aprende jugando",
+    "descripcion": "Aprende la escuela neoclásica y la escuela austriaca con lecciones cortas, retos y cromos.",
+    "documento": "Sanguino Villar, J. E. (2026). Ficha de investigación y registro de fuentes: escuela neoclásica y escuela austriaca. Universidad Autónoma de Bucaramanga, Historia del Pensamiento Económico II.",
+    "referencia": "Ekelund, R. B. y Hébert, R. F. (1992). Historia de la teoría económica y de su método (3.ª ed.). McGraw-Hill.",
+    "aviso": "Todo el contenido sale de la ficha de investigación del equipo. Cuando la ficha registra la página de Ekelund y Hébert (1992), la cita la muestra; si no, indica la respuesta de la ficha."
+  },
+  "escuelas": {
+    "neoclasica": { "nombre": "Escuela neoclásica", "corto": "Neoclásica" },
+    "austriaca": { "nombre": "Escuela austriaca", "corto": "Austriaca" },
+    "marxista": { "nombre": "Escuela marxista", "corto": "Marxista" }
+  },
+  "modulos": [
+    {
+      "id": "origenes",
+      "numero": 1,
+      "titulo": "Los orígenes",
+      "subtitulo": "¿Dónde y por qué nacieron?",
+      "preguntasDocumento": "Preguntas 1 y 2 de la ficha",
+      "niveles": [
+        {
+          "id": "nivel-1",
+          "numero": 1,
+          "titulo": "Contexto histórico",
+          "descripcion": "La revolución marginalista y el nacimiento de la escuela austriaca.",
+          "usaDelDocumento": "Respuesta 1 y contexto histórico de la síntesis",
+          "tarjetas": [
+            {
+              "titulo": "La revolución marginalista",
+              "texto": "En la década de 1870, Jevons, Menger y Walras iniciaron la revolución marginalista. De ahí surgió la economía neoclásica. En 1890, Alfred Marshall la consolidó con sus Principios de economía.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "titulo": "¿Por qué apareció?",
+              "texto": "Ayudaron tres cambios: la crisis de la teoría del valor-trabajo de los clásicos, que Marx había usado para hablar de explotación; la Segunda Revolución Industrial, con mercados más grandes y complejos; y la profesionalización de la economía, que imitaba a la física.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "titulo": "Nace la escuela austriaca",
+              "texto": "Nació en Viena en 1871 con Carl Menger, que enfrentó a la escuela histórica alemana en una disputa sobre el método. Después la desarrollaron Böhm-Bawerk y Wieser, y luego Mises, Hayek y Schumpeter.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "titulo": "Una Europa en crisis",
+              "texto": "A Mises, Hayek y Schumpeter los marcaron la Primera Guerra Mundial, la hiperinflación alemana y austriaca, la Revolución rusa y la Gran Depresión.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n1-p1",
+              "tipo": "seleccion",
+              "concepto": "Contexto histórico",
+              "enunciado": "¿En qué década ocurrió la revolución marginalista?",
+              "opciones": ["En la década de 1870", "En la década de 1890", "En la década de 1930"],
+              "correcta": 0,
+              "explicacion": "La economía neoclásica surgió en la década de 1870 con la revolución marginalista de Jevons, Menger y Walras.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p2",
+              "tipo": "vf",
+              "concepto": "Contexto histórico",
+              "afirmacion": "Alfred Marshall consolidó la economía neoclásica en 1890 con sus Principios de economía.",
+              "respuesta": true,
+              "explicacion": "Marshall la consolidó en 1890 con sus Principios de economía.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p3",
+              "tipo": "completar",
+              "concepto": "Contexto histórico",
+              "frase": "La escuela austriaca nació en ___ en 1871 con Carl Menger.",
+              "opciones": ["Viena", "Berlín", "Londres"],
+              "correcta": 0,
+              "explicacion": "La escuela austriaca nació en Viena en 1871 con Menger.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p4",
+              "tipo": "seleccion",
+              "concepto": "Contexto histórico",
+              "enunciado": "¿Qué teoría entró en crisis y abrió paso a la revolución marginalista?",
+              "opciones": [
+                "La teoría del valor-trabajo de los clásicos",
+                "La teoría del equilibrio general",
+                "La teoría de la utilidad marginal"
+              ],
+              "correcta": 0,
+              "explicacion": "Contribuyó la crisis de la teoría del valor-trabajo de los clásicos, que Marx había usado para hablar de explotación.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p5",
+              "tipo": "relacionar",
+              "concepto": "Contexto histórico",
+              "enunciado": "Relaciona cada autor con su papel en los orígenes.",
+              "pares": [
+                { "izquierda": "Carl Menger", "derecha": "Fundó la escuela austriaca en Viena (1871)" },
+                { "izquierda": "Alfred Marshall", "derecha": "Consolidó la economía neoclásica (1890)" },
+                { "izquierda": "Böhm-Bawerk y Wieser", "derecha": "Desarrollaron la escuela austriaca después de Menger" }
+              ],
+              "explicacion": "Menger fundó la escuela austriaca en 1871; Böhm-Bawerk y Wieser la desarrollaron después. Marshall consolidó la neoclásica en 1890.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p6",
+              "tipo": "vf",
+              "concepto": "Contexto histórico",
+              "afirmacion": "Menger fundó la escuela austriaca de la mano de la escuela histórica alemana.",
+              "respuesta": false,
+              "explicacion": "Menger enfrentó a la escuela histórica alemana en una disputa sobre el método.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p7",
+              "tipo": "seleccion",
+              "concepto": "Contexto histórico",
+              "contrarreloj": 20,
+              "enunciado": "¿Qué hechos marcaron a Mises, Hayek y Schumpeter?",
+              "opciones": [
+                "La Primera Guerra Mundial, la hiperinflación, la Revolución rusa y la Gran Depresión",
+                "La Segunda Revolución Industrial y la crisis del valor-trabajo",
+                "La publicación de los Principios de economía de Marshall"
+              ],
+              "correcta": 0,
+              "explicacion": "A Mises, Hayek y Schumpeter los marcaron la Primera Guerra Mundial, la hiperinflación alemana y austriaca, la Revolución rusa y la Gran Depresión.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "id": "n1-p8",
+              "tipo": "vf",
+              "concepto": "Contexto histórico",
+              "contrarreloj": 15,
+              "afirmacion": "La economía se profesionalizó como una ciencia que imitaba a la física.",
+              "respuesta": true,
+              "explicacion": "Entre los cambios que contribuyeron está la profesionalización de la economía como una ciencia que imitaba a la física.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            }
+          ]
+        },
+        {
+          "id": "nivel-2",
+          "numero": 2,
+          "titulo": "El problema económico",
+          "descripcion": "Qué intentaba explicar cada escuela.",
+          "usaDelDocumento": "Respuesta 2",
+          "tarjetas": [
+            {
+              "titulo": "La pregunta neoclásica",
+              "texto": "¿Cómo se asignan los recursos escasos entre usos alternativos? ¿Cómo se forman los precios en equilibrio? La respuesta parte de las decisiones de consumidores y empresas.",
+              "fuente": "Ficha del equipo, respuesta 2; Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "titulo": "La pregunta austriaca",
+              "texto": "¿Cómo se coordinan los planes de muchas personas que tienen información incompleta y viven con incertidumbre? Y todo sin que nadie dirija la economía desde el centro.",
+              "fuente": "Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "titulo": "Lo que estudiaron después",
+              "texto": "De esa pregunta salen los estudios austriacos sobre el dinero, los ciclos económicos, la innovación y la viabilidad del socialismo.",
+              "fuente": "Ficha del equipo, respuesta 2"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n2-p1",
+              "tipo": "seleccion",
+              "concepto": "Problema económico",
+              "enunciado": "¿Qué problema intentaba explicar la economía neoclásica?",
+              "opciones": [
+                "Cómo se asignan los recursos escasos y cómo se forman los precios en equilibrio",
+                "Cómo se coordinan planes con información incompleta, sin dirección central",
+                "Cómo las relaciones de propiedad generan desigualdad"
+              ],
+              "correcta": 0,
+              "explicacion": "La neoclásica buscaba explicar cómo se asignan los recursos escasos entre usos alternativos y cómo se forman los precios en equilibrio.",
+              "fuente": "Ficha del equipo, respuesta 2; Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "id": "n2-p2",
+              "tipo": "seleccion",
+              "concepto": "Problema económico",
+              "enunciado": "¿Qué problema buscaba explicar la escuela austriaca?",
+              "opciones": [
+                "Cómo se coordinan los planes de muchas personas con información incompleta",
+                "Cómo se forman los precios en competencia perfecta",
+                "Cómo se combinan los factores con rendimientos decrecientes"
+              ],
+              "correcta": 0,
+              "explicacion": "La austriaca buscaba explicar cómo se coordinan los planes de muchas personas con información incompleta e incertidumbre, sin que nadie dirija desde el centro.",
+              "fuente": "Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "id": "n2-p3",
+              "tipo": "vf",
+              "concepto": "Problema económico",
+              "afirmacion": "Para la escuela austriaca, alguien debe dirigir la economía desde el centro para coordinar los planes.",
+              "respuesta": false,
+              "explicacion": "Los austriacos estudian cómo se coordinan los planes sin que nadie dirija la economía desde el centro.",
+              "fuente": "Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "id": "n2-p4",
+              "tipo": "relacionar",
+              "concepto": "Problema económico",
+              "enunciado": "¿A qué escuela pertenece cada tema de estudio?",
+              "pares": [
+                { "izquierda": "Formación de precios en equilibrio", "derecha": "Neoclásica" },
+                { "izquierda": "Información incompleta e incertidumbre", "derecha": "Austriaca" },
+                { "izquierda": "Decisiones de consumidores y empresas", "derecha": "Neoclásica" },
+                { "izquierda": "Viabilidad del socialismo", "derecha": "Austriaca" }
+              ],
+              "explicacion": "La neoclásica parte de las decisiones de consumidores y empresas para explicar los precios en equilibrio. La austriaca estudia la coordinación con información incompleta, y de ahí sus estudios sobre el socialismo.",
+              "fuente": "Ficha del equipo, respuesta 2; Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "id": "n2-p5",
+              "tipo": "completar",
+              "concepto": "Problema económico",
+              "frase": "Los austriacos estudian la coordinación sin que nadie dirija la economía desde el ___.",
+              "opciones": ["centro", "mercado", "exterior"],
+              "correcta": 0,
+              "explicacion": "La escuela austriaca explica la coordinación de planes sin que nadie dirija la economía desde el centro.",
+              "fuente": "Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "id": "n2-p6",
+              "tipo": "seleccion",
+              "concepto": "Problema económico",
+              "enunciado": "¿Qué temas estudiaron los austriacos a partir de su pregunta?",
+              "opciones": [
+                "El dinero, los ciclos, la innovación y la viabilidad del socialismo",
+                "Las clases sociales y la explotación",
+                "El equilibrio parcial y las economías externas"
+              ],
+              "correcta": 0,
+              "explicacion": "De su pregunta salen sus estudios sobre el dinero, los ciclos económicos, la innovación y la viabilidad del socialismo.",
+              "fuente": "Ficha del equipo, respuesta 2"
+            },
+            {
+              "id": "n2-p7",
+              "tipo": "vf",
+              "concepto": "Problema económico",
+              "contrarreloj": 15,
+              "afirmacion": "La economía neoclásica parte de las decisiones de consumidores y empresas.",
+              "respuesta": true,
+              "explicacion": "La neoclásica explica la asignación de recursos y los precios a partir de las decisiones de consumidores y empresas.",
+              "fuente": "Ficha del equipo, respuesta 2; Ekelund y Hébert (1992, p. 594)"
+            },
+            {
+              "id": "n2-p8",
+              "tipo": "completar",
+              "concepto": "Problema económico",
+              "contrarreloj": 20,
+              "frase": "Para los neoclásicos, los recursos son ___ y se asignan entre usos alternativos.",
+              "opciones": ["escasos", "ilimitados", "públicos"],
+              "correcta": 0,
+              "explicacion": "La neoclásica estudia cómo se asignan los recursos escasos entre usos alternativos.",
+              "fuente": "Ficha del equipo, respuesta 2; Ekelund y Hébert (1992, p. 594)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ideas",
+      "numero": 2,
+      "titulo": "Las ideas",
+      "subtitulo": "Valor, precios, mercado y Estado",
+      "preguntasDocumento": "Preguntas 3, 4 y 5 de la ficha",
+      "niveles": [
+        {
+          "id": "nivel-3",
+          "numero": 3,
+          "titulo": "Riqueza, valor y precios",
+          "descripcion": "Cómo entendía cada escuela la riqueza, la producción, el valor, los precios y la distribución.",
+          "usaDelDocumento": "Respuesta 3",
+          "tarjetas": [
+            {
+              "titulo": "Riqueza y valor",
+              "comparacion": {
+                "neoclasica": "La riqueza son los bienes escasos que generan bienestar. El valor depende de la utilidad marginal; Marshall le sumó el costo de producción con su idea de las «tijeras».",
+                "austriaca": "La riqueza y el valor son subjetivos: dependen de las necesidades y valoraciones de cada persona."
+              },
+              "fuente": "Ficha del equipo, respuesta 3; Ekelund y Hébert (1992, p. 598)"
+            },
+            {
+              "titulo": "Producción",
+              "comparacion": {
+                "neoclasica": "Es una combinación de factores con rendimientos decrecientes.",
+                "austriaca": "Es un proceso en el tiempo, por etapas, impulsado por el empresario que innova o descubre oportunidades."
+              },
+              "fuente": "Ficha del equipo, respuesta 3; Ekelund y Hébert (1992, pp. 601, 604–605)"
+            },
+            {
+              "titulo": "Precios",
+              "comparacion": {
+                "neoclasica": "Salen del equilibrio entre oferta y demanda en competencia perfecta.",
+                "austriaca": "Son señales que transmiten el conocimiento disperso."
+              },
+              "fuente": "Ficha del equipo, respuesta 3; Ekelund y Hébert (1992, p. 612)"
+            },
+            {
+              "titulo": "Distribución",
+              "comparacion": {
+                "neoclasica": "Se basa en la productividad marginal: cada factor recibe lo que aporta.",
+                "austriaca": "Destacan que la inflación beneficia a quienes reciben primero el dinero nuevo."
+              },
+              "fuente": "Ficha del equipo, respuesta 3; Ekelund y Hébert (1992, p. 600)"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n3-p1",
+              "tipo": "completar",
+              "concepto": "Riqueza y valor",
+              "frase": "Marshall le sumó el costo de producción a la utilidad marginal con su idea de las «___».",
+              "opciones": ["tijeras", "escaleras", "balanzas"],
+              "correcta": 0,
+              "explicacion": "El valor dependía de la utilidad marginal, y Marshall le sumó el costo de producción con su idea de las «tijeras».",
+              "fuente": "Ficha del equipo, respuesta 3"
+            },
+            {
+              "id": "n3-p2",
+              "tipo": "seleccion",
+              "concepto": "Distribución",
+              "enunciado": "Para los neoclásicos, ¿cómo se reparte el ingreso entre los factores?",
+              "opciones": [
+                "Cada factor recibe lo que aporta (productividad marginal)",
+                "Según quién recibe primero el dinero nuevo",
+                "En partes iguales entre todos"
+              ],
+              "correcta": 0,
+              "explicacion": "Para la neoclásica, la distribución se basa en la productividad marginal: cada factor recibe lo que aporta.",
+              "fuente": "Ficha del equipo, respuesta 3"
+            },
+            {
+              "id": "n3-p3",
+              "tipo": "vf",
+              "concepto": "Distribución",
+              "afirmacion": "Para la escuela austriaca, la inflación beneficia a quienes reciben primero el dinero nuevo.",
+              "respuesta": true,
+              "explicacion": "En la distribución, los austriacos destacaban que la inflación beneficia a quienes reciben primero el dinero nuevo.",
+              "fuente": "Ekelund y Hébert (1992, p. 600)"
+            },
+            {
+              "id": "n3-p4",
+              "tipo": "seleccion",
+              "concepto": "Riqueza y valor",
+              "enunciado": "¿Por qué para los austriacos el valor es subjetivo?",
+              "opciones": [
+                "Porque depende de las necesidades y valoraciones de cada persona",
+                "Porque depende del trabajo incorporado",
+                "Porque lo fija el costo de producción"
+              ],
+              "correcta": 0,
+              "explicacion": "Para la escuela austriaca, la riqueza y el valor son subjetivos porque dependen de las necesidades y valoraciones de cada persona.",
+              "fuente": "Ekelund y Hébert (1992, p. 598)"
+            },
+            {
+              "id": "n3-p5",
+              "tipo": "relacionar",
+              "concepto": "Producción",
+              "enunciado": "¿A qué escuela pertenece cada idea?",
+              "pares": [
+                { "izquierda": "La producción combina factores con rendimientos decrecientes", "derecha": "Neoclásica" },
+                { "izquierda": "La producción es un proceso en el tiempo, por etapas", "derecha": "Austriaca" },
+                { "izquierda": "El empresario impulsa la producción al innovar", "derecha": "Austriaca" },
+                { "izquierda": "La riqueza son los bienes escasos que generan bienestar", "derecha": "Neoclásica" }
+              ],
+              "explicacion": "Los neoclásicos ven la producción como combinación de factores con rendimientos decrecientes. Los austriacos, como un proceso por etapas impulsado por el empresario.",
+              "fuente": "Ficha del equipo, respuesta 3; Ekelund y Hébert (1992, pp. 601, 604–605)"
+            },
+            {
+              "id": "n3-p6",
+              "tipo": "seleccion",
+              "concepto": "Precios",
+              "enunciado": "Para los austriacos, ¿qué son los precios?",
+              "opciones": [
+                "Señales que transmiten el conocimiento disperso",
+                "El reflejo del trabajo incorporado en cada bien",
+                "Un valor fijo que decide el Estado"
+              ],
+              "correcta": 0,
+              "explicacion": "Para la escuela austriaca, los precios son señales que transmiten el conocimiento disperso.",
+              "fuente": "Ekelund y Hébert (1992, p. 612)"
+            },
+            {
+              "id": "n3-p7",
+              "tipo": "vf",
+              "concepto": "Precios",
+              "contrarreloj": 15,
+              "afirmacion": "Para los neoclásicos, los precios salen del equilibrio entre oferta y demanda en competencia perfecta.",
+              "respuesta": true,
+              "explicacion": "En la visión neoclásica, los precios salen del equilibrio entre oferta y demanda en competencia perfecta.",
+              "fuente": "Ficha del equipo, respuesta 3"
+            },
+            {
+              "id": "n3-p8",
+              "tipo": "completar",
+              "concepto": "Producción",
+              "contrarreloj": 20,
+              "frase": "Para los neoclásicos, la producción combina factores con rendimientos ___.",
+              "opciones": ["decrecientes", "crecientes", "constantes"],
+              "correcta": 0,
+              "explicacion": "La producción neoclásica es una combinación de factores con rendimientos decrecientes.",
+              "fuente": "Ficha del equipo, respuesta 3"
+            }
+          ]
+        },
+        {
+          "id": "nivel-4",
+          "numero": 4,
+          "titulo": "El mercado y el Estado",
+          "descripcion": "Qué papel le daba cada escuela al mercado y al Estado.",
+          "usaDelDocumento": "Respuesta 4 y explicación sobre el mercado y el Estado de la síntesis",
+          "tarjetas": [
+            {
+              "titulo": "Lo que comparten",
+              "texto": "Para ambas corrientes, el mercado es el principal mecanismo de asignación de recursos.",
+              "fuente": "Ekelund y Hébert (1992, pp. 601, 611–612)"
+            },
+            {
+              "titulo": "El mercado",
+              "comparacion": {
+                "neoclasica": "Asigna eficientemente los recursos por medio de los precios. En competencia perfecta tiende al equilibrio.",
+                "austriaca": "Es un «procedimiento para descubrir» que reúne el conocimiento disperso y coordina los planes individuales."
+              },
+              "fuente": "Ficha del equipo, respuesta 4; Ekelund y Hébert (1992, p. 608)"
+            },
+            {
+              "titulo": "El Estado",
+              "comparacion": {
+                "neoclasica": "Debe garantizar las condiciones para que el mercado funcione. Puede intervenir de forma limitada para corregir fallas, como las economías externas que estudió Marshall.",
+                "austriaca": "Desconfían de su intervención porque distorsiona los precios y la coordinación."
+              },
+              "fuente": "Ficha del equipo, respuesta 4; Ekelund y Hébert (1992, pp. 601, 611–612)"
+            },
+            {
+              "titulo": "Las razones de Mises y Hayek",
+              "texto": "Mises sostenía que la expansión monetaria le permite al gobierno expropiar parte de la riqueza de otros grupos. Junto con Hayek, argumentó que un planificador central no puede calcular racionalmente sin precios de mercado.",
+              "fuente": "Ekelund y Hébert (1992, pp. 601, 611–612)"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n4-p1",
+              "tipo": "vf",
+              "concepto": "Mercado y Estado",
+              "afirmacion": "Para ambas escuelas, el mercado es el principal mecanismo de asignación de recursos.",
+              "respuesta": true,
+              "explicacion": "Ambas corrientes ven el mercado como el principal mecanismo de asignación de recursos; difieren en el papel del Estado.",
+              "fuente": "Ekelund y Hébert (1992, pp. 601, 611–612)"
+            },
+            {
+              "id": "n4-p2",
+              "tipo": "seleccion",
+              "concepto": "Mercado y Estado",
+              "enunciado": "¿Qué ejemplo de falla de mercado estudió Marshall?",
+              "opciones": ["Las economías externas", "La hiperinflación", "El cálculo socialista"],
+              "correcta": 0,
+              "explicacion": "Para los neoclásicos, el Estado puede intervenir de forma limitada para corregir fallas, como las economías externas que estudió Marshall.",
+              "fuente": "Ficha del equipo, respuesta 4"
+            },
+            {
+              "id": "n4-p3",
+              "tipo": "vf",
+              "concepto": "Mercado y Estado",
+              "afirmacion": "Según Mises, la expansión monetaria le permite al gobierno expropiar parte de la riqueza de otros grupos.",
+              "respuesta": true,
+              "explicacion": "Mises sostenía que la expansión monetaria le permite al gobierno expropiar parte de la riqueza de otros grupos.",
+              "fuente": "Ekelund y Hébert (1992, p. 601)"
+            },
+            {
+              "id": "n4-p4",
+              "tipo": "seleccion",
+              "concepto": "Mercado y Estado",
+              "enunciado": "Según Mises y Hayek, ¿por qué un planificador central no puede calcular racionalmente?",
+              "opciones": [
+                "Porque no tiene precios de mercado",
+                "Porque le faltan modelos matemáticos",
+                "Porque no hay recursos escasos"
+              ],
+              "correcta": 0,
+              "explicacion": "Mises y Hayek argumentaron que un planificador central no puede calcular racionalmente sin precios de mercado.",
+              "fuente": "Ekelund y Hébert (1992, pp. 611–612)"
+            },
+            {
+              "id": "n4-p5",
+              "tipo": "relacionar",
+              "concepto": "Mercado y Estado",
+              "enunciado": "¿A qué escuela pertenece cada idea?",
+              "pares": [
+                { "izquierda": "El Estado puede intervenir de forma limitada para corregir fallas", "derecha": "Neoclásica" },
+                { "izquierda": "La intervención del Estado distorsiona los precios", "derecha": "Austriaca" },
+                { "izquierda": "En competencia perfecta, el mercado tiende al equilibrio", "derecha": "Neoclásica" },
+                { "izquierda": "El mercado es un «procedimiento para descubrir»", "derecha": "Austriaca" }
+              ],
+              "explicacion": "Los neoclásicos aceptan una intervención limitada para corregir fallas. Los austriacos desconfían de ella y ven el mercado como un procedimiento para descubrir.",
+              "fuente": "Ficha del equipo, respuesta 4; Ekelund y Hébert (1992, pp. 601, 608, 611–612)"
+            },
+            {
+              "id": "n4-p6",
+              "tipo": "completar",
+              "concepto": "Mercado y Estado",
+              "frase": "Para los austriacos, el mercado es un «procedimiento para ___».",
+              "opciones": ["descubrir", "planificar", "igualar"],
+              "correcta": 0,
+              "explicacion": "La escuela austriaca entiende el mercado como un «procedimiento para descubrir» que reúne el conocimiento disperso.",
+              "fuente": "Ekelund y Hébert (1992, p. 608)"
+            },
+            {
+              "id": "n4-p7",
+              "tipo": "seleccion",
+              "concepto": "Mercado y Estado",
+              "contrarreloj": 20,
+              "enunciado": "¿Qué papel le da la economía neoclásica al Estado?",
+              "opciones": [
+                "Garantizar las condiciones del mercado y corregir fallas de forma limitada",
+                "Dirigir toda la economía desde el centro",
+                "Fijar todos los precios"
+              ],
+              "correcta": 0,
+              "explicacion": "Para la neoclásica, el Estado debe garantizar las condiciones para que el mercado funcione y puede intervenir de forma limitada para corregir fallas.",
+              "fuente": "Ficha del equipo, respuesta 4"
+            },
+            {
+              "id": "n4-p8",
+              "tipo": "vf",
+              "concepto": "Mercado y Estado",
+              "contrarreloj": 15,
+              "afirmacion": "Los austriacos confían en que el Estado coordina mejor que los precios de mercado.",
+              "respuesta": false,
+              "explicacion": "Los austriacos desconfían del Estado porque distorsiona los precios y la coordinación.",
+              "fuente": "Ekelund y Hébert (1992, pp. 601, 611–612)"
+            }
+          ]
+        },
+        {
+          "id": "nivel-5",
+          "numero": 5,
+          "titulo": "Tres conceptos clave",
+          "descripcion": "Utilidad marginal, equilibrio de mercado y mercado como proceso de descubrimiento.",
+          "usaDelDocumento": "Respuesta 5",
+          "tarjetas": [
+            {
+              "titulo": "Utilidad marginal",
+              "texto": "Es la satisfacción extra que da una unidad más de un bien. El primer vaso de agua cuando tienes sed vale mucho; el quinto, casi nada.",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "titulo": "El agua y el diamante",
+              "texto": "Por eso el agua, aunque es indispensable, es más barata que un diamante, que es escaso.",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "titulo": "Equilibrio de mercado",
+              "texto": "Es el punto donde lo que los compradores quieren comprar coincide con lo que los vendedores quieren vender. Marshall lo estudió en un solo mercado (equilibrio parcial) y Walras en todos a la vez (equilibrio general).",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "titulo": "Mercado como proceso de descubrimiento",
+              "texto": "Para los austriacos nadie tiene toda la información. Los precios son señales que muestran dónde hay oportunidades. El empresario que las descubre primero obtiene un beneficio y, al aprovecharlas, ayuda a coordinar la economía.",
+              "fuente": "Ekelund y Hébert (1992, pp. 608–609)"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n5-p1",
+              "tipo": "seleccion",
+              "concepto": "Utilidad marginal",
+              "enunciado": "¿Qué es la utilidad marginal?",
+              "opciones": [
+                "La satisfacción extra que da una unidad más de un bien",
+                "La satisfacción total de todos los bienes que tienes",
+                "El costo de producir una unidad más"
+              ],
+              "correcta": 0,
+              "explicacion": "La utilidad marginal es la satisfacción extra que da una unidad más de un bien.",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "id": "n5-p2",
+              "tipo": "seleccion",
+              "concepto": "Utilidad marginal",
+              "enunciado": "¿Por qué el agua es más barata que un diamante?",
+              "opciones": [
+                "Porque cada vaso extra satisface menos, y el diamante es escaso",
+                "Porque el agua no es indispensable",
+                "Porque el agua tiene más trabajo incorporado"
+              ],
+              "correcta": 0,
+              "explicacion": "El primer vaso vale mucho, pero el quinto casi nada. Por eso el agua, aunque indispensable, es más barata que un diamante, que es escaso.",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "id": "n5-p3",
+              "tipo": "vf",
+              "concepto": "Utilidad marginal",
+              "afirmacion": "Si tienes sed, el quinto vaso de agua te da tanta satisfacción como el primero.",
+              "respuesta": false,
+              "explicacion": "El primer vaso de agua cuando se tiene sed vale mucho, pero el quinto casi nada.",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "id": "n5-p4",
+              "tipo": "vf",
+              "concepto": "Equilibrio de mercado",
+              "afirmacion": "Walras estudió el equilibrio en un solo mercado.",
+              "respuesta": false,
+              "explicacion": "Marshall estudió un solo mercado (equilibrio parcial). Walras estudió todos los mercados a la vez (equilibrio general).",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "id": "n5-p5",
+              "tipo": "relacionar",
+              "concepto": "Equilibrio de mercado",
+              "enunciado": "Relaciona cada idea con su definición.",
+              "pares": [
+                { "izquierda": "Equilibrio de mercado", "derecha": "Lo que se quiere comprar coincide con lo que se quiere vender" },
+                { "izquierda": "Equilibrio parcial", "derecha": "Marshall: un solo mercado" },
+                { "izquierda": "Equilibrio general", "derecha": "Walras: todos los mercados a la vez" }
+              ],
+              "explicacion": "El equilibrio es el punto donde coinciden compradores y vendedores. Marshall lo estudió en un solo mercado y Walras en todos a la vez.",
+              "fuente": "Ficha del equipo, respuesta 5"
+            },
+            {
+              "id": "n5-p6",
+              "tipo": "completar",
+              "concepto": "Proceso de descubrimiento",
+              "frase": "El empresario que descubre primero una oportunidad obtiene un ___.",
+              "opciones": ["beneficio", "salario", "subsidio"],
+              "correcta": 0,
+              "explicacion": "El empresario que descubre primero las oportunidades obtiene un beneficio y, al aprovecharlas, ayuda a coordinar la economía.",
+              "fuente": "Ekelund y Hébert (1992, pp. 608–609)"
+            },
+            {
+              "id": "n5-p7",
+              "tipo": "seleccion",
+              "concepto": "Proceso de descubrimiento",
+              "contrarreloj": 20,
+              "enunciado": "Para los austriacos, ¿qué muestran los precios?",
+              "opciones": [
+                "Dónde hay oportunidades",
+                "Cuánto trabajo tiene cada bien",
+                "El valor fijo de cada cosa"
+              ],
+              "correcta": 0,
+              "explicacion": "Los precios funcionan como señales que muestran dónde hay oportunidades.",
+              "fuente": "Ekelund y Hébert (1992, pp. 608–609)"
+            },
+            {
+              "id": "n5-p8",
+              "tipo": "vf",
+              "concepto": "Proceso de descubrimiento",
+              "contrarreloj": 15,
+              "afirmacion": "Para los austriacos, nadie tiene toda la información.",
+              "respuesta": true,
+              "explicacion": "Para los austriacos nadie tiene toda la información; por eso los precios sirven como señales.",
+              "fuente": "Ekelund y Hébert (1992, pp. 608–609)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "autores",
+      "numero": 3,
+      "titulo": "Los autores",
+      "subtitulo": "Colecciona sus cromos",
+      "preguntasDocumento": "Pregunta 6 de la ficha",
+      "niveles": [
+        {
+          "id": "nivel-6",
+          "numero": 6,
+          "titulo": "Aportes de los autores",
+          "descripcion": "Jevons, Menger, Walras, Marshall y Hayek, más dos cromos extra: Mises y Schumpeter.",
+          "usaDelDocumento": "Respuesta 6, respuesta 4 (Mises) y registro de fuentes (Schumpeter)",
+          "tarjetas": [
+            {
+              "titulo": "Los marginalistas",
+              "texto": "Jevons, Menger y Walras iniciaron la revolución marginalista en la década de 1870. Marshall la consolidó en 1890.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "titulo": "Los austriacos",
+              "texto": "Menger fundó la escuela austriaca. Después la desarrollaron Böhm-Bawerk y Wieser, y luego Mises, Hayek y Schumpeter.",
+              "fuente": "Ekelund y Hébert (1992, pp. 597–602)"
+            },
+            {
+              "titulo": "Colecciona los cromos",
+              "texto": "Cada pregunta de este nivel es sobre un autor. Si respondes bien, desbloqueas su cromo. Hay 7 por coleccionar.",
+              "fuente": "Ficha del equipo, respuesta 6"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n6-p1",
+              "tipo": "seleccion",
+              "concepto": "Autores",
+              "desbloquea": ["jevons"],
+              "enunciado": "¿Quién desarrolló la teoría del intercambio, que relaciona las valoraciones de las personas con los precios?",
+              "opciones": ["William Stanley Jevons", "Léon Walras", "Friedrich A. Hayek"],
+              "correcta": 0,
+              "explicacion": "Jevons desarrolló la teoría de la utilidad marginal y la teoría del intercambio.",
+              "fuente": "Ekelund y Hébert (1992, p. 381)"
+            },
+            {
+              "id": "n6-p2",
+              "tipo": "seleccion",
+              "concepto": "Autores",
+              "desbloquea": ["menger"],
+              "enunciado": "¿Quién planteó la teoría subjetiva del valor y fundó la escuela austriaca?",
+              "opciones": ["Carl Menger", "Alfred Marshall", "Joseph Schumpeter"],
+              "correcta": 0,
+              "explicacion": "Menger planteó que un bien vale por la importancia que cada persona le da para satisfacer sus necesidades, y fundó la escuela austriaca.",
+              "fuente": "Ficha del equipo, respuesta 6"
+            },
+            {
+              "id": "n6-p3",
+              "tipo": "completar",
+              "concepto": "Autores",
+              "desbloquea": ["walras"],
+              "frase": "Léon Walras construyó el modelo matemático del equilibrio ___.",
+              "opciones": ["general", "parcial", "monetario"],
+              "correcta": 0,
+              "explicacion": "Walras construyó el modelo matemático del equilibrio general, que explica cómo se relacionan todos los mercados.",
+              "fuente": "Ekelund y Hébert (1992, p. 457)"
+            },
+            {
+              "id": "n6-p4",
+              "tipo": "vf",
+              "concepto": "Autores",
+              "desbloquea": ["marshall"],
+              "afirmacion": "Alfred Marshall unió utilidad y costo en el análisis de oferta y demanda.",
+              "respuesta": true,
+              "explicacion": "Marshall unió utilidad y costo en el análisis de oferta y demanda, desarrolló el equilibrio parcial y explicó las economías externas.",
+              "fuente": "Ekelund y Hébert (1992, p. 410)"
+            },
+            {
+              "id": "n6-p5",
+              "tipo": "seleccion",
+              "concepto": "Autores",
+              "desbloquea": ["hayek"],
+              "enunciado": "¿Quién explicó los ciclos económicos por la expansión del crédito y la sobreinversión?",
+              "opciones": ["Friedrich A. Hayek", "William Stanley Jevons", "Alfred Marshall"],
+              "correcta": 0,
+              "explicacion": "Hayek explicó los ciclos económicos como resultado de la expansión del crédito y la sobreinversión.",
+              "fuente": "Ekelund y Hébert (1992, pp. 601–602)"
+            },
+            {
+              "id": "n6-p6",
+              "tipo": "seleccion",
+              "concepto": "Autores",
+              "desbloquea": ["mises"],
+              "enunciado": "¿Qué autor sostenía que la expansión monetaria le permite al gobierno expropiar riqueza de otros grupos?",
+              "opciones": ["Ludwig von Mises", "Léon Walras", "Carl Menger"],
+              "correcta": 0,
+              "explicacion": "Mises sostenía que la expansión monetaria le permite al gobierno expropiar parte de la riqueza de otros grupos.",
+              "fuente": "Ekelund y Hébert (1992, p. 601)"
+            },
+            {
+              "id": "n6-p7",
+              "tipo": "seleccion",
+              "concepto": "Autores",
+              "contrarreloj": 20,
+              "desbloquea": ["schumpeter"],
+              "enunciado": "¿Qué temas estudió Joseph Schumpeter?",
+              "opciones": [
+                "El empresario, la innovación y la destrucción creadora",
+                "El equilibrio general de todos los mercados",
+                "La teoría del intercambio"
+              ],
+              "correcta": 0,
+              "explicacion": "El registro de fuentes de la ficha resume a Schumpeter así: empresario, innovación y destrucción creadora.",
+              "fuente": "Ekelund y Hébert (1992, pp. 602–607)"
+            },
+            {
+              "id": "n6-p8",
+              "tipo": "relacionar",
+              "concepto": "Autores",
+              "desbloquea": ["jevons", "menger", "walras", "marshall", "hayek"],
+              "enunciado": "Relaciona cada autor con su aporte.",
+              "pares": [
+                { "izquierda": "Jevons", "derecha": "Teoría del intercambio" },
+                { "izquierda": "Menger", "derecha": "Teoría subjetiva del valor" },
+                { "izquierda": "Walras", "derecha": "Equilibrio general" },
+                { "izquierda": "Marshall", "derecha": "Equilibrio parcial y economías externas" },
+                { "izquierda": "Hayek", "derecha": "Precios que coordinan el conocimiento disperso" }
+              ],
+              "explicacion": "Jevons: intercambio. Menger: valor subjetivo. Walras: equilibrio general. Marshall: equilibrio parcial y economías externas. Hayek: precios y conocimiento disperso.",
+              "fuente": "Ekelund y Hébert (1992, pp. 381, 410, 457, 612); Ficha del equipo, respuesta 6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "debate",
+      "numero": 4,
+      "titulo": "El debate",
+      "subtitulo": "Diferencias y críticas",
+      "preguntasDocumento": "Preguntas 7, 8 y 9 de la ficha",
+      "niveles": [
+        {
+          "id": "nivel-7",
+          "numero": 7,
+          "titulo": "Tres escuelas, tres miradas",
+          "descripcion": "Diferencias entre la escuela neoclásica, la austriaca y la marxista.",
+          "usaDelDocumento": "Respuesta 7",
+          "tarjetas": [
+            {
+              "titulo": "Lo que comparten",
+              "texto": "La neoclásica y la austriaca comparten la importancia de las decisiones individuales y del mercado. Ambas nacen de la revolución marginalista.",
+              "fuente": "Ekelund y Hébert (1992, pp. 601–602, 607–608)"
+            },
+            {
+              "titulo": "Su método",
+              "comparacion": {
+                "neoclasica": "Usa modelos matemáticos para estudiar los precios, la oferta, la demanda y el equilibrio.",
+                "austriaca": "Destaca la incertidumbre, el conocimiento limitado de las personas y la competencia como proceso de descubrimiento."
+              },
+              "fuente": "Ekelund y Hébert (1992, pp. 607–608)"
+            },
+            {
+              "titulo": "El contraste con el marxismo",
+              "texto": "Las dos primeras se centran en las decisiones individuales y la coordinación del mercado. El marxismo analiza las clases sociales, la propiedad de los medios de producción y la distribución de la riqueza.",
+              "fuente": "Ficha del equipo, respuesta 7"
+            },
+            {
+              "titulo": "Un ejemplo: la desigualdad",
+              "comparacion": {
+                "neoclasica": "Estudia factores como la productividad y los salarios.",
+                "marxista": "Examina cómo las relaciones de propiedad y laborales contribuyen a la desigualdad."
+              },
+              "fuente": "Ficha del equipo, respuesta 7"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n7-p1",
+              "tipo": "seleccion",
+              "concepto": "Diferencias entre escuelas",
+              "enunciado": "¿En qué difieren principalmente la neoclásica y la austriaca?",
+              "opciones": [
+                "En su método de análisis",
+                "En que una acepta el mercado y la otra lo rechaza",
+                "En que una estudia las clases sociales"
+              ],
+              "correcta": 0,
+              "explicacion": "Comparten la importancia de las decisiones individuales y del mercado, pero difieren en su método de análisis.",
+              "fuente": "Ekelund y Hébert (1992, pp. 607–608)"
+            },
+            {
+              "id": "n7-p2",
+              "tipo": "seleccion",
+              "concepto": "Diferencias entre escuelas",
+              "enunciado": "¿Qué escuela usa modelos matemáticos para estudiar precios, oferta, demanda y equilibrio?",
+              "opciones": ["La neoclásica", "La austriaca", "La marxista"],
+              "correcta": 0,
+              "explicacion": "La neoclásica utiliza modelos matemáticos para estudiar los precios, la oferta, la demanda y el equilibrio.",
+              "fuente": "Ekelund y Hébert (1992, pp. 607–608)"
+            },
+            {
+              "id": "n7-p3",
+              "tipo": "vf",
+              "concepto": "Diferencias entre escuelas",
+              "afirmacion": "El marxismo se centra en las decisiones individuales y la coordinación del mercado.",
+              "respuesta": false,
+              "explicacion": "Eso describe a la neoclásica y la austriaca. El marxismo analiza las clases sociales, la propiedad de los medios de producción y la distribución de la riqueza.",
+              "fuente": "Ficha del equipo, respuesta 7"
+            },
+            {
+              "id": "n7-p4",
+              "tipo": "relacionar",
+              "concepto": "Diferencias entre escuelas",
+              "enunciado": "¿Qué escuela diría cada idea?",
+              "pares": [
+                { "izquierda": "Modelos matemáticos del equilibrio", "derecha": "Neoclásica" },
+                { "izquierda": "Incertidumbre y conocimiento limitado", "derecha": "Austriaca" },
+                { "izquierda": "Clases sociales y propiedad de los medios de producción", "derecha": "Marxista" },
+                { "izquierda": "Competencia como proceso de descubrimiento", "derecha": "Austriaca" }
+              ],
+              "explicacion": "Neoclásica: modelos matemáticos. Austriaca: incertidumbre y descubrimiento. Marxismo: clases sociales y propiedad.",
+              "fuente": "Ficha del equipo, respuesta 7; Ekelund y Hébert (1992, pp. 607–608)"
+            },
+            {
+              "id": "n7-p5",
+              "tipo": "completar",
+              "concepto": "Diferencias entre escuelas",
+              "frase": "Ante la desigualdad, la economía neoclásica estudia la productividad y los ___.",
+              "opciones": ["salarios", "ciclos", "impuestos"],
+              "correcta": 0,
+              "explicacion": "Ante la desigualdad, la neoclásica estudia factores como la productividad y los salarios.",
+              "fuente": "Ficha del equipo, respuesta 7"
+            },
+            {
+              "id": "n7-p6",
+              "tipo": "seleccion",
+              "concepto": "Diferencias entre escuelas",
+              "enunciado": "¿Qué comparten la neoclásica y la austriaca?",
+              "opciones": [
+                "La importancia de las decisiones individuales y del mercado",
+                "El análisis de las clases sociales",
+                "La confianza en la planificación central"
+              ],
+              "correcta": 0,
+              "explicacion": "Ambas comparten la importancia de las decisiones individuales y del mercado.",
+              "fuente": "Ekelund y Hébert (1992, pp. 607–608)"
+            },
+            {
+              "id": "n7-p7",
+              "tipo": "vf",
+              "concepto": "Diferencias entre escuelas",
+              "contrarreloj": 15,
+              "afirmacion": "Las diferencias con el marxismo son mayores que las que hay entre la neoclásica y la austriaca.",
+              "respuesta": true,
+              "explicacion": "Al compararlas con la escuela marxista, las diferencias son mayores.",
+              "fuente": "Ficha del equipo, respuesta 7"
+            },
+            {
+              "id": "n7-p8",
+              "tipo": "seleccion",
+              "concepto": "Diferencias entre escuelas",
+              "contrarreloj": 20,
+              "enunciado": "Ante la desigualdad, ¿qué examina el marxismo?",
+              "opciones": [
+                "Cómo las relaciones de propiedad y laborales contribuyen a ella",
+                "Cómo los precios transmiten el conocimiento disperso",
+                "Cómo la utilidad marginal fija el valor"
+              ],
+              "correcta": 0,
+              "explicacion": "El marxismo examina cómo las relaciones de propiedad y laborales contribuyen a la desigualdad.",
+              "fuente": "Ficha del equipo, respuesta 7"
+            }
+          ]
+        },
+        {
+          "id": "nivel-8",
+          "numero": 8,
+          "titulo": "Las críticas",
+          "descripcion": "Qué se les ha criticado a ambas escuelas y qué aportan.",
+          "usaDelDocumento": "Respuesta 8",
+          "tarjetas": [
+            {
+              "titulo": "Críticas a la neoclásica",
+              "texto": "Algunos de sus modelos simplifican el comportamiento humano y suponen condiciones que no siempre se cumplen. Las personas no siempre deciden de forma completamente racional.",
+              "fuente": "Ficha del equipo, respuesta 8"
+            },
+            {
+              "titulo": "Mercados imperfectos",
+              "texto": "Los mercados pueden presentar monopolios, información desigual y diferencias de oportunidades. Por eso, el equilibrio no garantiza necesariamente una distribución equitativa de la riqueza.",
+              "fuente": "Ficha del equipo, respuesta 8"
+            },
+            {
+              "titulo": "Críticas a la austriaca",
+              "texto": "Su énfasis en la coordinación espontánea del mercado y en los límites del Estado puede ser insuficiente ante la pobreza, las externalidades y el acceso a servicios esenciales.",
+              "fuente": "Ekelund y Hébert (1992, pp. 594–613)"
+            },
+            {
+              "titulo": "Lo que sí aporta",
+              "texto": "Aun así, la escuela austriaca ayuda a comprender la importancia de los precios, la competencia y los riesgos de una intervención estatal mal diseñada.",
+              "fuente": "Ekelund y Hébert (1992, pp. 594–613)"
+            }
+          ],
+          "preguntas": [
+            {
+              "id": "n8-p1",
+              "tipo": "vf",
+              "concepto": "Críticas",
+              "afirmacion": "Según las críticas, el equilibrio del mercado garantiza una distribución equitativa de la riqueza.",
+              "respuesta": false,
+              "explicacion": "Como los mercados pueden tener monopolios, información desigual y diferencias de oportunidades, el equilibrio no garantiza necesariamente una distribución equitativa.",
+              "fuente": "Ficha del equipo, respuesta 8"
+            },
+            {
+              "id": "n8-p2",
+              "tipo": "relacionar",
+              "concepto": "Críticas",
+              "enunciado": "¿A qué escuela se le hace cada crítica?",
+              "pares": [
+                { "izquierda": "Sus modelos simplifican el comportamiento humano", "derecha": "Neoclásica" },
+                { "izquierda": "Puede ser insuficiente ante la pobreza", "derecha": "Austriaca" },
+                { "izquierda": "Supone condiciones que no siempre se cumplen", "derecha": "Neoclásica" },
+                { "izquierda": "Pone mucho énfasis en la coordinación espontánea del mercado", "derecha": "Austriaca" }
+              ],
+              "explicacion": "A la neoclásica se le critica simplificar el comportamiento humano. A la austriaca, que su énfasis en la coordinación espontánea puede ser insuficiente ante la pobreza.",
+              "fuente": "Ficha del equipo, respuesta 8; Ekelund y Hébert (1992, pp. 594–613)"
+            },
+            {
+              "id": "n8-p3",
+              "tipo": "seleccion",
+              "concepto": "Críticas",
+              "enunciado": "¿Qué problemas de los mercados reales señalan las críticas a la neoclásica?",
+              "opciones": [
+                "Monopolios, información desigual y diferencias de oportunidades",
+                "Hiperinflación y guerras",
+                "Exceso de innovación y emprendimiento"
+              ],
+              "correcta": 0,
+              "explicacion": "Los mercados pueden presentar monopolios, información desigual y diferencias de oportunidades.",
+              "fuente": "Ficha del equipo, respuesta 8"
+            },
+            {
+              "id": "n8-p4",
+              "tipo": "seleccion",
+              "concepto": "Críticas",
+              "enunciado": "Según sus críticos, ¿ante qué problemas puede quedarse corta la visión austriaca?",
+              "opciones": [
+                "La pobreza, las externalidades y el acceso a servicios esenciales",
+                "La formación de precios en equilibrio",
+                "La utilidad marginal del agua"
+              ],
+              "correcta": 0,
+              "explicacion": "Su énfasis en la coordinación espontánea puede resultar insuficiente para abordar la pobreza, las externalidades y el acceso a servicios esenciales.",
+              "fuente": "Ekelund y Hébert (1992, pp. 594–613)"
+            },
+            {
+              "id": "n8-p5",
+              "tipo": "vf",
+              "concepto": "Críticas",
+              "afirmacion": "Pese a las críticas, la escuela austriaca ayuda a entender los riesgos de una intervención estatal mal diseñada.",
+              "respuesta": true,
+              "explicacion": "Sus aportes permiten comprender la importancia de los precios, la competencia y los riesgos de una intervención estatal mal diseñada.",
+              "fuente": "Ekelund y Hébert (1992, pp. 594–613)"
+            },
+            {
+              "id": "n8-p6",
+              "tipo": "completar",
+              "concepto": "Críticas",
+              "frase": "A la neoclásica se le critica que las personas no siempre toman decisiones completamente ___.",
+              "opciones": ["racionales", "rápidas", "costosas"],
+              "correcta": 0,
+              "explicacion": "Las personas no siempre toman decisiones completamente racionales.",
+              "fuente": "Ficha del equipo, respuesta 8"
+            },
+            {
+              "id": "n8-p7",
+              "tipo": "seleccion",
+              "concepto": "Críticas",
+              "contrarreloj": 20,
+              "enunciado": "¿Qué aporte se le reconoce a la escuela austriaca pese a las críticas?",
+              "opciones": [
+                "Mostrar la importancia de los precios, la competencia y los riesgos de una mala intervención",
+                "Demostrar que el mercado siempre reparte con equidad",
+                "Crear el modelo matemático del equilibrio general"
+              ],
+              "correcta": 0,
+              "explicacion": "Sus aportes permiten comprender la importancia de los precios, la competencia y los riesgos de una intervención estatal mal diseñada.",
+              "fuente": "Ekelund y Hébert (1992, pp. 594–613)"
+            },
+            {
+              "id": "n8-p8",
+              "tipo": "vf",
+              "concepto": "Críticas",
+              "contrarreloj": 15,
+              "afirmacion": "Según la ficha, estas corrientes explican por sí solas todos los problemas económicos.",
+              "respuesta": false,
+              "explicacion": "Estas perspectivas no explican por sí solas todos los problemas económicos.",
+              "fuente": "Ficha del equipo, respuesta 10"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cromos": [
+    {
+      "id": "jevons",
+      "nombre": "William Stanley Jevons",
+      "iniciales": "WJ",
+      "escuela": "neoclasica",
+      "etiqueta": "Marginalista",
+      "aporte": "Desarrolló la teoría de la utilidad marginal y la teoría del intercambio, que relaciona las valoraciones de las personas con los precios.",
+      "fuente": "Ekelund y Hébert (1992, p. 381)"
+    },
+    {
+      "id": "menger",
+      "nombre": "Carl Menger",
+      "iniciales": "CM",
+      "escuela": "austriaca",
+      "etiqueta": "Fundador austriaco",
+      "aporte": "Planteó la teoría subjetiva del valor: un bien vale por la importancia que cada persona le da para satisfacer sus necesidades. Fundó la escuela austriaca en Viena en 1871.",
+      "fuente": "Ficha del equipo, respuesta 6; Ekelund y Hébert (1992, pp. 597–602)"
+    },
+    {
+      "id": "walras",
+      "nombre": "Léon Walras",
+      "iniciales": "LW",
+      "escuela": "neoclasica",
+      "etiqueta": "Marginalista",
+      "aporte": "Construyó el modelo matemático del equilibrio general, que explica cómo se relacionan todos los mercados de una economía.",
+      "fuente": "Ekelund y Hébert (1992, p. 457)"
+    },
+    {
+      "id": "marshall",
+      "nombre": "Alfred Marshall",
+      "iniciales": "AM",
+      "escuela": "neoclasica",
+      "etiqueta": "Neoclásico",
+      "aporte": "Unió utilidad y costo en el análisis de oferta y demanda, desarrolló el equilibrio parcial y explicó las economías externas.",
+      "fuente": "Ekelund y Hébert (1992, p. 410)"
+    },
+    {
+      "id": "hayek",
+      "nombre": "Friedrich A. Hayek",
+      "iniciales": "FH",
+      "escuela": "austriaca",
+      "etiqueta": "Austriaco",
+      "aporte": "Explicó los ciclos económicos por la expansión del crédito y la sobreinversión, y mostró que los precios coordinan el conocimiento disperso de la sociedad.",
+      "fuente": "Ekelund y Hébert (1992, pp. 601–602, 612)"
+    },
+    {
+      "id": "mises",
+      "nombre": "Ludwig von Mises",
+      "iniciales": "LM",
+      "escuela": "austriaca",
+      "etiqueta": "Austriaco",
+      "extra": true,
+      "aporte": "Desarrolló una teoría del dinero. Sostuvo que la expansión monetaria le permite al gobierno expropiar riqueza de otros grupos. Con Hayek, argumentó que sin precios de mercado no se puede calcular racionalmente.",
+      "fuente": "Ekelund y Hébert (1992, pp. 594–602, 611–612)"
+    },
+    {
+      "id": "schumpeter",
+      "nombre": "Joseph Schumpeter",
+      "iniciales": "JS",
+      "escuela": "austriaca",
+      "etiqueta": "Austriaco",
+      "extra": true,
+      "aporte": "Estudió al empresario, la innovación y la destrucción creadora.",
+      "fuente": "Ekelund y Hébert (1992, pp. 602–607), según el registro de fuentes de la ficha"
+    }
+  ],
+  "insignias": [
+    { "id": "primer-nivel", "nombre": "Primer paso", "descripcion": "Termina tu primer nivel." },
+    { "id": "modulo-origenes", "nombre": "Raíces marginalistas", "descripcion": "Termina el módulo Los orígenes." },
+    { "id": "modulo-ideas", "nombre": "Mente marginal", "descripcion": "Termina el módulo Las ideas." },
+    { "id": "modulo-autores", "nombre": "Coleccionista", "descripcion": "Termina el módulo Los autores." },
+    { "id": "modulo-debate", "nombre": "Gran debate", "descripcion": "Termina el módulo El debate." },
+    { "id": "album", "nombre": "Álbum completo", "descripcion": "Desbloquea los 7 cromos." },
+    { "id": "perfecto", "nombre": "Nivel perfecto", "descripcion": "Responde bien todas las preguntas de un nivel." },
+    { "id": "racha", "nombre": "En racha", "descripcion": "Logra 5 respuestas correctas seguidas." },
+    { "id": "simulador", "nombre": "Tres miradas", "descripcion": "Termina el simulador de decisiones." },
+    { "id": "reto", "nombre": "Reto superado", "descripcion": "Termina el reto final." }
+  ],
+  "simulador": {
+    "titulo": "Simulador: la desigualdad en Colombia",
+    "intro": "Vas a ver cuatro situaciones. En cada una, elige la explicación o la medida que te parezca mejor. Luego verás cómo la analizaría cada escuela. Aquí no hay respuestas correctas o incorrectas.",
+    "aviso": "Las historias son ejemplos para pensar. Las explicaciones de cada escuela salen de la ficha.",
+    "situaciones": [
+      {
+        "id": "ingresos",
+        "titulo": "Ingresos que no suben",
+        "historia": "Una persona trabaja hace varios años en el mismo empleo. Se esfuerza, pero sus ingresos no mejoran.",
+        "pregunta": "¿Qué explicación te parece mejor?",
+        "opciones": [
+          { "texto": "Le falta aumentar su productividad, por ejemplo con más educación.", "escuela": "neoclasica" },
+          { "texto": "Faltan emprendimiento y competencia, y sobran barreras para crear empresas.", "escuela": "austriaca" },
+          { "texto": "Su situación depende de la relación entre trabajadores y dueños del capital.", "escuela": "marxista" }
+        ],
+        "analisis": {
+          "neoclasica": {
+            "texto": "Analizaría cómo la productividad, la educación y la oferta y demanda de trabajo influyen en los salarios. En su visión, cada factor recibe lo que aporta (productividad marginal).",
+            "fuente": "Ficha del equipo, respuestas 3 y 9"
+          },
+          "austriaca": {
+            "texto": "Miraría el emprendimiento, la competencia y las barreras que dificultan la entrada de nuevas empresas. El empresario que descubre oportunidades obtiene un beneficio y ayuda a coordinar la economía.",
+            "fuente": "Ficha del equipo, respuesta 9; Ekelund y Hébert (1992, pp. 608–609)"
+          },
+          "marxista": {
+            "texto": "Examinaría la concentración de la propiedad y las relaciones entre trabajadores y propietarios del capital.",
+            "fuente": "Ficha del equipo, respuesta 9"
+          }
+        }
+      },
+      {
+        "id": "emprendedora",
+        "titulo": "Un negocio que no logra abrir",
+        "historia": "Una emprendedora tiene una buena idea para un negocio. Pero encuentra barreras que le impiden entrar al mercado.",
+        "pregunta": "¿Qué medida te parece mejor?",
+        "opciones": [
+          { "texto": "Quitar las barreras que frenan la entrada de nuevas empresas.", "escuela": "austriaca" },
+          { "texto": "Que el Estado garantice las condiciones para que el mercado funcione.", "escuela": "neoclasica" },
+          { "texto": "Revisar quién concentra la propiedad en ese mercado.", "escuela": "marxista" }
+        ],
+        "analisis": {
+          "neoclasica": {
+            "texto": "Diría que el Estado debe garantizar las condiciones para que el mercado funcione, y que puede intervenir de forma limitada para corregir fallas. Sus críticos recuerdan que los mercados pueden tener monopolios e información desigual.",
+            "fuente": "Ficha del equipo, respuestas 4 y 8"
+          },
+          "austriaca": {
+            "texto": "Pondría el foco en las barreras a la entrada de nuevas empresas. Ve el mercado como un «procedimiento para descubrir»: el empresario que descubre oportunidades obtiene un beneficio y ayuda a coordinar la economía.",
+            "fuente": "Ficha del equipo, respuesta 9; Ekelund y Hébert (1992, pp. 608–609)"
+          },
+          "marxista": {
+            "texto": "Miraría más allá de las decisiones individuales: examinaría la concentración de la propiedad y la propiedad de los medios de producción.",
+            "fuente": "Ficha del equipo, respuestas 7 y 9"
+          }
+        }
+      },
+      {
+        "id": "informalidad",
+        "titulo": "Trabajo informal",
+        "historia": "Muchas personas en Colombia trabajan en la informalidad. Quieren mejores oportunidades económicas.",
+        "pregunta": "¿Por dónde empezarías a analizar el problema?",
+        "opciones": [
+          { "texto": "Por la productividad, la educación y la oferta y demanda de trabajo.", "escuela": "neoclasica" },
+          { "texto": "Por las barreras que impiden emprender y competir.", "escuela": "austriaca" },
+          { "texto": "Por las relaciones laborales y de propiedad.", "escuela": "marxista" }
+        ],
+        "analisis": {
+          "neoclasica": {
+            "texto": "Estudiaría cómo la productividad, la educación y la oferta y demanda de trabajo influyen en los salarios.",
+            "fuente": "Ficha del equipo, respuesta 9"
+          },
+          "austriaca": {
+            "texto": "Destacaría el emprendimiento, la competencia y las barreras que dificultan la entrada de nuevas empresas al mercado.",
+            "fuente": "Ficha del equipo, respuesta 9"
+          },
+          "marxista": {
+            "texto": "Examinaría cómo las relaciones de propiedad y laborales contribuyen a la desigualdad.",
+            "fuente": "Ficha del equipo, respuesta 7"
+          }
+        }
+      },
+      {
+        "id": "crecer-o-redistribuir",
+        "titulo": "¿Crecer o redistribuir?",
+        "historia": "En un debate se discute cómo reducir la desigualdad en Colombia, ante la pobreza, la informalidad laboral y las diferencias de oportunidades.",
+        "pregunta": "¿Qué debería priorizarse?",
+        "opciones": [
+          { "texto": "El crecimiento económico mediante la productividad.", "escuela": "neoclasica" },
+          { "texto": "La competencia y el emprendimiento, con menos barreras.", "escuela": "austriaca" },
+          { "texto": "Cambios en la distribución de la riqueza.", "escuela": "marxista" }
+        ],
+        "analisis": {
+          "neoclasica": {
+            "texto": "Priorizaría la productividad, la educación y el funcionamiento de los mercados. Su crítica: el equilibrio del mercado no garantiza necesariamente una distribución equitativa de la riqueza.",
+            "fuente": "Ficha del equipo, respuestas 8 y 9"
+          },
+          "austriaca": {
+            "texto": "Priorizaría la competencia y el emprendimiento, y advertiría sobre los riesgos de una intervención estatal mal diseñada. Su crítica: puede quedarse corta ante la pobreza y el acceso a servicios esenciales.",
+            "fuente": "Ficha del equipo, respuesta 9; Ekelund y Hébert (1992, pp. 594–613)"
+          },
+          "marxista": {
+            "texto": "Plantearía que también se necesitan cambios en la distribución de la riqueza, porque la desigualdad está ligada a la propiedad de los medios de producción.",
+            "fuente": "Ficha del equipo, principal controversia y respuesta 9"
+          }
+        }
+      }
+    ],
+    "controversia": {
+      "titulo": "La gran pregunta",
+      "texto": "¿La desigualdad es resultado de la productividad, las decisiones individuales y el funcionamiento del mercado, o está ligada a la propiedad de los medios de producción, como sostiene el marxismo?",
+      "fuente": "Ficha del equipo, principal controversia"
+    },
+    "cierre": {
+      "titulo": "No hay una sola respuesta",
+      "texto": "La desigualdad en Colombia puede analizarse desde la productividad y la educación (neoclásicos), desde las barreras a la competencia y al emprendimiento (austriacos) o desde la concentración de la propiedad (marxismo). Cada escuela parte de un marco distinto.",
+      "fuente": "Ficha del equipo, relación con un problema económico actual"
+    }
+  },
+  "retoFinal": {
+    "titulo": "Reto final",
+    "intro": "Preguntas mezcladas de todos los módulos. Al final verás qué conceptos dominas y cuáles te conviene repasar.",
+    "preguntasPorNivel": 2,
+    "cierre": {
+      "titulo": "La idea central",
+      "texto": "El valor depende de las personas y no del trabajo incorporado, y los precios coordinan una economía en la que nadie lo sabe todo. Sin embargo, estas corrientes no explican por sí solas todos los problemas económicos. Compararlas con el marxismo permite una visión más crítica y completa de la economía.",
+      "fuente": "Ficha del equipo, idea central y respuesta 10"
+    }
+  },
+  "competencia": {
+    "titulo": "Modo competencia",
+    "intro": "Proyecta la pantalla. Cada equipo responde en su turno, en este mismo dispositivo. Responder rápido da más puntos.",
+    "segundosPorPregunta": 20
+  }
+}

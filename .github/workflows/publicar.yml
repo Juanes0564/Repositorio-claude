@@ -1,4 +1,5 @@
-# Publica Vínculo gratis en GitHub Pages cada vez que hay cambios en la rama principal.
+# Publica gratis en GitHub Pages cada vez que hay cambios en la rama principal:
+# Vínculo en la raíz del sitio y Econoplay en /econoplay/.
 # Antes de usarlo: en GitHub → Settings → Pages → "Source": elegir "GitHub Actions" (una sola vez).
 name: Publicar en GitHub Pages
 
@@ -25,10 +26,20 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            econoplay/package-lock.json
       - run: npm ci
       - run: npm run lint
       - run: npm test
       - run: npm run build
+      - name: Econoplay
+        working-directory: econoplay
+        run: |
+          npm ci
+          npm test
+          npm run build
+          cp -r dist ../dist/econoplay
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
