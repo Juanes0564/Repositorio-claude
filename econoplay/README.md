@@ -40,9 +40,17 @@ npm run build    # crea la versión para publicar en la carpeta dist
 
 ## Cómo publicarla con un link (gratis)
 
-### Versión publicada
+### Versión publicada (página web)
 
-Ya está publicada en **https://claude.ai/artifact/37wAd6bfknLNnhgsbfEVvU**. Para que otras personas la abran, compártela desde el menú *Compartir* de esa página.
+Está publicada como página web normal en GitHub Pages:
+
+**https://juanes0564.github.io/Repositorio-claude/econoplay/**
+
+- Funciona en celulares y computadores.
+- En el celular se puede agregar a la pantalla de inicio: en Android, menú ⋮ → *Agregar a la pantalla principal*; en iPhone, *Compartir* → *Agregar a inicio*.
+- Se actualiza sola con cada cambio que llega a la rama principal (`main`), mediante `.github/workflows/publicar.yml`. Ese mismo proceso publica Vínculo en la raíz del sitio.
+
+También hay una copia en claude.ai (https://claude.ai/artifact/37wAd6bfknLNnhgsbfEVvU), pero algunas redes la bloquean.
 
 ### Un solo archivo
 

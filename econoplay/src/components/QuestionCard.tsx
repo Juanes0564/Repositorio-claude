@@ -30,7 +30,9 @@ interface Props {
 function useCountdown(seconds: number | undefined, running: boolean, onExpire: () => void) {
   const [remaining, setRemaining] = useState(seconds ?? 0);
   const expire = useRef(onExpire);
-  expire.current = onExpire;
+  useEffect(() => {
+    expire.current = onExpire;
+  });
 
   useEffect(() => {
     if (!seconds || !running) return;
